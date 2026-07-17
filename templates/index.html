@@ -48,7 +48,17 @@
                 <h2 class="section-heading">Executive Summary</h2>
                 <p class="section-subtitle">A high-level overview of the pipeline's performance, architecture, and outcomes.</p>
                 <div class="content-container">
-                    <p class="placeholder-text">This section will contain a summary of the autonomous pipeline's execution, including key metrics, automation rates, and general outcomes from the research and verification process.</p>
+                    <div class="summary-layout">
+                        <div class="summary-text-block">
+                            <p><strong>Pipeline Operation & Purpose:</strong> This autonomous pipeline automates the discovery, extraction, and validation of integration metadata for 100+ SaaS applications. It was built to eliminate the error-prone, labor-intensive process of manual API directory maintenance, enabling rapid scaling of integration catalogs.</p>
+                            <p><strong>Multi-Agent Collaboration:</strong> The system orchestrates three specialized agents: the <strong>Research Agent</strong> scrapes developer docs to gather raw claims; the <strong>Verifier Agent</strong> performs adversarial cross-examination against live evidence URLs to calculate confidence scores; and the <strong>Analyst Agent</strong> synthesizes the validated dataset to extract strategic trends.</p>
+                            <p><strong>Human-in-the-Loop & Outputs:</strong> To ensure absolute reliability, the system automatically routes ambiguous evidence or low-confidence records to a human verification queue. The final outputs include a structured integration directory (<code>verified.json</code>), an audit report (<code>verification_report.json</code>), a strategic analysis (<code>insights.json</code>), and this interactive dashboard.</p>
+                        </div>
+                        <div class="summary-highlight-card">
+                            <h4>Strategic Verdict</h4>
+                            <p>Composio can drive growth by optimizing its core engine for REST + OAuth 2.0, developing a self-serve onboarding process, and establishing business development partnerships with companies in high gated_access categories.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -59,7 +69,26 @@
                 <h2 class="section-heading">Project Objective</h2>
                 <p class="section-subtitle">Defining the goals, requirements, and challenges of automating SaaS metadata collection.</p>
                 <div class="content-container">
-                    <p class="placeholder-text">This section will detail the business and engineering objectives behind developing the autonomous pipeline, highlighting the challenges of manual API cataloging and the need for scale.</p>
+                    <div class="objective-layout">
+                        <div class="objective-problem">
+                            <h3>The Problem</h3>
+                            <p>Composio needs to maintain a high-quality, always-current directory of 100+ SaaS integrations — including authentication mechanisms, API surface types, access models, and MCP compatibility. Maintaining this manually is error-prone, labour-intensive, and does not scale.</p>
+                        </div>
+                        <div class="objective-solution">
+                            <h3>The Solution</h3>
+                            <p>Build a fully autonomous multi-agent pipeline that reads a raw CSV, crawls public documentation, extracts structured metadata, cross-validates each claim against live evidence, and produces a final, auditable directory — end-to-end, without human involvement in the happy path.</p>
+                        </div>
+                        <div class="objective-goals">
+                            <h3>Success Criteria</h3>
+                            <ul class="goal-list">
+                                <li>Automate research for 100+ SaaS apps from a single CSV input</li>
+                                <li>Achieve structured data extraction with Pydantic schema validation</li>
+                                <li>Perform adversarial verification with independent evidence retrieval</li>
+                                <li>Produce actionable ecosystem insights via a dedicated Analyst Agent</li>
+                                <li>Generate a shareable, self-contained HTML case study report</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -217,7 +246,33 @@
                 <h2 class="section-heading">Dataset Overview</h2>
                 <p class="section-subtitle">A statistical view of the audited SaaS applications.</p>
                 <div class="content-container">
-                    <p class="placeholder-text">This section will feature placeholder tables and metrics outlining the distribution of application categories, authentication methods, and overall buildability verdicts.</p>
+                    <div class="kpi-grid">
+                        <div class="kpi-card">
+                            <span class="kpi-label">Total Applications</span>
+                            <span class="kpi-value">104</span>
+                            <span class="kpi-detail">Complete CSV Target Batch</span>
+                        </div>
+                        <div class="kpi-card">
+                            <span class="kpi-label">Automatically Verified</span>
+                            <span class="kpi-value highlight-verified">27</span>
+                            <span class="kpi-detail">Approved by Verifier Agent</span>
+                        </div>
+                        <div class="kpi-card">
+                            <span class="kpi-label">Manual Review Required</span>
+                            <span class="kpi-value highlight-review">33</span>
+                            <span class="kpi-detail">Ambiguous Evidence / Flagged</span>
+                        </div>
+                        <div class="kpi-card">
+                            <span class="kpi-label">Failed Verification</span>
+                            <span class="kpi-value highlight-failed">44</span>
+                            <span class="kpi-detail">Failed Scraping or Exceptions</span>
+                        </div>
+                        <div class="kpi-card">
+                            <span class="kpi-label">Average Confidence Score</span>
+                            <span class="kpi-value">47.85%</span>
+                            <span class="kpi-detail">LLM Self-Assessment Avg</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -228,7 +283,28 @@
                 <h2 class="section-heading">Key Insights</h2>
                 <p class="section-subtitle">Significant discoveries and integration opportunities discovered by the pipeline.</p>
                 <div class="content-container">
-                    <p class="placeholder-text">This section will highlight the most crucial trends, developer experience takeaways, and strategic opportunities identified during the run.</p>
+                    <div class="insights-layout">
+                        <div class="insights-top">
+                            <p>Analysis of the 27 fully verified applications revealed clear technical pathways for core integration optimizations.</p>
+                        </div>
+                        <div class="insights-grid">
+                            <div class="insights-patterns">
+                                <h4>Ecosystem Observations</h4>
+                                <ul class="styled-list">
+                                    <li>REST + OAuth 2.0 dominates the API tech trends</li>
+                                    <li>Self-serve access model is prevalent</li>
+                                </ul>
+                            </div>
+                            <div class="insights-recommendations">
+                                <h4>Strategic Recommendations</h4>
+                                <ul class="styled-list">
+                                    <li><strong>REST + OAuth 2.0 dominates the API tech trends:</strong> Optimize Composio's core engine to support REST + OAuth 2.0, as this will enable seamless integration with the majority of verified SaaS applications.</li>
+                                    <li><strong>Self-serve access model is prevalent:</strong> Develop a self-serve onboarding process for Composio to reduce friction and increase adoption rates.</li>
+                                    <li><strong>High gated_access in certain categories:</strong> Establish business development partnerships with companies in categories with high gated_access, such as Finance and Customer Service, to facilitate integration and growth.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -239,7 +315,49 @@
                 <h2 class="section-heading">Pattern Analysis</h2>
                 <p class="section-subtitle">Deep dive into common integration patterns, API surfaces, and auth designs.</p>
                 <div class="content-container">
-                    <p class="placeholder-text">This section will analyze technical patterns such as the prevalence of OAuth 2.0, REST vs GraphQL surfaces, and developer accessibility features.</p>
+                    <div class="patterns-grid">
+                        <div class="pattern-card">
+                            <h4>Authentication Distribution</h4>
+                            <ul class="dist-list">
+                                <li><span class="dist-key">OAuth 2.0</span>: <span class="dist-val">25 apps</span></li>
+                                <li><span class="dist-key">API Key</span>: <span class="dist-val">10 apps</span></li>
+                                <li><span class="dist-key">Basic Auth</span>: <span class="dist-val">5 apps</span></li>
+                                <li><span class="dist-key">JWT</span>: <span class="dist-val">4 apps</span></li>
+                                <li><span class="dist-key">Unknown</span>: <span class="dist-val">3 apps</span></li>
+                                <li><span class="dist-key">Other</span>: <span class="dist-val">3 apps</span></li>
+                            </ul>
+                        </div>
+                        <div class="pattern-card">
+                            <h4>API Surface Trends</h4>
+                            <ul class="dist-list">
+                                <li><span class="dist-key">REST</span>: <span class="dist-val">26 apps</span></li>
+                                <li><span class="dist-key">GraphQL</span>: <span class="dist-val">12 apps</span></li>
+                                <li><span class="dist-key">SOAP</span>: <span class="dist-val">3 apps</span></li>
+                                <li><span class="dist-key">Webhooks</span>: <span class="dist-val">3 apps</span></li>
+                                <li><span class="dist-key">gRPC</span>: <span class="dist-val">3 apps</span></li>
+                                <li><span class="dist-key">Unknown</span>: <span class="dist-val">3 apps</span></li>
+                                <li><span class="dist-key">Other</span>: <span class="dist-val">3 apps</span></li>
+                            </ul>
+                        </div>
+                        <div class="pattern-card">
+                            <h4>Access Model Patterns</h4>
+                            <ul class="dist-list">
+                                <li><span class="dist-key">Self-Serve</span>: <span class="dist-val">21 apps</span></li>
+                                <li><span class="dist-key">Gated</span>: <span class="dist-val">5 apps</span></li>
+                                <li><span class="dist-key">Unknown</span>: <span class="dist-val">1 app</span></li>
+                            </ul>
+                        </div>
+                        <div class="pattern-card">
+                            <h4>Category Observations</h4>
+                            <ul class="dist-list">
+                                <li><span class="dist-key">Marketing</span>: <span class="dist-val">4 apps (4 easy, 0 gated)</span></li>
+                                <li><span class="dist-key">CRM</span>: <span class="dist-val">2 apps (1 easy, 1 gated)</span></li>
+                                <li><span class="dist-key">Customer Service</span>: <span class="dist-val">2 apps (1 easy, 1 gated)</span></li>
+                                <li><span class="dist-key">Developer Tools</span>: <span class="dist-val">2 apps (1 easy, 1 gated)</span></li>
+                                <li><span class="dist-key">Productivity</span>: <span class="dist-val">2 apps (1 easy, 0 gated)</span></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -250,7 +368,60 @@
                 <h2 class="section-heading">Verification & Human Review</h2>
                 <p class="section-subtitle">Assessing adversarial checks, LLM confidence calibration, and the manual review queue.</p>
                 <div class="content-container">
-                    <p class="placeholder-text">This section will focus on the verifier agent's audit results, confidence adjustment mechanisms, and details about the records flagged for manual review.</p>
+                    <div class="verification-layout">
+                        <div class="verification-intro">
+                            <p>Every application processed by the Researcher underwent a secondary verification pass. The Verifier Agent uses a separate session to retrieve the source documentation page and cross-examine the claimed metadata attributes. If the Verifier finds discrepancies or if text searches yield zero evidence, the confidence score drops and the app is flagged for human review.</p>
+                        </div>
+                        
+                        <div class="verification-flow">
+                            <div class="v-step">
+                                <span class="v-step-icon">🔍</span>
+                                <span class="v-step-title">Research</span>
+                                <span class="v-step-desc">Structures Raw Claims</span>
+                            </div>
+                            <div class="v-arrow">➔</div>
+                            <div class="v-step">
+                                <span class="v-step-icon">🛡️</span>
+                                <span class="v-step-title">Verification</span>
+                                <span class="v-step-desc">Adversarial Auditing</span>
+                            </div>
+                            <div class="v-arrow">➔</div>
+                            <div class="v-step">
+                                <span class="v-step-icon">👥</span>
+                                <span class="v-step-title">Human Review</span>
+                                <span class="v-step-desc">HITL Fallback Queue</span>
+                            </div>
+                            <div class="v-arrow">➔</div>
+                            <div class="v-step">
+                                <span class="v-step-icon">✅</span>
+                                <span class="v-step-title">Final Dataset</span>
+                                <span class="v-step-desc">Verified Directory</span>
+                            </div>
+                        </div>
+
+                        <div class="failure-categories-grid">
+                            <div class="failure-category-card">
+                                <h5>⏳ Rate Limits</h5>
+                                <p><strong>Count: 27 occurrences</strong></p>
+                                <p>Frequent 429 requests encountered due to strict daily API quotas on Groq developer models during massive batch runs.</p>
+                            </div>
+                            <div class="failure-category-card">
+                                <h5>🚫 Docs Unavailable</h5>
+                                <p><strong>Count: 10 occurrences</strong></p>
+                                <p>HTTP fetch failures, broken evidence URLs, or developer portal firewalls blocking the headless scraper from crawling raw content.</p>
+                            </div>
+                            <div class="failure-category-card">
+                                <h5>❓ Evidence Ambiguity</h5>
+                                <p><strong>Count: 12 occurrences</strong></p>
+                                <p>Documentation text that does not explicitly mention the parameters (e.g. not explicitly declaring OAuth 2.0 support on public homepages).</p>
+                            </div>
+                            <div class="failure-category-card">
+                                <h5>⚠️ API Validation Issues</h5>
+                                <p><strong>Count: 18 occurrences</strong></p>
+                                <p>Strict schema structures fail due to missing fields, LLM output schema mismatches, or tool-use parsing crashes.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -259,9 +430,46 @@
         <section id="challenges">
             <div class="container">
                 <h2 class="section-heading">Challenges Faced</h2>
-                <p class="section-subtitle">Key engineering roadblocks and how they were mitigated.</p>
+                <p class="section-subtitle">Key engineering roadblocks encountered during the pipeline build and how each was resolved.</p>
                 <div class="content-container">
-                    <p class="placeholder-text">This section will discuss technical challenges such as token limit rates, scraper blocking, and LLM tool calling schema validation failures on the Groq API.</p>
+                    <div class="challenges-grid">
+                        <div class="challenge-card">
+                            <div class="challenge-icon">⏳</div>
+                            <h4>Groq Free-Tier Rate Limits</h4>
+                            <p class="challenge-problem">Daily token limits (429 errors) halted batch processing mid-pipeline after approximately 30–40 apps, making full runs impossible in a single session.</p>
+                            <div class="challenge-resolution">
+                                <span class="resolution-label">Resolution</span>
+                                <p>Implemented resume-from-checkpoint logic using <code>verified.json</code> as persistent state. The pipeline skips already-processed apps on restart, making it resilient to interruptions.</p>
+                            </div>
+                        </div>
+                        <div class="challenge-card">
+                            <div class="challenge-icon">🔧</div>
+                            <h4>LLM Tool-Call Schema Failures</h4>
+                            <p class="challenge-problem">Groq's <code>tool_use_failed</code> errors caused agent crashes when generated outputs didn't strictly match the Pydantic schema — particularly for boolean fields and datetime serialization.</p>
+                            <div class="challenge-resolution">
+                                <span class="resolution-label">Resolution</span>
+                                <p>Migrated from <code>instructor.Mode.TOOLS</code> to <code>instructor.Mode.JSON</code>. Normalized all booleans and converted datetimes to ISO strings before passing to the LLM context.</p>
+                            </div>
+                        </div>
+                        <div class="challenge-card">
+                            <div class="challenge-icon">🚫</div>
+                            <h4>Documentation Scraping Failures</h4>
+                            <p class="challenge-problem">Many SaaS developer portals use JavaScript-rendered content, bot-detection headers, or aggressive rate limiting — returning empty bodies or blocking the scraper entirely.</p>
+                            <div class="challenge-resolution">
+                                <span class="resolution-label">Resolution</span>
+                                <p>Added graceful fallback in the Verifier: if no text can be extracted from evidence URLs, the app is auto-flagged as <em>Manual Review Required</em> rather than silently failing.</p>
+                            </div>
+                        </div>
+                        <div class="challenge-card">
+                            <div class="challenge-icon">🌍</div>
+                            <h4>Environment Variable Loading</h4>
+                            <p class="challenge-problem">The <code>GROQ_API_KEY</code> was stored in <code>.env</code> but <code>python-dotenv</code> was not calling <code>load_dotenv()</code>, causing agents to instantiate with empty API keys and silent failures.</p>
+                            <div class="challenge-resolution">
+                                <span class="resolution-label">Resolution</span>
+                                <p>Documented the correct execution pattern: <code>export $(cat .env | xargs) && python main.py</code> to manually inject variables before pipeline startup.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -270,9 +478,45 @@
         <section id="future-improvements">
             <div class="container">
                 <h2 class="section-heading">Future Improvements</h2>
-                <p class="section-subtitle">Next steps for enhancing the pipeline's autonomy and capabilities.</p>
+                <p class="section-subtitle">Next steps for scaling the pipeline's autonomy, accuracy, and coverage.</p>
                 <div class="content-container">
-                    <p class="placeholder-text">This section will propose future enhancements including parallelized batch processing, deeper JS scraping capabilities, and advanced agent orchestration models.</p>
+                    <div class="improvements-list">
+                        <div class="improvement-item">
+                            <span class="improvement-number">01</span>
+                            <div class="improvement-body">
+                                <h4>Parallel Batch Processing</h4>
+                                <p>Replace the current sequential agent loop with a <code>asyncio.gather()</code> concurrency pattern, processing multiple apps simultaneously to reduce total pipeline time from hours to minutes.</p>
+                            </div>
+                        </div>
+                        <div class="improvement-item">
+                            <span class="improvement-number">02</span>
+                            <div class="improvement-body">
+                                <h4>Headless Browser Scraping</h4>
+                                <p>Integrate Playwright or Puppeteer to scrape JavaScript-rendered documentation portals that currently return empty bodies, dramatically improving evidence retrieval success rates.</p>
+                            </div>
+                        </div>
+                        <div class="improvement-item">
+                            <span class="improvement-number">03</span>
+                            <div class="improvement-body">
+                                <h4>LangGraph Orchestration</h4>
+                                <p>Migrate agent coordination to a LangGraph state machine, enabling conditional routing, automatic retry with exponential backoff, and persistent multi-step reasoning traces.</p>
+                            </div>
+                        </div>
+                        <div class="improvement-item">
+                            <span class="improvement-number">04</span>
+                            <div class="improvement-body">
+                                <h4>Paid API Tier & Cost Tracking</h4>
+                                <p>Move to a paid Groq or OpenAI tier to eliminate rate limit interruptions. Add per-run cost tracking and token budgeting to ensure pipeline runs stay within target cost envelopes.</p>
+                            </div>
+                        </div>
+                        <div class="improvement-item">
+                            <span class="improvement-number">05</span>
+                            <div class="improvement-body">
+                                <h4>Live Dashboard & Webhooks</h4>
+                                <p>Replace the static HTML report with a live WebSocket-connected dashboard that streams agent status, verification scores, and emerging insights in real-time as the pipeline executes.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -283,7 +527,42 @@
                 <h2 class="section-heading">Technology Stack</h2>
                 <p class="section-subtitle">The tools and frameworks powering our autonomous execution system.</p>
                 <div class="content-container">
-                    <p class="placeholder-text">This section will list and define the backend modules, LLM APIs, validation libraries, and utilities utilized in the pipeline.</p>
+                    <div class="tech-grid">
+                        <div class="tech-category">
+                            <h4>🤖 AI & LLM</h4>
+                            <ul class="tech-list">
+                                <li><span class="tech-name">Groq API</span><span class="tech-desc">Inference runtime for Llama-3 models</span></li>
+                                <li><span class="tech-name">Llama-3.1-8b-instant</span><span class="tech-desc">Fast agent for research & verification</span></li>
+                                <li><span class="tech-name">Llama-3.3-70b-versatile</span><span class="tech-desc">High-capacity model for analysis</span></li>
+                                <li><span class="tech-name">Instructor</span><span class="tech-desc">Structured JSON output enforcement</span></li>
+                            </ul>
+                        </div>
+                        <div class="tech-category">
+                            <h4>🐍 Backend & Orchestration</h4>
+                            <ul class="tech-list">
+                                <li><span class="tech-name">Python 3.11+</span><span class="tech-desc">Core runtime & async orchestration</span></li>
+                                <li><span class="tech-name">asyncio</span><span class="tech-desc">Non-blocking pipeline execution</span></li>
+                                <li><span class="tech-name">Pydantic v2</span><span class="tech-desc">Schema validation & data modelling</span></li>
+                                <li><span class="tech-name">aiohttp / httpx</span><span class="tech-desc">Async HTTP evidence fetching</span></li>
+                            </ul>
+                        </div>
+                        <div class="tech-category">
+                            <h4>📦 Data & Persistence</h4>
+                            <ul class="tech-list">
+                                <li><span class="tech-name">JSON flat-files</span><span class="tech-desc">Checkpoint & artifact persistence</span></li>
+                                <li><span class="tech-name">CSV (apps.csv)</span><span class="tech-desc">Source of truth for app targets</span></li>
+                                <li><span class="tech-name">BeautifulSoup4</span><span class="tech-desc">HTML parsing & text extraction</span></li>
+                            </ul>
+                        </div>
+                        <div class="tech-category">
+                            <h4>🖥️ Frontend</h4>
+                            <ul class="tech-list">
+                                <li><span class="tech-name">Semantic HTML5</span><span class="tech-desc">Structured, accessible markup</span></li>
+                                <li><span class="tech-name">Vanilla CSS</span><span class="tech-desc">Premium dark-theme design system</span></li>
+                                <li><span class="tech-name">Vanilla JS (ES2020)</span><span class="tech-desc">Dynamic JSON-driven data injection</span></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -292,9 +571,56 @@
         <section id="repository">
             <div class="container">
                 <h2 class="section-heading">Repository & Codebase</h2>
-                <p class="section-subtitle">Explore the source code, developer guides, and execution scripts.</p>
+                <p class="section-subtitle">Explore the source code, generated artifacts, and execution guide.</p>
                 <div class="content-container">
-                    <p class="placeholder-text">This section will contain links and details to access the codebase, run scripts, and view local execution configurations.</p>
+                    <div class="repo-layout">
+                        <div class="repo-links">
+                            <a href="https://github.com/ace-tk/Composio" target="_blank" class="repo-link-card">
+                                <span class="repo-link-icon">📁</span>
+                                <div>
+                                    <strong>GitHub Repository</strong>
+                                    <span>ace-tk/Composio</span>
+                                </div>
+                                <span class="repo-link-arrow">↗</span>
+                            </a>
+                        </div>
+                        <div class="repo-structure">
+                            <h4>Project Structure</h4>
+                            <div class="file-tree">
+                                <div class="tree-item tree-root">composio-assessment/</div>
+                                <div class="tree-item tree-dir">├── agents/</div>
+                                <div class="tree-item tree-file">│   ├── researcher.py</div>
+                                <div class="tree-item tree-file">│   ├── verifier.py</div>
+                                <div class="tree-item tree-file">│   └── analyst.py</div>
+                                <div class="tree-item tree-dir">├── data/</div>
+                                <div class="tree-item tree-file">│   ├── apps.csv</div>
+                                <div class="tree-item tree-file">│   ├── verified.json</div>
+                                <div class="tree-item tree-file">│   ├── insights.json</div>
+                                <div class="tree-item tree-file">│   └── verification_report.json</div>
+                                <div class="tree-item tree-dir">├── templates/</div>
+                                <div class="tree-item tree-file">│   ├── index.html</div>
+                                <div class="tree-item tree-file">│   └── static/</div>
+                                <div class="tree-item tree-file">├── utils/models.py</div>
+                                <div class="tree-item tree-file">└── main.py</div>
+                            </div>
+                        </div>
+                        <div class="repo-run">
+                            <h4>Quick Start</h4>
+                            <div class="code-block">
+                                <pre><code># 1. Set your Groq API key
+export $(cat .env | xargs)
+
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Run the full pipeline
+python main.py
+
+# 4. Open the case study
+open templates/index.html</code></pre>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -304,8 +630,9 @@
     <footer id="site-footer">
         <div class="container">
             <p>&copy; 2026 AI Product Ops Pipeline. All rights reserved.</p>
-            <p>Built autonomously by the Antigravity pair programmer.</p>
+            <p>Built as part of the Composio Product Operations Engineering Assessment.</p>
         </div>
     </footer>
+    <script src="static/main.js"></script>
 </body>
 </html>
