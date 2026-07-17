@@ -1,0 +1,19 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+venv/
+env/
+ENV/
+
+# Environment Variables
+.env
+
+# Output reports
+output/report.html
+
+# Ignore system files
+.DS_Store
+

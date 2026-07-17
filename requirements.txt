@@ -1,0 +1,13 @@
+# LLM and Data Extraction
+openai
+pydantic
+instructor
+
+# Web Scraping & Async HTTP
+httpx
+beautifulsoup4
+# playwright  # Uncomment if JS-rendering is required
+
+# Reporting and Data Analysis
+jinja2
+pandas
