@@ -57,6 +57,15 @@ async def process_apps():
         logger.error(f"Cannot find {APPS_CSV}. Please ensure it exists.")
         return
             
+    # Filter existing_data to keep only current apps in apps.csv, purging stale ones
+    current_app_names = {row["app_name"] for row in apps_to_process}
+    original_count = len(existing_data)
+    existing_data = {app: data for app, data in existing_data.items() if app in current_app_names}
+    if len(existing_data) < original_count:
+        logger.info(f"Purged {original_count - len(existing_data)} stale research records.")
+        with open(RESEARCH_JSON, "w") as f:
+            json.dump(list(existing_data.values()), f, indent=2)
+
     total_apps = len(apps_to_process)
     
     for idx, row in enumerate(apps_to_process, 1):
@@ -208,6 +217,15 @@ async def process_verification():
             logger.info(f"Loaded {len(verified_data)} existing verified records.")
         except json.JSONDecodeError:
             pass
+
+    # Filter verified_data to keep only current apps in research_data, purging stale ones
+    current_research_names = {item["app_name"] for item in research_data}
+    original_verified_count = len(verified_data)
+    verified_data = {app: data for app, data in verified_data.items() if app in current_research_names}
+    if len(verified_data) < original_verified_count:
+        logger.info(f"Purged {original_verified_count - len(verified_data)} stale verified records.")
+        with open(VERIFIED_JSON, "w") as f:
+            json.dump(list(verified_data.values()), f, indent=2)
 
     report = {
         "total_apps": len(research_data),
