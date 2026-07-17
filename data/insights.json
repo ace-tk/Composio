@@ -1,0 +1,156 @@
+{
+  "summary": "Composio can drive growth by optimizing its core engine for REST + OAuth 2.0, developing a self-serve onboarding process, and establishing business development partnerships with companies in high gated_access categories.",
+  "key_metrics": {
+    "total_verified_apps": 27,
+    "auth_distribution": {
+      "OAuth 2.0": 25,
+      "API Key": 10,
+      "Basic Auth": 5,
+      "JWT": 4,
+      "Unknown": 3,
+      "Other": 3
+    },
+    "api_surface_distribution": {
+      "REST": 26,
+      "GraphQL": 12,
+      "SOAP": 3,
+      "Webhooks": 3,
+      "gRPC": 3,
+      "Unknown": 3,
+      "Other": 3
+    },
+    "access_model_distribution": {
+      "Self-Serve": 21,
+      "Gated": 5,
+      "Unknown": 1
+    },
+    "buildability_distribution": {
+      "Easy": 18,
+      "Moderate": 8,
+      "Unknown": 1
+    },
+    "mcp_adoption_count": 15,
+    "category_distribution": {
+      "Marketing": {
+        "total_apps": 4,
+        "easy_builds": 4,
+        "gated_access": 0
+      },
+      "CRM": {
+        "total_apps": 2,
+        "easy_builds": 1,
+        "gated_access": 1
+      },
+      "Sales CRM": {
+        "total_apps": 1,
+        "easy_builds": 0,
+        "gated_access": 0
+      },
+      "Productivity": {
+        "total_apps": 2,
+        "easy_builds": 1,
+        "gated_access": 0
+      },
+      "Project Management": {
+        "total_apps": 1,
+        "easy_builds": 1,
+        "gated_access": 0
+      },
+      "Collaboration Tool": {
+        "total_apps": 1,
+        "easy_builds": 0,
+        "gated_access": 1
+      },
+      "Developer Tools": {
+        "total_apps": 2,
+        "easy_builds": 1,
+        "gated_access": 1
+      },
+      "Communications Platform": {
+        "total_apps": 1,
+        "easy_builds": 0,
+        "gated_access": 0
+      },
+      "Version Control": {
+        "total_apps": 1,
+        "easy_builds": 1,
+        "gated_access": 0
+      },
+      "Incident Response": {
+        "total_apps": 1,
+        "easy_builds": 1,
+        "gated_access": 0
+      },
+      "Finance": {
+        "total_apps": 1,
+        "easy_builds": 0,
+        "gated_access": 1
+      },
+      "Accounting and Finance": {
+        "total_apps": 1,
+        "easy_builds": 0,
+        "gated_access": 0
+      },
+      "Subscription Lifecycle Management": {
+        "total_apps": 1,
+        "easy_builds": 1,
+        "gated_access": 0
+      },
+      "Customer Service": {
+        "total_apps": 2,
+        "easy_builds": 1,
+        "gated_access": 1
+      },
+      "Customer Communication": {
+        "total_apps": 1,
+        "easy_builds": 1,
+        "gated_access": 0
+      },
+      "Data Platform": {
+        "total_apps": 1,
+        "easy_builds": 1,
+        "gated_access": 0
+      },
+      "Business Intelligence": {
+        "total_apps": 1,
+        "easy_builds": 1,
+        "gated_access": 0
+      },
+      "Customer Data Platform": {
+        "total_apps": 1,
+        "easy_builds": 1,
+        "gated_access": 0
+      },
+      "Development": {
+        "total_apps": 1,
+        "easy_builds": 1,
+        "gated_access": 0
+      },
+      "NLP/AI": {
+        "total_apps": 1,
+        "easy_builds": 1,
+        "gated_access": 0
+      }
+    }
+  },
+  "patterns": [
+    "REST + OAuth 2.0 dominates the API tech trends",
+    "Self-serve access model is prevalent"
+  ],
+  "recommendations": [
+    {
+      "finding": "REST + OAuth 2.0 dominates the API tech trends",
+      "recommendation": "Optimize Composio's core engine to support REST + OAuth 2.0, as this will enable seamless integration with the majority of verified SaaS applications."
+    },
+    {
+      "finding": "Self-serve access model is prevalent",
+      "recommendation": "Develop a self-serve onboarding process for Composio to reduce friction and increase adoption rates."
+    },
+    {
+      "finding": "High gated_access in certain categories",
+      "recommendation": "Establish business development partnerships with companies in categories with high gated_access, such as Finance and Customer Service, to facilitate integration and growth."
+    }
+  ],
+  "risk_analysis": "The high prevalence of OAuth 2.0 and REST may pose a risk if these technologies become obsolete. Composio should invest in research and development to stay ahead of the curve and adapt to emerging trends.",
+  "opportunity_analysis": "Quick wins can be achieved by focusing on categories with high easy_builds and low gated_access, such as Marketing and Productivity. Partnering with companies in these categories can drive rapid growth for Composio."
+}

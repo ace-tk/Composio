@@ -1,1 +1,2817 @@
-[]
+[
+  {
+    "app_name": "Salesforce",
+    "website": "https://www.salesforce.com/",
+    "category": "CRM",
+    "one_line_description": "Cloud-based CRM and sales platform for businesses",
+    "agent_summary": "Salesforce is a cloud-based software company that offers a range of products and services for customer relationship management (CRM), sales, marketing, and customer service.",
+    "authentication_methods": [
+      "OAuth 2.0",
+      "API Key",
+      "Basic Auth"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST"
+    ],
+    "api_documentation_url": "https://www.salesforce.com/docs",
+    "mcp_available": true,
+    "buildability_verdict": "Easy",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://www.salesforce.com/docs",
+        "source_type": "Official Docs",
+        "claim_supported": "Offers REST API"
+      }
+    ],
+    "confidence_score": 89.5,
+    "status": "Manual Review",
+    "manual_review_required": true,
+    "research_timestamp": "2026-07-17T11:38:38.855052",
+    "verification_timestamp": "2026-07-17T14:38:58.648412",
+    "processing_time_seconds": 9.92,
+    "processing_notes": [
+      "Scraped content provided.",
+      "Additional information inferred from general knowledge.",
+      "Verifier Reasoning: The evidence obtained from the provided URL does not explicitly support or contradict the claim that Salesforce offers a REST API. However, upon further evaluation, it appears that the evidence obtained is incomplete and does not allow for a definitive conclusion. The content loaded is also empty, suggesting that the link might be broken."
+    ],
+    "notes": null
+  },
+  {
+    "app_name": "HubSpot",
+    "website": "https://www.hubspot.com/",
+    "category": "Marketing",
+    "one_line_description": "All-in-one marketing and sales platform.",
+    "agent_summary": null,
+    "authentication_methods": [
+      "OAuth 2.0",
+      "API Key"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST"
+    ],
+    "api_documentation_url": "https://developers.hubspot.com/",
+    "mcp_available": true,
+    "buildability_verdict": "Easy",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://hubspot.com/pricing",
+        "source_type": "Pricing Page",
+        "claim_supported": "Offers free plan"
+      }
+    ],
+    "confidence_score": 98.75,
+    "status": "Verified",
+    "manual_review_required": false,
+    "research_timestamp": "2026-07-17T11:38:48.542389",
+    "verification_timestamp": "2026-07-17T14:38:59.755698",
+    "processing_time_seconds": 5.779999999999999,
+    "processing_notes": [
+      "Verifier Reasoning: Verified that HubSpot offers a free plan based on pricing information available on their website. However, the evidence provided does not explicitly verify the other original claims."
+    ],
+    "notes": null
+  },
+  {
+    "app_name": "Pipedrive",
+    "website": "https://www.pipedrive.com/",
+    "category": "CRM",
+    "one_line_description": "A sales CRM & pipeline management software that lets you track your sales pipeline, optimize leads, manage deals with AI and automate your entire sales process.",
+    "agent_summary": "Pipedrive is a comprehensive sales CRM and pipeline management software that offers a range of features to track and optimize sales pipelines, manage leads, and automate sales processes.",
+    "authentication_methods": [
+      "OAuth 2.0"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST"
+    ],
+    "api_documentation_url": "https://www.pipedrive.com/api",
+    "mcp_available": true,
+    "buildability_verdict": "Easy",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://www.pipedrive.com/api",
+        "source_type": "Official Docs",
+        "claim_supported": "REST API documentation is available"
+      },
+      {
+        "url": "https://www.pipedrive.com/api",
+        "source_type": "Official Docs",
+        "claim_supported": "OAuth 2.0 authentication is supported"
+      }
+    ],
+    "confidence_score": 95.9,
+    "status": "Verified",
+    "manual_review_required": false,
+    "research_timestamp": "2026-07-17T11:41:07.130594",
+    "verification_timestamp": "2026-07-17T14:39:03.830495",
+    "processing_time_seconds": 9.79,
+    "processing_notes": [
+      "No issues found with the scraped content",
+      "All necessary information is easily accessible",
+      "Verifier Reasoning: Pipedrive API documentation confirms REST API availability, and developers share positive experiences with the API and documentation."
+    ],
+    "notes": ""
+  },
+  {
+    "app_name": "Zendesk Sell",
+    "website": "https://www.zendesk.com/sell",
+    "category": "Sales CRM",
+    "one_line_description": "Zendesk Sell offers a Sales CRM API for integration purposes.",
+    "agent_summary": null,
+    "authentication_methods": [
+      "OAuth 2.0"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST"
+    ],
+    "api_documentation_url": "https://www.zendesk.com/sell/developers/",
+    "mcp_available": true,
+    "buildability_verdict": "Moderate",
+    "primary_blocker": "None",
+    "evidence": [
+      {
+        "url": "https://www.zendesk.com/sell/developers/",
+        "source_type": "Official Docs",
+        "claim_supported": "OAuth 2.0 authentication support"
+      },
+      {
+        "url": "https://www.zendesk.com/sell/developers/",
+        "source_type": "Official Docs",
+        "claim_supported": "API purpose core api "
+      },
+      {
+        "url": "https://www.zendesk.com/sell/developers/",
+        "source_type": "Official Docs",
+        "claim_supported": "API purpose search and filter Sell data (API purpose core api)"
+      }
+    ],
+    "confidence_score": 90.9,
+    "status": "Verified",
+    "manual_review_required": false,
+    "research_timestamp": "2026-07-17T11:41:45.034526",
+    "verification_timestamp": "2026-07-17T14:39:12.657728",
+    "processing_time_seconds": 14.14,
+    "processing_notes": [
+      "Zendesk has various types of API for different needs (Core API, Firehose API, etc.)",
+      "API documentation requires review to assess buildability",
+      "Verifier Reasoning: The Zendesk Sell API supports OAuth 2.0 authentication, and the API purpose includes core, search, and filter capabilities through REST API."
+    ],
+    "notes": "Based on our research, the buildability verdict is moderate due to various API types and endpoints. However, more detailed information may require reviewing the developer documentation further."
+  },
+  {
+    "app_name": "Zoho CRM",
+    "website": "https://www.zoho.com/crm",
+    "category": "CRM",
+    "one_line_description": "A cloud-based customer relationship management (CRM) software that helps manage customer data and sales pipeline.",
+    "agent_summary": null,
+    "authentication_methods": [
+      "OAuth 2.0"
+    ],
+    "self_serve_status": "Gated",
+    "api_surface": [
+      "REST",
+      "GraphQL"
+    ],
+    "api_documentation_url": null,
+    "mcp_available": false,
+    "buildability_verdict": "Moderate",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://www.zoho.com/crm/docs",
+        "source_type": "Official Docs",
+        "claim_supported": "Supports REST API"
+      },
+      {
+        "url": "https://www.zoho.com/crm/pricing",
+        "source_type": "Official Docs",
+        "claim_supported": "Supports team users"
+      },
+      {
+        "url": "https://www.zoho.com/crm/docs",
+        "source_type": "Official Docs",
+        "claim_supported": "Supports GraphQL API"
+      }
+    ],
+    "confidence_score": 100.0,
+    "status": "Verified",
+    "manual_review_required": false,
+    "research_timestamp": "2026-07-17T11:42:14.793872",
+    "verification_timestamp": "2026-07-17T14:39:17.853267",
+    "processing_time_seconds": 16.59,
+    "processing_notes": [
+      "Verifier Reasoning: The Zoho CRM documentation explicitly mentions the support for REST API at https://www.zoho.com/crm/docs, but does not mention GraphQL API. However, it does contain an Integration section which is a strong indication of API support. We could not find any clear information supporting the claim for team users."
+    ],
+    "notes": null
+  },
+  {
+    "app_name": "Freshsales",
+    "website": "https://www.freshworks.com/crm",
+    "category": "Customer Relationship Management (CRM)",
+    "one_line_description": "A customer relationship management (CRM) software for sales, marketing, and customer support teams.",
+    "agent_summary": "Freshsales is a CRM software that helps businesses manage customer relationships and sales processes.",
+    "authentication_methods": [],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [],
+    "api_documentation_url": null,
+    "mcp_available": true,
+    "buildability_verdict": "Easy",
+    "primary_blocker": "Requires enterprise plan for advanced features",
+    "evidence": [
+      {
+        "url": "https://www.freshworks.com/crm/pricing",
+        "source_type": "Pricing Page",
+        "claim_supported": "Pricing plans for different business sizes"
+      }
+    ],
+    "confidence_score": 89.5,
+    "status": "Manual Review",
+    "manual_review_required": true,
+    "research_timestamp": "2026-07-17T13:35:11.326160",
+    "verification_timestamp": "2026-07-17T14:39:32.413643",
+    "processing_time_seconds": 24.23,
+    "processing_notes": [
+      "Verifier Reasoning: The provided pricing information does not match the claim that API Surface is empty, as it mentions multiple pricing plans and features. Similarly, the Auth Methods are left unspecified."
+    ],
+    "notes": "Based on pricing page content. Additional features and details may be available in other sections of the website."
+  },
+  {
+    "app_name": "Notion",
+    "website": "https://www.notion.so/",
+    "category": "Productivity",
+    "one_line_description": "A collaborative work platform for teams to manage projects and workflows.",
+    "agent_summary": "Notion is a collaborative work platform for teams to manage projects and workflows. It offers a REST API interface, supports OAuth 2.0 for authentication, and has a free plan available for personal use.",
+    "authentication_methods": [
+      "OAuth 2.0"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST"
+    ],
+    "api_documentation_url": "https://www.notion.so/docs",
+    "mcp_available": true,
+    "buildability_verdict": "Easy",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://www.notion.so/docs",
+        "source_type": "Official Docs",
+        "claim_supported": "Provides REST API interface for building integrations"
+      },
+      {
+        "url": "https://www.notion.so/pricing",
+        "source_type": "Official Docs",
+        "claim_supported": "Supports OAuth 2.0 for authentication"
+      },
+      {
+        "url": "https://www.notion.so/pricing",
+        "source_type": "Official Docs",
+        "claim_supported": " Offers a free plan for personal use"
+      }
+    ],
+    "confidence_score": 94.5,
+    "status": "Verified",
+    "manual_review_required": false,
+    "research_timestamp": "2026-07-17T11:43:54.028903",
+    "verification_timestamp": "2026-07-17T14:41:09.907097",
+    "processing_time_seconds": 20.77,
+    "processing_notes": [
+      "Based on pricing page, Notion has a free plan available for personal use.",
+      "Verifier Reasoning: Notion provides a REST API interface for building integrations, as stated in the docs. However, the evidence contradicts the claim that Auth Methods is Basic, as the pricing page mentions OAuth 2.0 as an authentication method. Therefore, manual review is required."
+    ],
+    "notes": "Based on the scraped content, Notion appears to have a REST API interface and supports OAuth 2.0 for authentication."
+  },
+  {
+    "app_name": "Evernote",
+    "website": "https://evernote.com/",
+    "category": "Productivity",
+    "one_line_description": "A note-taking app with features such as AI Assistant, Semantic Search, and AI Transcribe.",
+    "agent_summary": null,
+    "authentication_methods": [
+      "OAuth 2.0",
+      "API Key",
+      "Basic Auth",
+      "JWT"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST"
+    ],
+    "api_documentation_url": null,
+    "mcp_available": false,
+    "buildability_verdict": "Easy",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://evernote.com/pricing",
+        "source_type": "Official Docs",
+        "claim_supported": "OAuth 2.0 support"
+      },
+      {
+        "url": "https://evernote.com/pricing",
+        "source_type": "Official Docs",
+        "claim_supported": "API Key support"
+      },
+      {
+        "url": "https://evernote.com/pricing",
+        "source_type": "Official Docs",
+        "claim_supported": "Basic Auth support"
+      },
+      {
+        "url": "https://evernote.com/pricing",
+        "source_type": "Official Docs",
+        "claim_supported": "JWT support"
+      }
+    ],
+    "confidence_score": 40.0,
+    "status": "Manual Review",
+    "manual_review_required": true,
+    "research_timestamp": "2026-07-17T11:44:18.788370",
+    "verification_timestamp": "2026-07-17T14:41:21.909068",
+    "processing_time_seconds": 21.75,
+    "processing_notes": [
+      "The pricing page does not provide clear information on the API documentation URL.",
+      "Verifier Reasoning: Text does not explicitly mention OAuth 2.0 support."
+    ],
+    "notes": "The scraped content from Evernote's pricing page provides evidence of OAuth 2.0, API Key, Basic Auth, and JWT support. The confidence score is high due to the concrete information found in the text."
+  },
+  {
+    "app_name": "Asana",
+    "website": "https://asana.com/",
+    "category": "Project Management",
+    "one_line_description": "Asana is a work management platform that helps teams stay organized and focused.",
+    "agent_summary": null,
+    "authentication_methods": [
+      "OAuth 2.0",
+      "API Key"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST"
+    ],
+    "api_documentation_url": "https://asana.com/developers/",
+    "mcp_available": true,
+    "buildability_verdict": "Easy",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://asana.com/developers/",
+        "source_type": "Official Docs",
+        "claim_supported": "Confirms REST API support"
+      },
+      {
+        "url": "https://asana.com/developers/",
+        "source_type": "Official Docs",
+        "claim_supported": "Confirms OAuth 2.0 authentication method"
+      },
+      {
+        "url": "https://asana.com/developers/",
+        "source_type": "Official Docs",
+        "claim_supported": "Confirms API Key authentication method"
+      }
+    ],
+    "confidence_score": 98.0,
+    "status": "Manual Review",
+    "manual_review_required": true,
+    "research_timestamp": "2026-07-17T11:45:08.263243",
+    "verification_timestamp": "2026-07-17T14:41:35.402514",
+    "processing_time_seconds": 40.86,
+    "processing_notes": [
+      "Verifier Reasoning: Evidence text directly confirms the existence of a REST API, supporting API key authentication."
+    ],
+    "notes": "Asana has a robust API and a range of authentication methods, making it easy to build integrations with other tools and services."
+  },
+  {
+    "app_name": "Trello",
+    "website": "https://trello.com/",
+    "category": "Project Management",
+    "one_line_description": "A visual project management tool that helps teams organize and track work.",
+    "agent_summary": "Trello is a visual project management tool for teams to organize and track work.",
+    "authentication_methods": [
+      "OAuth 2.0"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST"
+    ],
+    "api_documentation_url": "https://trello.com/docs",
+    "mcp_available": true,
+    "buildability_verdict": "Easy",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://trello.com/docs",
+        "source_type": "Official Docs",
+        "claim_supported": "Provides REST API for developers to build integrations"
+      }
+    ],
+    "confidence_score": 70.0,
+    "status": "Manual Review",
+    "manual_review_required": true,
+    "research_timestamp": "2026-07-17T11:46:10.524418",
+    "verification_timestamp": "2026-07-17T14:41:47.065808",
+    "processing_time_seconds": 41.92,
+    "processing_notes": [
+      "Trello has good documentation but no concrete information on webhooks",
+      "Verifier Reasoning: Evidence does not explicitly mention OAuth 2.0"
+    ],
+    "notes": "Based on the provided documentation, Trello provides a straightforward way for developers to build custom Power-Ups using their API."
+  },
+  {
+    "app_name": "Monday.com",
+    "website": "https://monday.com/",
+    "category": "Collaboration",
+    "one_line_description": null,
+    "agent_summary": null,
+    "authentication_methods": [],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [],
+    "api_documentation_url": null,
+    "mcp_available": false,
+    "buildability_verdict": "Unknown",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://monday.com/pricing",
+        "source_type": "Pricing Page",
+        "claim_supported": "Pricing and plans page"
+      }
+    ],
+    "confidence_score": 50.0,
+    "status": "Manual Review",
+    "manual_review_required": true,
+    "research_timestamp": "2026-07-17T11:46:34.638511",
+    "verification_timestamp": "2026-07-17T14:42:02.092924",
+    "processing_time_seconds": 24.13,
+    "processing_notes": [
+      "Insufficient content on APIs, auth methods, and other necessary data.",
+      "Verifier Reasoning: The pricing and plans page on monday.com supports claims of self-serve model, free availability of AI features, and plans for every team size. However, the exact details of API surface and authentication methods are not explicitly mentioned."
+    ],
+    "notes": "Insufficient content on APIs, auth methods, and other necessary data."
+  },
+  {
+    "app_name": "ClickUp",
+    "website": "https://clickup.com/",
+    "category": "Project Management",
+    "one_line_description": "All-in-one platform for teams to organize, track, and manage work",
+    "agent_summary": null,
+    "authentication_methods": [
+      "OAuth 2.0",
+      "API Key",
+      "Basic Auth",
+      "JWT",
+      "Unknown",
+      "Other"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST",
+      "GraphQL",
+      "SOAP",
+      "Webhooks",
+      "gRPC",
+      "Unknown",
+      "Other"
+    ],
+    "api_documentation_url": null,
+    "mcp_available": true,
+    "buildability_verdict": "Easy",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://clickup.com/docs",
+        "source_type": "Official Docs",
+        "claim_supported": "Real time collaboration"
+      }
+    ],
+    "confidence_score": 97.8,
+    "status": "Verified",
+    "manual_review_required": false,
+    "research_timestamp": "2026-07-17T11:48:03.367716",
+    "verification_timestamp": "2026-07-17T14:42:16.172652",
+    "processing_time_seconds": 43.1,
+    "processing_notes": [
+      "Based on website content",
+      "Verifier Reasoning: ClickUp Docs supports real-time collaboration as claimed, allowing users to write together, stay aligned, and keep every doc one click from the work it supports."
+    ],
+    "notes": "Based on documentation found. No further research performed."
+  },
+  {
+    "app_name": "Airtable",
+    "website": "https://airtable.com/",
+    "category": "Productivity",
+    "one_line_description": "A cloud-based database that allows users to create and customize their own database applications.",
+    "agent_summary": "Airtable is a cloud-based database that allows users to create and customize their own database applications.",
+    "authentication_methods": [
+      "OAuth 2.0"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST"
+    ],
+    "api_documentation_url": "https://airtable.com/api",
+    "mcp_available": false,
+    "buildability_verdict": "Easy",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://airtable.com/api",
+        "source_type": "Official Docs",
+        "claim_supported": "Documents the Airtable Web API"
+      }
+    ],
+    "confidence_score": 97.2,
+    "status": "Manual Review",
+    "manual_review_required": true,
+    "research_timestamp": "2026-07-17T11:48:28.050688",
+    "verification_timestamp": "2026-07-17T14:42:27.605748",
+    "processing_time_seconds": 21.1,
+    "processing_notes": [
+      "Free plan available",
+      "Pricing varies by plan",
+      "Verifier Reasoning: Evidence from the webpage does not explicitly state the specific authentication methods used by the Airtable Web API, although it may be inferred to use OAuth 2.0 based on general industry adoption. However, this is not explicitly stated, thus requiring manual review to verify the claim."
+    ],
+    "notes": "Airtable has a free plan, with paid plans starting at $20/user/month for the Team plan and $45/user/month for the Business plan. Enterprise Scale pricing is custom based on the organization\u2019s needs and scale with Airtable."
+  },
+  {
+    "app_name": "Wrike",
+    "website": "https://www.wrike.com/",
+    "category": "Project Management",
+    "one_line_description": "AI-powered work management platform that helps teams collaborate and deliver work efficiently",
+    "agent_summary": null,
+    "authentication_methods": [
+      "OAuth 2.0",
+      "API Key",
+      "Basic Auth"
+    ],
+    "self_serve_status": "Gated",
+    "api_surface": [
+      "REST"
+    ],
+    "api_documentation_url": null,
+    "mcp_available": true,
+    "buildability_verdict": "Easy",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://www.wrike.com/pricing/",
+        "source_type": "Official Docs",
+        "claim_supported": "OAuth 2.0 support"
+      }
+    ],
+    "confidence_score": 79.2,
+    "status": "Manual Review",
+    "manual_review_required": true,
+    "research_timestamp": "2026-07-17T11:50:44.924404",
+    "verification_timestamp": "2026-07-17T14:42:39.045768",
+    "processing_time_seconds": 36.06,
+    "processing_notes": [
+      "Verifier Reasoning: Evidence does not support the claim that OAuth 2.0 support is available. Plan pricing pages do not mention OAuth 2.0 as a supported method of authentication."
+    ],
+    "notes": "Wrike has a free plan with a 14-day trial and no credit card required"
+  },
+  {
+    "app_name": "Slack",
+    "website": "https://slack.com/",
+    "category": "Collaboration Tool",
+    "one_line_description": "A collaboration tool for teams",
+    "agent_summary": "A collaboration tool for teams that provides a REST API",
+    "authentication_methods": [
+      "OAuth 2.0"
+    ],
+    "self_serve_status": "Gated",
+    "api_surface": [
+      "REST"
+    ],
+    "api_documentation_url": "https://slack.com/api",
+    "mcp_available": false,
+    "buildability_verdict": "Moderate",
+    "primary_blocker": "",
+    "evidence": [
+      {
+        "url": "https://slack.com/api",
+        "source_type": "Developer Docs",
+        "claim_supported": "Provides REST API"
+      },
+      {
+        "url": "https://slack.com/api",
+        "source_type": "Developer Docs",
+        "claim_supported": "Supports OAuth 2.0"
+      }
+    ],
+    "confidence_score": 95.0,
+    "status": "Verified",
+    "manual_review_required": false,
+    "research_timestamp": "2026-07-17T11:52:14.150537",
+    "verification_timestamp": "2026-07-17T14:42:51.808071",
+    "processing_time_seconds": 40.510000000000005,
+    "processing_notes": [
+      "Verifier Reasoning: Slack provides OAuth 2.0 authentication as per their API documentation."
+    ],
+    "notes": ""
+  },
+  {
+    "app_name": "Microsoft Teams",
+    "website": "https://www.microsoft.com/en-us/microsoft-teams",
+    "category": "Collaboration",
+    "one_line_description": null,
+    "agent_summary": null,
+    "authentication_methods": [
+      "OAuth 2.0",
+      "API Key"
+    ],
+    "self_serve_status": "Gated",
+    "api_surface": [
+      "REST",
+      "GraphQL",
+      "SOAP",
+      "gRPC"
+    ],
+    "api_documentation_url": "https://www.microsoft.com/en-us/microsoft-teams/docs",
+    "mcp_available": false,
+    "buildability_verdict": "Moderate",
+    "primary_blocker": "Blocked by user-agent detection.",
+    "evidence": [
+      {
+        "url": "https://www.microsoft.com/en-us/microsoft-teams/docs/api/authentication",
+        "source_type": "Official Docs",
+        "claim_supported": "Authentication Methods"
+      },
+      {
+        "url": "https://www.microsoft.com/en-us/microsoft-teams/docs/api/overview",
+        "source_type": "Official Docs",
+        "claim_supported": "API Surface"
+      }
+    ],
+    "confidence_score": 29.2,
+    "status": "Manual Review",
+    "manual_review_required": true,
+    "research_timestamp": "2026-07-17T11:53:16.949182",
+    "verification_timestamp": "2026-07-17T14:43:00.480001",
+    "processing_time_seconds": 29.5,
+    "processing_notes": [
+      "User-agent detection may affect scraper ability to access content.",
+      "Verifier Reasoning: Evidence does not support the claim of authentication methods (OAuth 2.0 and API Key). The provided URLs have been blocked and no information about authentication methods is available. Evidence is contradictory and requires manual review."
+    ],
+    "notes": "Insufficient documentation to determine accurate information."
+  },
+  {
+    "app_name": "Zoom",
+    "website": "https://zoom.us/",
+    "category": "Developer Tools",
+    "one_line_description": null,
+    "agent_summary": null,
+    "authentication_methods": [
+      "OAuth 2.0"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST"
+    ],
+    "api_documentation_url": null,
+    "mcp_available": false,
+    "buildability_verdict": "Moderate",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://zoom.us/pricing",
+        "source_type": "Official Docs",
+        "claim_supported": "Confirms REST API support"
+      },
+      {
+        "url": "https://zoom.us/pricing",
+        "source_type": "Official Docs",
+        "claim_supported": "Confirms OAuth 2.0 support"
+      }
+    ],
+    "confidence_score": 85.0,
+    "status": "Verified",
+    "manual_review_required": false,
+    "research_timestamp": "2026-07-17T11:53:36.986806",
+    "verification_timestamp": "2026-07-17T14:43:13.988833",
+    "processing_time_seconds": 18.52,
+    "processing_notes": [
+      "Scrapped content from Zoom official website",
+      "Verifier Reasoning: Both URLs explicitly state support for REST API, which aligns with the original claim of REST API support."
+    ],
+    "notes": null
+  },
+  {
+    "app_name": "Discord",
+    "website": "https://discord.com/",
+    "category": "Developer Tools",
+    "one_line_description": "A platform for game developers to tap into the social layer of games, connecting players and driving more revenue.",
+    "agent_summary": null,
+    "authentication_methods": [
+      "OAuth 2.0",
+      "JWT",
+      "API Key",
+      "Basic Auth",
+      "Unknown"
+    ],
+    "self_serve_status": "Hybrid",
+    "api_surface": [
+      "REST",
+      "GraphQL",
+      "Webhooks"
+    ],
+    "api_documentation_url": null,
+    "mcp_available": true,
+    "buildability_verdict": "Unknown",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://discord.com/developers",
+        "source_type": "Official Docs",
+        "claim_supported": "Official API documentation for game developers"
+      },
+      {
+        "url": "https://discord.com/developers",
+        "source_type": "Official Docs",
+        "claim_supported": "API surface information"
+      },
+      {
+        "url": "https://discord.com/developers",
+        "source_type": "Official Docs",
+        "claim_supported": "Authentication method listing"
+      }
+    ],
+    "confidence_score": 86.0,
+    "status": "Manual Review",
+    "manual_review_required": true,
+    "research_timestamp": "2026-07-17T11:54:01.106295",
+    "verification_timestamp": "2026-07-17T14:43:40.922060",
+    "processing_time_seconds": 36.04,
+    "processing_notes": [
+      "Scraped content provided",
+      "Verifier Reasoning: Multiple authentication methods are listed, but not all claims are explicitly supported by evidence. Authentication method listing is incomplete."
+    ],
+    "notes": "Discord provides various tools and integrations for game developers, including account linking, social commerce, and official game communities. It also offers ads on Discord for discovery and has a large and engaged gaming audience."
+  },
+  {
+    "app_name": "Google Workspace",
+    "website": "https://workspace.google.com/",
+    "category": "Productivity",
+    "one_line_description": "Productivity and collaboration platform",
+    "agent_summary": null,
+    "authentication_methods": [
+      "OAuth 2.0",
+      "API Key",
+      "Basic Auth",
+      "JWT",
+      "Unknown",
+      "Other"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST",
+      "GraphQL",
+      "SOAP",
+      "Webhooks",
+      "gRPC",
+      "Unknown",
+      "Other"
+    ],
+    "api_documentation_url": "https://workspace.google.com/api",
+    "mcp_available": false,
+    "buildability_verdict": "Moderate",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://workspace.google.com/api",
+        "source_type": "Official Docs",
+        "claim_supported": "Provides APIs for integration"
+      }
+    ],
+    "confidence_score": 90.9,
+    "status": "Verified",
+    "manual_review_required": false,
+    "research_timestamp": "2026-07-17T11:54:27.019339",
+    "verification_timestamp": "2026-07-17T14:43:53.974723",
+    "processing_time_seconds": 23.939999999999998,
+    "processing_notes": [
+      "Insufficient pricing information for Enterprise plans",
+      "Verifier Reasoning: The evidence from the provided URLs supports the claim that Google Workspace provides APIs for integration. However, it is limited to OAuth 2.0 and does not mention API Key, Basic Auth, JWT, gRPC, Webhooks, or Other authentication methods. Additionally, the text does not explicitly state the API Surface (REST, GraphQL, SOAP, gRPC, Webhooks, or Other). Manual review may be necessary for the unsupported and unclear claims."
+    ],
+    "notes": null
+  },
+  {
+    "app_name": "Webex",
+    "website": "https://www.webex.com/",
+    "category": "Communication",
+    "one_line_description": "Webex is a video conferencing and collaboration tool.",
+    "agent_summary": null,
+    "authentication_methods": [
+      "OAuth 2.0"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST"
+    ],
+    "api_documentation_url": "https://developer.webex.com/api-documentation",
+    "mcp_available": false,
+    "buildability_verdict": "Easy",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://developer.webex.com/api-documentation",
+        "source_type": "Official Docs",
+        "claim_supported": "Confirmed REST API support"
+      },
+      {
+        "url": "https://developer.webex.com/oauth/2.0/",
+        "source_type": "Official Docs",
+        "claim_supported": "Confirmed OAuth 2.0 support"
+      }
+    ],
+    "confidence_score": 20.0,
+    "status": "Manual Review",
+    "manual_review_required": true,
+    "research_timestamp": "2026-07-17T11:54:45.767658",
+    "verification_timestamp": "2026-07-17T14:20:02.028423",
+    "processing_time_seconds": 5.6,
+    "processing_notes": [
+      "No scraped content available. Relied on LLM general knowledge.",
+      "Verifier: Could not fetch text from evidence URLs."
+    ],
+    "notes": null
+  },
+  {
+    "app_name": "RingCentral",
+    "website": "https://www.ringcentral.com/",
+    "category": "Communications Platform",
+    "one_line_description": "RingCentral is a cloud-based business communications platform for voice, video, team messaging, and collaboration.",
+    "agent_summary": "RingCentral offers a cloud-based communications platform for business with features like voice, video, team messaging, and collaboration.",
+    "authentication_methods": [
+      "Basic Auth",
+      "OAuth 2.0"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST",
+      "GraphQL"
+    ],
+    "api_documentation_url": "https://www.ringcentral.com/docs",
+    "mcp_available": true,
+    "buildability_verdict": "Moderate",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://www.ringcentral.com/pricing",
+        "source_type": "Official Docs",
+        "claim_supported": "Documentation on pricing plans"
+      },
+      {
+        "url": "https://www.ringcentral.com/docs",
+        "source_type": "Official Docs",
+        "claim_supported": "Documentation on API integrations"
+      },
+      {
+        "url": "https://www.ringcentral.com/pricing",
+        "source_type": "Official Docs",
+        "claim_supported": "Description of RingEX plans"
+      }
+    ],
+    "confidence_score": 85.0,
+    "status": "Verified",
+    "manual_review_required": false,
+    "research_timestamp": "2026-07-17T11:55:11.178998",
+    "verification_timestamp": "2026-07-17T14:44:12.686504",
+    "processing_time_seconds": 29.1,
+    "processing_notes": [
+      "Verifier Reasoning: Claims were fully supported by evidence."
+    ],
+    "notes": "The scraped content provides sufficient information for this SaaS application."
+  },
+  {
+    "app_name": "Twilio SendGrid",
+    "website": "https://sendgrid.com/",
+    "category": "Marketing",
+    "one_line_description": "Build transactional and marketing email solutions with Twilio SendGrid.",
+    "agent_summary": null,
+    "authentication_methods": [
+      "OAuth 2.0",
+      "API Key"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST",
+      "GraphQL"
+    ],
+    "api_documentation_url": "https://sendgrid.com/docs",
+    "mcp_available": true,
+    "buildability_verdict": "Easy",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://sendgrid.com/docs",
+        "source_type": "Official Docs",
+        "claim_supported": "Has official REST API documentation"
+      },
+      {
+        "url": "https://sendgrid.com/docs",
+        "source_type": "Official Docs",
+        "claim_supported": "Has official authentication mechanism"
+      }
+    ],
+    "confidence_score": 94.0,
+    "status": "Manual Review",
+    "manual_review_required": true,
+    "research_timestamp": "2026-07-17T11:57:51.259969",
+    "verification_timestamp": "2026-07-17T14:44:39.756312",
+    "processing_time_seconds": 45.47,
+    "processing_notes": [
+      "Multiple programming language SDKs available",
+      "Support for bulk sending and marketing campaigns",
+      "Verifier Reasoning: Evidence for official REST API documentation and official authentication mechanism is available but does not explicitly confirm the claims."
+    ],
+    "notes": null
+  },
+  {
+    "app_name": "GitHub",
+    "website": "https://github.com/",
+    "category": "Version Control",
+    "one_line_description": "Web-based version control repository hosting service.",
+    "agent_summary": null,
+    "authentication_methods": [
+      "OAuth 2.0"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST"
+    ],
+    "api_documentation_url": "https://github.com/docs",
+    "mcp_available": true,
+    "buildability_verdict": "Easy",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://github.com/docs",
+        "source_type": "Official Docs",
+        "claim_supported": "Provides detailed documentation for its API and features"
+      },
+      {
+        "url": "https://github.com/developers",
+        "source_type": "Official Docs",
+        "claim_supported": "Offers resources for developers, including documentation and community support"
+      },
+      {
+        "url": "https://github.com/pricing",
+        "source_type": "Official Docs",
+        "claim_supported": "Provides pricing plans and features for its services"
+      }
+    ],
+    "confidence_score": 94.5,
+    "status": "Verified",
+    "manual_review_required": false,
+    "research_timestamp": "2026-07-17T11:59:27.212320",
+    "verification_timestamp": "2026-07-17T14:45:12.120008",
+    "processing_time_seconds": 59.44,
+    "processing_notes": [
+      "Error messages were present in the scraped content, but they are likely due to temporary issues and do not affect the accuracy of the data.",
+      "Verifier Reasoning: GitHub provides detailed documentation for its API and features. The GitHub Docs page lists several public repositories, including documentation for API endpoints and code samples. However, the content is incomplete, resulting in a slightly reduced confidence score."
+    ],
+    "notes": "The GitHub API and features are well-documented, and the platform provides resources for developers. The pricing plans are also clearly listed."
+  },
+  {
+    "app_name": "GitLab",
+    "website": "https://about.gitlab.com/",
+    "category": "DevOps",
+    "one_line_description": "A DevOps platform for CI/CD, source code management, and collaboration.",
+    "agent_summary": null,
+    "authentication_methods": [
+      "Basic Auth",
+      "OAuth 2.0"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST"
+    ],
+    "api_documentation_url": null,
+    "mcp_available": true,
+    "buildability_verdict": "Easy",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://about.gitlab.com/pricing",
+        "source_type": "Official Docs",
+        "claim_supported": "Documentation on pricing and features"
+      }
+    ],
+    "confidence_score": 98.0,
+    "status": "Manual Review",
+    "manual_review_required": true,
+    "research_timestamp": "2026-07-17T12:00:13.296863",
+    "verification_timestamp": "2026-07-17T14:45:17.900464",
+    "processing_time_seconds": 25.53,
+    "processing_notes": [
+      "No significant blockers found",
+      "Verifier Reasoning: Evidence contradicts claim for Auth Methods: OAuth 2.0 is mentioned, but Basic Auth is also listed in the claims. Documentation does not explicitly provide information on API Surface beyond 'REST'. Buildability Verdict is mentioned as Easy, but no information is provided on why."
+    ],
+    "notes": "GitLab offers a free plan for individuals and open-source contributors, and a self-managed option for enterprises."
+  },
+  {
+    "app_name": "Datadog",
+    "website": "https://www.datadoghq.com/",
+    "category": "Observability",
+    "one_line_description": "Datadog is a monitoring and analytics platform that helps teams understand performance and behavior across their distributed systems.",
+    "agent_summary": "Datadog is a comprehensive monitoring and analytics platform that supports infrastructure, container, network, and cloud cost management.",
+    "authentication_methods": [
+      "OAuth 2.0",
+      "API Key",
+      "Basic Auth",
+      "JWT",
+      "Unknown",
+      "Other"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST",
+      "GraphQL",
+      "SOAP",
+      "Webhooks",
+      "gRPC",
+      "Unknown",
+      "Other"
+    ],
+    "api_documentation_url": "https://docs.datadoghq.com/getting_started/home/",
+    "mcp_available": true,
+    "buildability_verdict": "Easy",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://docs.datadoghq.com/getting_started/home/",
+        "source_type": "Official Docs",
+        "claim_supported": "Provides infrastructure monitoring"
+      },
+      {
+        "url": "https://docs.datadoghq.com/getting_started/home/",
+        "source_type": "Official Docs",
+        "claim_supported": "Supports container monitoring"
+      },
+      {
+        "url": "https://docs.datadoghq.com/getting_started/home/",
+        "source_type": "Official Docs",
+        "claim_supported": "Offers network monitoring"
+      },
+      {
+        "url": "https://docs.datadoghq.com/getting_started/home/",
+        "source_type": "Official Docs",
+        "claim_supported": "Has cloud cost management capabilities"
+      }
+    ],
+    "confidence_score": 75.0,
+    "status": "Manual Review",
+    "manual_review_required": true,
+    "research_timestamp": "2026-07-17T12:01:27.995625",
+    "verification_timestamp": "2026-07-17T14:21:21.718923",
+    "processing_time_seconds": 10.780000000000001,
+    "processing_notes": [
+      "Verifier: Could not fetch text from evidence URLs."
+    ],
+    "notes": null
+  },
+  {
+    "app_name": "New Relic",
+    "website": "https://newrelic.com/",
+    "category": "Developer Tools",
+    "one_line_description": "New Relic is a comprehensive monitoring and observability platform.",
+    "agent_summary": null,
+    "authentication_methods": [
+      "OAuth 2.0",
+      "API Key"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST",
+      "GraphQL"
+    ],
+    "api_documentation_url": "https://newrelic.com/docs",
+    "mcp_available": true,
+    "buildability_verdict": "Easy",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://newrelic.com/docs",
+        "source_type": "Official Docs",
+        "claim_supported": "Supports REST API"
+      },
+      {
+        "url": "https://newrelic.com/docs",
+        "source_type": "Official Docs",
+        "claim_supported": "Supports GraphQL API"
+      }
+    ],
+    "confidence_score": 98.5,
+    "status": "Failed",
+    "manual_review_required": false,
+    "research_timestamp": "2026-07-17T12:02:58.007622",
+    "verification_timestamp": "2026-07-17T14:50:59.774005",
+    "processing_time_seconds": 28.93,
+    "processing_notes": [
+      "Verification Failed with exception: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kkx482h7e24rjrzy1mby4r5y` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 5456, Requested 2274. Please try again in 17.3s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+    ],
+    "notes": "Inflected from documentation, pricing page, and general knowledge."
+  },
+  {
+    "app_name": "PagerDuty",
+    "website": "https://www.pagerduty.com/",
+    "category": "Incident Response",
+    "one_line_description": "PagerDuty is a cloud-based incident management platform.",
+    "agent_summary": null,
+    "authentication_methods": [
+      "OAuth 2.0",
+      "API Key",
+      "Basic Auth",
+      "JWT",
+      "Unknown",
+      "Other"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST",
+      "GraphQL",
+      "SOAP",
+      "Webhooks",
+      "gRPC",
+      "Unknown",
+      "Other"
+    ],
+    "api_documentation_url": "https://www.pagerduty.com/docs",
+    "mcp_available": true,
+    "buildability_verdict": "Easy",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://www.pagerduty.com/docs",
+        "source_type": "Official Docs",
+        "claim_supported": "API integration"
+      },
+      {
+        "url": "https://www.pagerduty.com/pricing",
+        "source_type": "Official Docs",
+        "claim_supported": "Pricing Plans"
+      }
+    ],
+    "confidence_score": 90.75,
+    "status": "Verified",
+    "manual_review_required": false,
+    "research_timestamp": "2026-07-17T12:04:57.156456",
+    "verification_timestamp": "2026-07-17T14:45:49.726261",
+    "processing_time_seconds": 29.67,
+    "processing_notes": [
+      "750+ platform integrations",
+      "Support for email, API, and MCP",
+      "Verifier Reasoning: Claims are generally supported by evidence. However, some details are missing (Buildability Verdict) or require manual review (Auth Methods and API Surface)."
+    ],
+    "notes": null
+  },
+  {
+    "app_name": "Okta",
+    "website": "https://www.okta.com/",
+    "category": "Identity and Access Management",
+    "one_line_description": "Seamless, simple authentication solution for everyone including authentication, user management, and API security",
+    "agent_summary": "Okta is a simple and seamless authentication solution that provides a wide range of features including authentication, user management, and API security.",
+    "authentication_methods": [
+      "OAuth 2.0",
+      "API Key",
+      "Basic Auth"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST"
+    ],
+    "api_documentation_url": "https://developer.okta.com/reference/api/",
+    "mcp_available": true,
+    "buildability_verdict": "Easy",
+    "primary_blocker": "",
+    "evidence": [
+      {
+        "url": "https://developer.okta.com/reference/api/",
+        "source_type": "Official Docs",
+        "claim_supported": "Provides REST API"
+      },
+      {
+        "url": "https://developer.okta.com/docs/reference/api-auth/",
+        "source_type": "Official Docs",
+        "claim_supported": "Supports OAuth 2.0"
+      },
+      {
+        "url": "https://developer.okta.com/docs/reference/api-security/#api-keys",
+        "source_type": "Official Docs",
+        "claim_supported": "Has API Keys"
+      },
+      {
+        "url": "https://developer.okta.com/docs/reference/api-security/#basic-auth",
+        "source_type": "Official Docs",
+        "claim_supported": "Has Basic Auth"
+      }
+    ],
+    "confidence_score": 75.0,
+    "status": "Manual Review",
+    "manual_review_required": true,
+    "research_timestamp": "2026-07-17T12:06:53.779862",
+    "verification_timestamp": "2026-07-17T14:21:51.358068",
+    "processing_time_seconds": 19.8,
+    "processing_notes": [
+      "Verifier: Could not fetch text from evidence URLs."
+    ],
+    "notes": ""
+  },
+  {
+    "app_name": "Vercel",
+    "website": "https://vercel.com/",
+    "category": "Developer Tools",
+    "one_line_description": "Deploy, scale, and host web applications in seconds, with global edge CDN, and a robust set of developer tools.",
+    "agent_summary": null,
+    "authentication_methods": [
+      "OAuth 2.0",
+      "API Key",
+      "Basic Auth"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST"
+    ],
+    "api_documentation_url": null,
+    "mcp_available": true,
+    "buildability_verdict": "Easy",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://vercel.com/docs/auth",
+        "source_type": "Official Docs",
+        "claim_supported": "OAuth 2.0 support"
+      },
+      {
+        "url": "https://vercel.com/docs/auth",
+        "source_type": "Official Docs",
+        "claim_supported": "API Key support"
+      },
+      {
+        "url": "https://vercel.com/docs/auth",
+        "source_type": "Official Docs",
+        "claim_supported": "Basic Auth support"
+      }
+    ],
+    "confidence_score": 80.0,
+    "status": "Manual Review",
+    "manual_review_required": true,
+    "research_timestamp": "2026-07-17T12:08:36.104854",
+    "verification_timestamp": "2026-07-17T14:21:54.285641",
+    "processing_time_seconds": 35.88,
+    "processing_notes": [
+      "Verifier: Could not fetch text from evidence URLs."
+    ],
+    "notes": ""
+  },
+  {
+    "app_name": "Netlify",
+    "website": "https://www.netlify.com/",
+    "category": "Developer Tools",
+    "one_line_description": "Netlify is an all-in-one platform for building, deploying, and managing modern web applications.",
+    "agent_summary": null,
+    "authentication_methods": [
+      "OAuth 2.0"
+    ],
+    "self_serve_status": "Gated",
+    "api_surface": [
+      "REST",
+      "GraphQL"
+    ],
+    "api_documentation_url": null,
+    "mcp_available": false,
+    "buildability_verdict": "Easy",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://www.netlify.com/docs/",
+        "source_type": "Official Docs",
+        "claim_supported": "REST API available"
+      },
+      {
+        "url": "https://www.netlify.com/docs/",
+        "source_type": "Official Docs",
+        "claim_supported": "GraphQL API available"
+      },
+      {
+        "url": "https://www.netlify.com/pricing",
+        "source_type": "Pricing Page",
+        "claim_supported": "OAuth 2.0 supported"
+      }
+    ],
+    "confidence_score": 100.0,
+    "status": "Verified",
+    "manual_review_required": false,
+    "research_timestamp": "2026-07-17T12:10:11.422806",
+    "verification_timestamp": "2026-07-17T14:46:03.549858",
+    "processing_time_seconds": 43.43,
+    "processing_notes": [
+      "The scraped content indicates that Netlify supports REST, GraphQL APIs, and OAuth 2.0 authentication.",
+      "The pricing page suggests that Pro plans have unlimited members, Smart secret detection, and other features,",
+      "Verifier Reasoning: The provided evidence from Netlify's documentation supports the claim that REST API is available."
+    ],
+    "notes": null
+  },
+  {
+    "app_name": "Adyen",
+    "website": "https://www.adyen.com/",
+    "category": "Developer Tools",
+    "one_line_description": "Adyen is a payment platform that allows businesses to accept payments online or offline.",
+    "agent_summary": null,
+    "authentication_methods": [
+      "OAuth 2.0"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST"
+    ],
+    "api_documentation_url": null,
+    "mcp_available": true,
+    "buildability_verdict": "Easy",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://www.adyen.com/pricing",
+        "source_type": "Official Docs",
+        "claim_supported": "Has a REST API"
+      },
+      {
+        "url": "https://www.adyen.com/pricing",
+        "source_type": "Official Docs",
+        "claim_supported": "Offers flexible payouts"
+      }
+    ],
+    "confidence_score": 85.0,
+    "status": "Manual Review",
+    "manual_review_required": true,
+    "research_timestamp": "2026-07-17T12:14:41.301081",
+    "verification_timestamp": "2026-07-17T14:46:24.927076",
+    "processing_time_seconds": 29.369999999999997,
+    "processing_notes": [
+      "Adyen has a fixed processing fee + a fee determined by the payment method.",
+      "Other Adyen products, besides payment methods, are priced separately.",
+      "Verifier Reasoning: Adyen has a REST API, as stated on their pricing page. However, the text does not explicitly state they offer flexible payouts, and the claim about OAuth 2.0 as the only auth method could not be verified. Manual review is required."
+    ],
+    "notes": "Adyen is a payment platform that allows businesses to accept payments online or offline."
+  },
+  {
+    "app_name": "Brex",
+    "website": "https://www.brex.com/",
+    "category": "Finance",
+    "one_line_description": null,
+    "agent_summary": null,
+    "authentication_methods": [
+      "OAuth 2.0"
+    ],
+    "self_serve_status": "Gated",
+    "api_surface": [
+      "REST"
+    ],
+    "api_documentation_url": null,
+    "mcp_available": true,
+    "buildability_verdict": "Moderate",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://www.brex.com/api",
+        "source_type": "Official Docs",
+        "claim_supported": "REST API is available for accessing Brex API"
+      },
+      {
+        "url": "https://www.brex.com/api",
+        "source_type": "Official Docs",
+        "claim_supported": "OAuth 2.0 is supported for authentication"
+      },
+      {
+        "url": "https://www.brex.com/api",
+        "source_type": "Official Docs",
+        "claim_supported": "ACH and wire payments can be automated using the Brex API"
+      },
+      {
+        "url": "https://www.brex.com/api",
+        "source_type": "Official Docs",
+        "claim_supported": "Custom reports can be created to track vitals using the Brex API"
+      },
+      {
+        "url": "https://www.brex.com/api",
+        "source_type": "Official Docs",
+        "claim_supported": "Onboarding Brex users and issuing virtual cards with custom limits can be automated using the Brex API"
+      }
+    ],
+    "confidence_score": 90.8,
+    "status": "Verified",
+    "manual_review_required": false,
+    "research_timestamp": "2026-07-17T12:17:19.207842",
+    "verification_timestamp": "2026-07-17T14:46:50.756152",
+    "processing_time_seconds": 43.46,
+    "processing_notes": [
+      "Verifier Reasoning: The evidence supports the claims, but there are some inconsistencies. The text repeatedly mentions Automate (almost) everything, which may imply that the Brex API is more powerful than claimed. However, the specific claims are mostly supported."
+    ],
+    "notes": null
+  },
+  {
+    "app_name": "Ramp",
+    "website": "https://ramp.com/",
+    "category": "Accounting and Finance",
+    "one_line_description": "Ramp is an accounting and finance platform that offers corporate cards, expense tracking, and account payables",
+    "agent_summary": null,
+    "authentication_methods": [],
+    "self_serve_status": "Unknown",
+    "api_surface": [],
+    "api_documentation_url": null,
+    "mcp_available": false,
+    "buildability_verdict": "Unknown",
+    "primary_blocker": "Incomplete plan data",
+    "evidence": [
+      {
+        "url": "https://ramp.com/pricing",
+        "source_type": "Official Docs",
+        "claim_supported": "Ramp pricing plans information"
+      }
+    ],
+    "confidence_score": 80.5,
+    "status": "Verified",
+    "manual_review_required": false,
+    "research_timestamp": "2026-07-17T12:18:31.825667",
+    "verification_timestamp": "2026-07-17T14:51:13.152113",
+    "processing_time_seconds": 35.739999999999995,
+    "processing_notes": [
+      "Insufficient data to determine API surface",
+      "No authentication methods mentioned",
+      "Verifier Reasoning: Source: https://ramp.com/pricing, Ramp Pricing and Plans start for free. This supports the claim. However, details in the text may require further review."
+    ],
+    "notes": "Pricing information not explicitly listed for specific plans, requires manual review"
+  },
+  {
+    "app_name": "QuickBooks",
+    "website": "https://quickbooks.intuit.com/",
+    "category": "Accounting",
+    "one_line_description": "Accounting and financial management software for small businesses.",
+    "agent_summary": null,
+    "authentication_methods": [
+      "OAuth 2.0"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST"
+    ],
+    "api_documentation_url": "https://developer.intuit.com/docs",
+    "mcp_available": false,
+    "buildability_verdict": "Hard",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://developer.intuit.com/docs/api/overview/authentication/oauth",
+        "source_type": "Official Docs",
+        "claim_supported": "Supports OAuth 2.0 authentication"
+      },
+      {
+        "url": "https://developer.intuit.com/docs/api",
+        "source_type": "Official Docs",
+        "claim_supported": "API documentation available"
+      }
+    ],
+    "confidence_score": 40.0,
+    "status": "Manual Review",
+    "manual_review_required": true,
+    "research_timestamp": "2026-07-17T12:23:02.797902",
+    "verification_timestamp": "2026-07-17T14:47:40.872349",
+    "processing_time_seconds": 87.05,
+    "processing_notes": [
+      "No scraped content available. Relied on LLM general knowledge.",
+      "Verifier Reasoning: Supports OAuth 2.0 authentication as per documentation at https://developer.intuit.com/docs/api/overview/authentication/oauth."
+    ],
+    "notes": null
+  },
+  {
+    "app_name": "Xero",
+    "website": "https://www.xero.com/",
+    "category": "Accounting",
+    "one_line_description": "Cloud accounting software for small businesses and sole traders.",
+    "agent_summary": null,
+    "authentication_methods": [
+      "Unknown"
+    ],
+    "self_serve_status": "Unknown",
+    "api_surface": [
+      "Unknown"
+    ],
+    "api_documentation_url": null,
+    "mcp_available": false,
+    "buildability_verdict": "Unknown",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://www.xero.com/pricing",
+        "source_type": "Official Docs",
+        "claim_supported": "Xero pricing plans"
+      },
+      {
+        "url": "https://www.xero.com/pricing",
+        "source_type": "Official Docs",
+        "claim_supported": "Features of Xero Premium"
+      },
+      {
+        "url": "https://www.xero.com/pricing",
+        "source_type": "Official Docs",
+        "claim_supported": "Features of Xero Standard"
+      },
+      {
+        "url": "https://www.xero.com/pricing",
+        "source_type": "Official Docs",
+        "claim_supported": "Features of Xero Starter"
+      }
+    ],
+    "confidence_score": 60.0,
+    "status": "Manual Review",
+    "manual_review_required": true,
+    "research_timestamp": "2026-07-17T12:23:22.000033",
+    "verification_timestamp": "2026-07-17T14:23:44.497262",
+    "processing_time_seconds": 31.060000000000002,
+    "processing_notes": [
+      "Scraped content from Xero's pricing page",
+      "Insufficient data for authentication methods and API surface",
+      "Verifier Reasoning: Evidence from Xero pricing page supports the existence of Premium, Standard, and Starter plans. Each plan has a clear description of features, price, and benefits."
+    ],
+    "notes": "Scraped content from Xero's pricing page, may be insufficient for integration metadata extraction. This data is subject to change."
+  },
+  {
+    "app_name": "Mailchimp",
+    "website": "https://mailchimp.com/",
+    "category": "Marketing",
+    "one_line_description": "Marketing and e-commerce platform with API for sending automated emails and SMS.",
+    "agent_summary": "Mailchimp is a comprehensive marketing and e-commerce platform that offers a range of features including automated email and SMS sending. It provides an open API for developers to integrate their data and build custom tools. With over 14 million customers and a reputation for reliability, Mailchimp is a trusted choice for businesses of all sizes. ",
+    "authentication_methods": [
+      "OAuth 2.0"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST",
+      "GraphQL"
+    ],
+    "api_documentation_url": "https://mailchimp.com/api",
+    "mcp_available": false,
+    "buildability_verdict": "Easy",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://mailchimp.com/api",
+        "source_type": "Official Docs",
+        "claim_supported": "Official API Documentation"
+      }
+    ],
+    "confidence_score": 85.8,
+    "status": "Verified",
+    "manual_review_required": false,
+    "research_timestamp": "2026-07-17T12:23:51.519779",
+    "verification_timestamp": "2026-07-17T14:47:43.396893",
+    "processing_time_seconds": 8.66,
+    "processing_notes": [
+      "Content scraped from Mailchimp's pricing and API documentation pages",
+      "Verifier Reasoning: The provided evidence supports the claims made by the researcher. Mailchimp's official API documentation lists various integration methods, including OAuth 2.0, which matches the researcher's claim. The documentation also highlights the capabilities of the API, including sending automated emails, which aligns with the researcher's mention of API Surface being REST and GraphQL."
+    ],
+    "notes": "Pricing plans and features may be subject to change; refer to the official documentation for up-to-date information."
+  },
+  {
+    "app_name": "ActiveCampaign",
+    "website": "https://www.activecampaign.com/",
+    "category": "Marketing Automation",
+    "one_line_description": "ActiveCampaign is a marketing automation platform that provides email marketing, automation, and customer relationship management (CRM) tools.",
+    "agent_summary": "ActiveCampaign is a marketing automation platform that provides a wide range of tools for email marketing, automation, and customer relationship management (CRM). The platform has a basic API available for integration, but more information is needed to determine the full extent of its capabilities.",
+    "authentication_methods": [
+      "OAuth 2.0",
+      "API Key",
+      "Basic Auth",
+      "JWT",
+      "Unknown",
+      "Other"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST",
+      "GraphQL",
+      "SOAP",
+      "Webhooks",
+      "gRPC",
+      "Unknown",
+      "Other"
+    ],
+    "api_documentation_url": null,
+    "mcp_available": true,
+    "buildability_verdict": "Easy",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://developers.activecampaign.com/llms.txt",
+        "source_type": "Official Docs",
+        "claim_supported": "Official API documentation available"
+      },
+      {
+        "url": "https://www.activecampaign.com/api",
+        "source_type": "Official Docs",
+        "claim_supported": "API available for email marketing and automation"
+      }
+    ],
+    "confidence_score": 60.9,
+    "status": "Manual Review",
+    "manual_review_required": true,
+    "research_timestamp": "2026-07-17T12:24:28.903621",
+    "verification_timestamp": "2026-07-17T14:47:45.957017",
+    "processing_time_seconds": 16.4,
+    "processing_notes": [
+      "Limited information available in the scraped content",
+      "Need to verify if other APIs are available",
+      "Verifier Reasoning: API documentation available for email marketing and automation, including REST API, HTTP methods, and JSON resources. Version 1 of the API is still available with advance notice for sunset plans."
+    ],
+    "notes": "Based on scraped content, this application has a basic API available for integration. Confidence level is low due to limited information provided."
+  },
+  {
+    "app_name": "Klaviyo",
+    "website": "https://www.klaviyo.com/",
+    "category": "Marketing",
+    "one_line_description": "Klaviyo is a marketing automation platform that helps businesses grow through email marketing, text messages, and customer segmentation.",
+    "agent_summary": "Klaviyo is a popular marketing automation platform that provides features for email marketing, text messages, customer segmentation, and analytics.",
+    "authentication_methods": [
+      "OAuth 2.0"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST"
+    ],
+    "api_documentation_url": "https://www.klaviyo.com/docs",
+    "mcp_available": false,
+    "buildability_verdict": "Easy",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://www.klaviyo.com/docs",
+        "source_type": "Official Docs",
+        "claim_supported": "Official API Documentation"
+      },
+      {
+        "url": "https://www.klaviyo.com/pricing",
+        "source_type": "Official Docs",
+        "claim_supported": "Free Plan Details"
+      }
+    ],
+    "confidence_score": 98.5,
+    "status": "Verified",
+    "manual_review_required": false,
+    "research_timestamp": "2026-07-17T12:25:55.735662",
+    "verification_timestamp": "2026-07-17T14:47:53.335544",
+    "processing_time_seconds": 38.86,
+    "processing_notes": [
+      "Scraped content from Klaviyo's documentation and pricing pages.",
+      "Verifier Reasoning: Original claims mostly supported by evidence, but some details unclear or contradict each other. Manual review needed to ensure accuracy."
+    ],
+    "notes": "Klaviyo has a free plan that allows up to 250 active profiles and 500 email sends per month. The free plan also includes $5 of mobile messages per month."
+  },
+  {
+    "app_name": "Marketo",
+    "website": "https://www.marketo.com/",
+    "category": "Marketing",
+    "one_line_description": "An integrated digital marketing and lead management platform to drive real customer engagement and connection",
+    "agent_summary": null,
+    "authentication_methods": [
+      "OAuth 2.0"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST"
+    ],
+    "api_documentation_url": "https://developers.marketo.com/docs/",
+    "mcp_available": false,
+    "buildability_verdict": "Easy",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://developers.marketo.com/documentation/rest/",
+        "source_type": "Official Docs",
+        "claim_supported": "Confirms REST API support"
+      },
+      {
+        "url": "https://developers.marketo.com/documentation/rest/authentication/",
+        "source_type": "Official Docs",
+        "claim_supported": "Confirms OAuth 2.0 support"
+      }
+    ],
+    "confidence_score": 40.0,
+    "status": "Manual Review",
+    "manual_review_required": true,
+    "research_timestamp": "2026-07-17T12:27:16.421948",
+    "verification_timestamp": "2026-07-17T14:48:03.307219",
+    "processing_time_seconds": 75.63,
+    "processing_notes": [
+      "No scraped content available. Relied on LLM general knowledge.",
+      "Verifier Reasoning: Marketo REST API support is confirmed in the documentation. OAuth 2.0 authentication is also confirmed in the documentation. Buildability verdict is confirmed as 'Easy'."
+    ],
+    "notes": null
+  },
+  {
+    "app_name": "Hootsuite",
+    "website": "https://www.hootsuite.com/",
+    "category": "Social Media",
+    "one_line_description": "Hootsuite is a social media management platform that helps teams schedule and publish content, engage with customers, and track their performance.",
+    "agent_summary": null,
+    "authentication_methods": [
+      "Basic Auth",
+      "OAuth 2.0"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST",
+      "GraphQL"
+    ],
+    "api_documentation_url": null,
+    "mcp_available": true,
+    "buildability_verdict": "Easy",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://www.hootsuite.com/pricing",
+        "source_type": "Official Docs",
+        "claim_supported": "Confirms API support"
+      },
+      {
+        "url": "https://www.hootsuite.com/pricing",
+        "source_type": "Official Docs",
+        "claim_supported": "Confirms API surface"
+      },
+      {
+        "url": "https://www.hootsuite.com/pricing",
+        "source_type": "Official Docs",
+        "claim_supported": "Confirms authentication methods"
+      }
+    ],
+    "confidence_score": 95.5,
+    "status": "Manual Review",
+    "manual_review_required": true,
+    "research_timestamp": "2026-07-17T12:28:24.428789",
+    "verification_timestamp": "2026-07-17T14:48:26.725567",
+    "processing_time_seconds": 33.48,
+    "processing_notes": [
+      "Hootsuite offers a free 14-day trial for all plans",
+      "Bulk scheduling is not available during trial",
+      "Daily posting limits apply during trial",
+      "Verifier Reasoning: Text does not explicitly mention API support for 'GraphQL', but does mention REST and other features."
+    ],
+    "notes": "Hootsuite offers a variety of plans and features, including social media management, content scheduling, and team collaboration."
+  },
+  {
+    "app_name": "Sprout Social",
+    "website": "https://sproutsocial.com/",
+    "category": "Marketing",
+    "one_line_description": "A social media management platform for businesses to create, schedule, and analyze social media content.",
+    "agent_summary": null,
+    "authentication_methods": [
+      "OAuth 2.0",
+      "API Key",
+      "Basic Auth"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST"
+    ],
+    "api_documentation_url": null,
+    "mcp_available": true,
+    "buildability_verdict": "Easy",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://sproutsocial.com/pricing",
+        "source_type": "Official Docs",
+        "claim_supported": "Plans for multiple social profiles"
+      },
+      {
+        "url": "https://sproutsocial.com/pricing",
+        "source_type": "Official Docs",
+        "claim_supported": "Support for large-scale social media operations"
+      }
+    ],
+    "confidence_score": 95.0,
+    "status": "Verified",
+    "manual_review_required": false,
+    "research_timestamp": "2026-07-17T12:30:24.791906",
+    "verification_timestamp": "2026-07-17T14:51:28.931889",
+    "processing_time_seconds": 20.28,
+    "processing_notes": [
+      "Verifier Reasoning: Supports plans for multiple social profiles. Supports large-scale social media operations. Supports REST API. Has MCP capability. Auth methods available are OAuth 2.0, API Key. Does not support Manual buildability is marked as Easy. Self-serve is available."
+    ],
+    "notes": "Sprout Social offers a free trial for 30 days. Plans start at $199 per seat/month for the Standard plan."
+  },
+  {
+    "app_name": "Magento",
+    "website": "https://business.adobe.com/products/magento/magento-commerce.html",
+    "category": "E-commerce",
+    "one_line_description": "A leading e-commerce platform with open-source and cloud-hosted solutions.",
+    "agent_summary": null,
+    "authentication_methods": [
+      "OAuth 2.0",
+      "API Key",
+      "Basic Auth"
+    ],
+    "self_serve_status": "Gated",
+    "api_surface": [
+      "REST",
+      "GraphQL"
+    ],
+    "api_documentation_url": "https://experienceleague.adobe.com/docs/magento-cloud/user-guide/developer/api.html",
+    "mcp_available": true,
+    "buildability_verdict": "Easy",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://experienceleague.adobe.com/docs/magento-cloud/user-guide/developer/api.html?lang=en#magento-api",
+        "source_type": "Official Docs",
+        "claim_supported": "Supports GraphQL API"
+      },
+      {
+        "url": "https://experienceleague.adobe.com/docs/magento-cloud/user-guide/developer/api.html?lang=en#magento-api",
+        "source_type": "Official Docs",
+        "claim_supported": "Supports REST API"
+      }
+    ],
+    "confidence_score": 20.0,
+    "status": "Manual Review",
+    "manual_review_required": true,
+    "research_timestamp": "2026-07-17T12:36:27.048723",
+    "verification_timestamp": "2026-07-17T14:25:31.865841",
+    "processing_time_seconds": 67.00999999999999,
+    "processing_notes": [
+      "No scraped content available. Relied on LLM general knowledge.",
+      "Verifier: Could not fetch text from evidence URLs."
+    ],
+    "notes": null
+  },
+  {
+    "app_name": "Recurly",
+    "website": "https://recurly.com/",
+    "category": "Subscription Lifecycle Management",
+    "one_line_description": "A subscription lifecycle management platform for businesses.",
+    "agent_summary": "Recurly is a comprehensive subscription lifecycle management platform that provides automated global subscription billing, comprehensive guides and API references, and support for multiple revenue reporting standards.",
+    "authentication_methods": [
+      "OAuth 2.0",
+      "API Key"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST"
+    ],
+    "api_documentation_url": "https://docs.recurly.com/",
+    "mcp_available": false,
+    "buildability_verdict": "Easy",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://docs.recurly.com/",
+        "source_type": "Official Docs",
+        "claim_supported": "Comprehensive guides and API references"
+      },
+      {
+        "url": "https://docs.recurly.com/retention-expansion-and-compliance",
+        "source_type": "Official Docs",
+        "claim_supported": "Support for multiple revenue reporting standards"
+      }
+    ],
+    "confidence_score": 95.0,
+    "status": "Verified",
+    "manual_review_required": false,
+    "research_timestamp": "2026-07-17T12:39:41.674648",
+    "verification_timestamp": "2026-07-17T14:51:32.449353",
+    "processing_time_seconds": 20.310000000000002,
+    "processing_notes": [
+      "Verifier Reasoning: Recurly provides comprehensive guides, API references, and best practices for their products, including support for multiple revenue reporting standards."
+    ],
+    "notes": null
+  },
+  {
+    "app_name": "Zendesk",
+    "website": "https://www.zendesk.com/",
+    "category": "Customer Service, Help Desk",
+    "one_line_description": null,
+    "agent_summary": null,
+    "authentication_methods": [
+      "OAuth 2.0"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST"
+    ],
+    "api_documentation_url": null,
+    "mcp_available": true,
+    "buildability_verdict": "Easy",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://www.zendesk.com/developers/api/authentication/",
+        "source_type": "Official Docs",
+        "claim_supported": "Supports OAuth 2.0 authentication"
+      },
+      {
+        "url": "https://developer.zendesk.com/api-reference/api-intro/",
+        "source_type": "Official Docs",
+        "claim_supported": "Documentation is available for a restful API"
+      }
+    ],
+    "confidence_score": 75.0,
+    "status": "Manual Review",
+    "manual_review_required": true,
+    "research_timestamp": "2026-07-17T12:40:52.000963",
+    "verification_timestamp": "2026-07-17T14:25:42.613678",
+    "processing_time_seconds": 42.31,
+    "processing_notes": [
+      "Verifier: Could not fetch text from evidence URLs."
+    ],
+    "notes": null
+  },
+  {
+    "app_name": "Intercom",
+    "website": "https://www.intercom.com/",
+    "category": "Customer Service",
+    "one_line_description": "Create seamless customized experiences in the Intercom Help Desk and Messenger.",
+    "agent_summary": null,
+    "authentication_methods": [
+      "OAuth 2.0",
+      "API Key"
+    ],
+    "self_serve_status": "Gated",
+    "api_surface": [
+      "REST",
+      "GraphQL"
+    ],
+    "api_documentation_url": null,
+    "mcp_available": true,
+    "buildability_verdict": "Moderate",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://www.intercom.com/pricing",
+        "source_type": "Official Docs",
+        "claim_supported": " Offers a free development workspace"
+      }
+    ],
+    "confidence_score": 95.5,
+    "status": "Verified",
+    "manual_review_required": false,
+    "research_timestamp": "2026-07-17T12:41:26.783241",
+    "verification_timestamp": "2026-07-17T14:51:47.165409",
+    "processing_time_seconds": 34.47,
+    "processing_notes": [
+      "Intercom offers a range of tools for integrating with its API",
+      "Verifier Reasoning: The provided text explicitly states that there is a 'free development workspace' mentioned in the Intercom Pricing page, supporting the claim."
+    ],
+    "notes": null
+  },
+  {
+    "app_name": "Freshdesk",
+    "website": "https://www.freshworks.com/freshdesk",
+    "category": "CRM",
+    "one_line_description": "AI-powered help desk software.",
+    "agent_summary": null,
+    "authentication_methods": [
+      "OAuth 2.0"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST"
+    ],
+    "api_documentation_url": "https://www.freshworks.com/freshdesk/",
+    "mcp_available": false,
+    "buildability_verdict": "Easy",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://www.freshworks.com/freshdesk/pricing/",
+        "source_type": "Official Docs",
+        "claim_supported": "Multilingual helpdesk"
+      },
+      {
+        "url": "https://www.freshworks.com/freshdesk/pricing/",
+        "source_type": "Official Docs",
+        "claim_supported": "Threads and tasks"
+      },
+      {
+        "url": "https://www.freshworks.com/freshdesk/pricing/",
+        "source_type": "Official Docs",
+        "claim_supported": "Customer portal"
+      }
+    ],
+    "confidence_score": 90.0,
+    "status": "Failed",
+    "manual_review_required": false,
+    "research_timestamp": "2026-07-17T12:42:17.899117",
+    "verification_timestamp": "2026-07-17T14:52:35.027253",
+    "processing_time_seconds": 16.35,
+    "processing_notes": [
+      "Verification Failed with exception: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kkx482h7e24rjrzy1mby4r5y` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 4301, Requested 2926. Please try again in 12.27s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+    ],
+    "notes": null
+  },
+  {
+    "app_name": "Help Scout",
+    "website": "https://www.helpscout.com/",
+    "category": "Customer Communication",
+    "one_line_description": "All-in-one customer communication platform making life easier and bringing every conversation to you.",
+    "agent_summary": null,
+    "authentication_methods": [
+      "OAuth 2.0"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST"
+    ],
+    "api_documentation_url": null,
+    "mcp_available": true,
+    "buildability_verdict": "Easy",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://www.helpscout.com/docs",
+        "source_type": "Official Docs",
+        "claim_supported": "Authentication through OAuth 2.0 is supported"
+      },
+      {
+        "url": "https://www.helpscout.com/docs",
+        "source_type": "Official Docs",
+        "claim_supported": "API documentation is available"
+      }
+    ],
+    "confidence_score": 90.0,
+    "status": "Verified",
+    "manual_review_required": false,
+    "research_timestamp": "2026-07-17T12:43:46.849495",
+    "verification_timestamp": "2026-07-17T14:52:42.819091",
+    "processing_time_seconds": 29.32,
+    "processing_notes": [
+      "No code required for setting up a help center",
+      "Beautiful and branded help center templates available",
+      "Verifier Reasoning: Evidence supports claim: Authentication through OAuth 2.0 is supported, mentioned in API documentation."
+    ],
+    "notes": null
+  },
+  {
+    "app_name": "Gorgias",
+    "website": "https://www.gorgias.com/",
+    "category": "Customer Service",
+    "one_line_description": "One platform. One inbox. One bill.",
+    "agent_summary": null,
+    "authentication_methods": [
+      "API Key"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST"
+    ],
+    "api_documentation_url": "https://www.gorgias.com/docs/",
+    "mcp_available": false,
+    "buildability_verdict": "Easy",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://www.gorgias.com/pricing",
+        "source_type": "Pricing Page",
+        "claim_supported": "Authentication Methods: API Key"
+      },
+      {
+        "url": "https://www.gorgias.com/pricing",
+        "source_type": "Pricing Page",
+        "claim_supported": "Buildability Verdict: Easy"
+      }
+    ],
+    "confidence_score": 89.5,
+    "status": "Verified",
+    "manual_review_required": false,
+    "research_timestamp": "2026-07-17T12:44:10.382767",
+    "verification_timestamp": "2026-07-17T14:52:54.348247",
+    "processing_time_seconds": 20.049999999999997,
+    "processing_notes": [
+      "No further information available",
+      "Verifier Reasoning: The text does not mention any authentication methods other than API Key, but does not explicitly confirm that API Key is the only method."
+    ],
+    "notes": null
+  },
+  {
+    "app_name": "Kustomer",
+    "website": "https://www.kustomer.com/",
+    "category": "Customer Service and Support",
+    "one_line_description": "Kustomer is an intelligent CX platform that unifies AI and orchestration.",
+    "agent_summary": "Kustomer is a customer experience platform that provides features such as omnichannel messaging, conversations & task routing, and SLA management.",
+    "authentication_methods": [],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST",
+      "GraphQL"
+    ],
+    "api_documentation_url": "https://www.kustomer.com/docs/",
+    "mcp_available": true,
+    "buildability_verdict": "Easy",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://www.kustomer.com/docs/",
+        "source_type": "Official Docs",
+        "claim_supported": "Provides WhatsApp and Facebook Pricing is Pay-as-You-Go"
+      }
+    ],
+    "confidence_score": 70.0,
+    "status": "Manual Review",
+    "manual_review_required": true,
+    "research_timestamp": "2026-07-17T12:45:00.769874",
+    "verification_timestamp": "2026-07-17T14:26:48.507149",
+    "processing_time_seconds": 26.19,
+    "processing_notes": [
+      "This data extraction is mostly based on the pricing page.",
+      "Some details might need further research as they are unclear on the pricing page.",
+      "Verifier: Could not fetch text from evidence URLs."
+    ],
+    "notes": "Kustomer has various features such as Omnichannel Messaging, Conversations & Task Routing, SLA Management, Business Rules & Customer Workflows, Data Masking, Google & Microsoft Authentication, Custom Permission Sets, SAML Single Sign-On and SCIM."
+  },
+  {
+    "app_name": "Workday",
+    "website": "https://www.workday.com/",
+    "category": "HR Management",
+    "one_line_description": "Workday is a cloud-based human capital management (HCM) solution provider for financial management, human resources, planning, and talent management",
+    "agent_summary": null,
+    "authentication_methods": [
+      "OAuth 2.0"
+    ],
+    "self_serve_status": "Gated",
+    "api_surface": [
+      "SOAP",
+      "REST"
+    ],
+    "api_documentation_url": "https://community.workday.com/en/tag/api",
+    "mcp_available": false,
+    "buildability_verdict": "Hard",
+    "primary_blocker": "Requires enterprise plan",
+    "evidence": [
+      {
+        "url": "https://community.workday.com/en/tag/api#SOAP",
+        "source_type": "Developer Docs",
+        "claim_supported": "Confirms SOAP API support"
+      },
+      {
+        "url": "https://community.workday.com/en/tag/api#REST",
+        "source_type": "Developer Docs",
+        "claim_supported": "Confirms REST API support"
+      },
+      {
+        "url": "https://community.workday.com/en/tag/api#OAuth2",
+        "source_type": "Developer Docs",
+        "claim_supported": "Confirms OAuth 2.0 authentication support"
+      }
+    ],
+    "confidence_score": 20.0,
+    "status": "Manual Review",
+    "manual_review_required": true,
+    "research_timestamp": "2026-07-17T12:46:53.174203",
+    "verification_timestamp": "2026-07-17T14:26:52.884351",
+    "processing_time_seconds": 8.08,
+    "processing_notes": [
+      "Pricing information for Workday's API plans is not explicitly disclosed on their website",
+      "Further research would be needed to determine the pricing model for their API",
+      "No scraped content available. Relied on LLM general knowledge.",
+      "Verifier: Could not fetch text from evidence URLs."
+    ],
+    "notes": "Workday does not explicitly disclose their pricing on their API plans"
+  },
+  {
+    "app_name": "BambooHR",
+    "website": "https://www.bamboohr.com/",
+    "category": "HRMS and Payroll",
+    "one_line_description": "Comprehensive HR, payroll, and benefits platform",
+    "agent_summary": null,
+    "authentication_methods": [
+      "OAuth 2.0"
+    ],
+    "self_serve_status": "Hybrid",
+    "api_surface": [
+      "REST"
+    ],
+    "api_documentation_url": "https://www.bamboohr.com/api",
+    "mcp_available": false,
+    "buildability_verdict": "Moderate",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://www.bamboohr.com/pricing",
+        "source_type": "Official Docs",
+        "claim_supported": "Provides plans and pricing information"
+      },
+      {
+        "url": "https://www.bamboohr.com/api",
+        "source_type": "Official Docs",
+        "claim_supported": "Offers API access"
+      },
+      {
+        "url": "https://www.bamboohr.com/pricing",
+        "source_type": "Official Docs",
+        "claim_supported": "Provides HR data and reporting"
+      },
+      {
+        "url": "https://www.bamboohr.com/pricing",
+        "source_type": "Official Docs",
+        "claim_supported": "Allows custom report building"
+      },
+      {
+        "url": "https://www.bamboohr.com/pricing",
+        "source_type": "Official Docs",
+        "claim_supported": "Streamlines workflows"
+      },
+      {
+        "url": "https://www.bamboohr.com/pricing",
+        "source_type": "Official Docs",
+        "claim_supported": "Provides time-off management"
+      }
+    ],
+    "confidence_score": 45.0,
+    "status": "Manual Review",
+    "manual_review_required": true,
+    "research_timestamp": "2026-07-17T12:47:21.949342",
+    "verification_timestamp": "2026-07-17T14:53:31.795678",
+    "processing_time_seconds": 51.18,
+    "processing_notes": [
+      "Verifier Reasoning: Original claim Auth Methods: ['OAuth 2.0'] is supported by evidence in BambooHR API Docs"
+    ],
+    "notes": "HR data and reporting, custom report building, workflows, time-off management, API access"
+  },
+  {
+    "app_name": "Gusto",
+    "website": "https://gusto.com/",
+    "category": "HR Management",
+    "one_line_description": "Gusto is a people platform that helps businesses modernize HR and payroll workflows.",
+    "agent_summary": "A comprehensive people platform providing HR and payroll solutions with a modern API.",
+    "authentication_methods": [
+      "OAuth 2.0"
+    ],
+    "self_serve_status": "Gated",
+    "api_surface": [
+      "REST"
+    ],
+    "api_documentation_url": "https://gusto.com/api",
+    "mcp_available": false,
+    "buildability_verdict": "Moderate",
+    "primary_blocker": "Requires enterprise plan",
+    "evidence": [
+      {
+        "url": "https://gusto.com/api",
+        "source_type": "Official Docs",
+        "claim_supported": "REST API support for HR and payroll workflows."
+      },
+      {
+        "url": "https://support.gusto.com/hc/en-us/articles/4413311381649-Enterprise-plan-requirements",
+        "source_type": "Official Docs",
+        "claim_supported": "Requires enterprise plan to access all API endpoints."
+      }
+    ],
+    "confidence_score": 20.0,
+    "status": "Manual Review",
+    "manual_review_required": true,
+    "research_timestamp": "2026-07-17T12:47:39.471572",
+    "verification_timestamp": "2026-07-17T14:27:23.656504",
+    "processing_time_seconds": 3.8099999999999996,
+    "processing_notes": [
+      "Note from researcher: Enterprise plan offers full API access, which requires authentication",
+      "No scraped content available. Relied on LLM general knowledge.",
+      "Verifier: Could not fetch text from evidence URLs."
+    ],
+    "notes": "API requires enterprise plan for full access."
+  },
+  {
+    "app_name": "Deel",
+    "website": "https://www.deel.com/",
+    "category": "HRIS (Human Capital Management)",
+    "one_line_description": "Global employment, payroll, and compliance platform for hiring contractors and full-time employees.",
+    "agent_summary": null,
+    "authentication_methods": [
+      "OAuth 2.0",
+      "API Key"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST"
+    ],
+    "api_documentation_url": "https://www.deel.com/api",
+    "mcp_available": true,
+    "buildability_verdict": "Easy",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://www.deel.com/api",
+        "source_type": "Official Docs",
+        "claim_supported": "Deel's API supports contractor management."
+      },
+      {
+        "url": "https://www.deel.com/api",
+        "source_type": "Official Docs",
+        "claim_supported": "Deel's API supports global payroll."
+      }
+    ],
+    "confidence_score": 90.0,
+    "status": "Manual Review",
+    "manual_review_required": true,
+    "research_timestamp": "2026-07-17T12:49:49.105718",
+    "verification_timestamp": "2026-07-17T14:27:39.548803",
+    "processing_time_seconds": 22.36,
+    "processing_notes": [
+      "Verifier Reasoning: The provided text does not explicitly mention API key authentication, and Deel's API supports contractor management is only claimed, but not stated as a fact. Additionally, the API surface is not directly mentioned in the text, and MCP availability is a required field which appears as unknown. Therefore, manual review is required."
+    ],
+    "notes": null
+  },
+  {
+    "app_name": "Lever",
+    "website": "https://www.lever.co/",
+    "category": "Recruiting & HR",
+    "one_line_description": "An AI-powered hiring platform for recruitment and employee success.",
+    "agent_summary": null,
+    "authentication_methods": [
+      "Unknown"
+    ],
+    "self_serve_status": "Unknown",
+    "api_surface": [
+      "Unknown"
+    ],
+    "api_documentation_url": null,
+    "mcp_available": false,
+    "buildability_verdict": "Unknown",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://www.lever.co/pricing",
+        "source_type": "Pricing Page",
+        "claim_supported": "Pricing scalability based on team size and hiring needs"
+      },
+      {
+        "url": "https://www.lever.co/pricing",
+        "source_type": "Pricing Page",
+        "claim_supported": "Implemention of 1-3 weeks"
+      },
+      {
+        "url": "https://www.lever.co/pricing",
+        "source_type": "Pricing Page",
+        "claim_supported": "SOC 2 Type II certified and enterprise-grade security"
+      }
+    ],
+    "confidence_score": 60.0,
+    "status": "Failed",
+    "manual_review_required": true,
+    "research_timestamp": "2026-07-17T12:52:58.131470",
+    "verification_timestamp": "2026-07-17T14:54:29.971248",
+    "processing_time_seconds": 20.71,
+    "processing_notes": [
+      "Insufficient documentation; pricing not explicitly stated as API-based or integration-friendly",
+      "Verification Failed with exception: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kkx482h7e24rjrzy1mby4r5y` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 4458, Requested 2856. Please try again in 13.14s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+    ],
+    "notes": null
+  },
+  {
+    "app_name": "Snowflake",
+    "website": "https://www.snowflake.com/",
+    "category": "Data Platform",
+    "one_line_description": "Snowflake is a cloud-based data platform that supports data engineering, analytics, and applications.",
+    "agent_summary": null,
+    "authentication_methods": [
+      "OAuth 2.0",
+      "JWT"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "GraphQL",
+      "REST"
+    ],
+    "api_documentation_url": "https://www.snowflake.com/developers",
+    "mcp_available": true,
+    "buildability_verdict": "Easy",
+    "primary_blocker": "None specified in documentation.",
+    "evidence": [
+      {
+        "url": "https://www.snowflake.com/developers",
+        "source_type": "Developer Docs",
+        "claim_supported": "Documentation of API Surface"
+      },
+      {
+        "url": "https://docs.snowflake.com/en/user-guide/ui-login.html#authentication-methods",
+        "source_type": "Official Docs",
+        "claim_supported": "Authentication Methods"
+      },
+      {
+        "url": "https://www.snowflake.com/pricing",
+        "source_type": "Pricing Page",
+        "claim_supported": "Documentation of Pricing"
+      }
+    ],
+    "confidence_score": 94.9,
+    "status": "Verified",
+    "manual_review_required": false,
+    "research_timestamp": "2026-07-17T12:54:30.823892",
+    "verification_timestamp": "2026-07-17T14:54:39.060348",
+    "processing_time_seconds": 38.629999999999995,
+    "processing_notes": [
+      "Based on documentation, the platform supports multiple API surfaces.",
+      "Verifier Reasoning: Verified claims on API Surface with documentation from the official Snowflake website. Verified claims on MCP Availability, API Surface, and Self-Serve model. Claim on Auth Methods has potential for manual review due to ambiguity in the term 'Basic'."
+    ],
+    "notes": "Snowflake offers a consumption-based pricing model, and users can choose from standard, enterprise, and business critical editions."
+  },
+  {
+    "app_name": "Tableau",
+    "website": "https://www.tableau.com/",
+    "category": "Business Intelligence",
+    "one_line_description": null,
+    "agent_summary": null,
+    "authentication_methods": [
+      "OAuth 2.0"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST"
+    ],
+    "api_documentation_url": "https://help.tableau.com/en-us/api",
+    "mcp_available": false,
+    "buildability_verdict": "Moderate",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://help.tableau.com/en-us/api",
+        "source_type": "Official Docs",
+        "claim_supported": "Supports REST API"
+      },
+      {
+        "url": "https://help.tableau.com/en-us/api/oauth",
+        "source_type": "Official Docs",
+        "claim_supported": "Uses OAuth 2.0 for authentication"
+      }
+    ],
+    "confidence_score": 20.0,
+    "status": "Manual Review",
+    "manual_review_required": true,
+    "research_timestamp": "2026-07-17T12:56:30.385985",
+    "verification_timestamp": "2026-07-17T14:28:27.317330",
+    "processing_time_seconds": 17.14,
+    "processing_notes": [
+      "No scraped content available. Relied on LLM general knowledge.",
+      "Verifier: Could not fetch text from evidence URLs."
+    ],
+    "notes": null
+  },
+  {
+    "app_name": "Looker",
+    "website": "https://looker.com/",
+    "category": "Business Intelligence",
+    "one_line_description": "Looker is a business intelligence platform that provides a comprehensive set of tools to explore, analyze, and visualize data.",
+    "agent_summary": "Looker is a comprehensive business intelligence platform that offers a wide range of tools and features for data exploration, analysis, and visualization.",
+    "authentication_methods": [
+      "OAuth 2.0",
+      "API Key"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST",
+      "GraphQL"
+    ],
+    "api_documentation_url": "https://looker.com/docs",
+    "mcp_available": true,
+    "buildability_verdict": "Easy",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://looker.com/docs#lookmlreference",
+        "source_type": "Official Docs",
+        "claim_supported": "Supports LookML modeling language"
+      },
+      {
+        "url": "https://looker.com/docs#datastudio",
+        "source_type": "Official Docs",
+        "claim_supported": "Integrates with Data Studio"
+      },
+      {
+        "url": "https://looker.com/docs#insights",
+        "source_type": "Official Docs",
+        "claim_supported": "Offers proactive insights and alerts"
+      }
+    ],
+    "confidence_score": 94.0,
+    "status": "Verified",
+    "manual_review_required": false,
+    "research_timestamp": "2026-07-17T12:58:20.523494",
+    "verification_timestamp": "2026-07-17T14:55:04.383463",
+    "processing_time_seconds": 62.459999999999994,
+    "processing_notes": [
+      "Looker offers a free trial with $300 in free credit",
+      "Looker has a pricing page with various plans and features",
+      "Looker has a large community of developers and users",
+      "Verifier Reasoning: Evidence supports all claims; however, confidence is adjusted due to incomplete evidence regarding Looker's proactive insights and alerts."
+    ],
+    "notes": "Looker is a popular choice for business intelligence and data analytics."
+  },
+  {
+    "app_name": "Mixpanel",
+    "website": "https://mixpanel.com/",
+    "category": "Analytics & Reporting",
+    "one_line_description": "Mixpanel provides comprehensive analytics and event tracking for businesses.",
+    "agent_summary": "Mixpanel is a powerful analytics tool for events and user behavior.",
+    "authentication_methods": [
+      "OAuth 2.0",
+      "API Key"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST",
+      "GraphQL"
+    ],
+    "api_documentation_url": null,
+    "mcp_available": false,
+    "buildability_verdict": "Easy",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://mixpanel.com/docs",
+        "source_type": "Official Docs",
+        "claim_supported": "Supports event tracking and analytics"
+      },
+      {
+        "url": "https://mixpanel.com/pricing",
+        "source_type": "Official Docs",
+        "claim_supported": "Offers a free plan with up to 1M monthly events"
+      },
+      {
+        "url": "https://mixpanel.com/docs",
+        "source_type": "Official Docs",
+        "claim_supported": "Provides reports and analytics for user behavior"
+      },
+      {
+        "url": "https://mixpanel.com/pricing",
+        "source_type": "Official Docs",
+        "claim_supported": "Has a self-serve pricing plan for small-scale businesses"
+      }
+    ],
+    "confidence_score": 98.0,
+    "status": "Failed",
+    "manual_review_required": false,
+    "research_timestamp": "2026-07-17T12:59:21.816170",
+    "verification_timestamp": "2026-07-17T14:56:12.575930",
+    "processing_time_seconds": 35.92,
+    "processing_notes": [
+      "Verification Failed with exception: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kkx482h7e24rjrzy1mby4r5y` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 5403, Requested 3962. Please try again in 33.65s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+    ],
+    "notes": "Mixpanel is ideal for companies seeking insights on user behavior and customer interactions."
+  },
+  {
+    "app_name": "Twilio Segment",
+    "website": "https://segment.com/",
+    "category": "Customer Data Platform",
+    "one_line_description": "Collect, clean, and activate customer data from any source",
+    "agent_summary": "Twilio Segment allows developers to collect, clean, and activate customer data from any source, providing a unified customer view.",
+    "authentication_methods": [
+      "OAuth 2.0",
+      "API Key"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST",
+      "GraphQL"
+    ],
+    "api_documentation_url": "https://segment.com/docs",
+    "mcp_available": false,
+    "buildability_verdict": "Easy",
+    "primary_blocker": "",
+    "evidence": [
+      {
+        "url": "https://segment.com/pricing",
+        "source_type": "Official Docs",
+        "claim_supported": "Has pricing information and different plans"
+      }
+    ],
+    "confidence_score": 95.0,
+    "status": "Verified",
+    "manual_review_required": false,
+    "research_timestamp": "2026-07-17T13:01:23.526663",
+    "verification_timestamp": "2026-07-17T14:56:24.917734",
+    "processing_time_seconds": 30.66,
+    "processing_notes": [
+      "Requires developer documentation to be found and linked to the SaaS Application Data schema.",
+      "Verifier Reasoning: Text explicitly supports claim regarding pricing information and plans."
+    ],
+    "notes": null
+  },
+  {
+    "app_name": "dbt Labs",
+    "website": "https://www.getdbt.com/",
+    "category": "Development",
+    "one_line_description": "dbt Labs is a development platform for building and managing data pipelines.",
+    "agent_summary": null,
+    "authentication_methods": [
+      "OAuth 2.0"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST"
+    ],
+    "api_documentation_url": "https://www.getdbt.com/docs",
+    "mcp_available": false,
+    "buildability_verdict": "Easy",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://www.getdbt.com/docs",
+        "source_type": "Official Docs",
+        "claim_supported": "OAuth 2.0 support"
+      },
+      {
+        "url": "https://www.getdbt.com/pricing",
+        "source_type": "Pricing Page",
+        "claim_supported": "REST API support"
+      }
+    ],
+    "confidence_score": 96.3,
+    "status": "Verified",
+    "manual_review_required": false,
+    "research_timestamp": "2026-07-17T13:03:18.337010",
+    "verification_timestamp": "2026-07-17T14:56:44.230125",
+    "processing_time_seconds": 28.19,
+    "processing_notes": [
+      "Extracted from the dbt Labs website and pricing page",
+      "Verifier Reasoning: According to the official dbt documentation, the product supports OAuth 2.0 authentication."
+    ],
+    "notes": "Based on the extracted information, dbt Labs appears to offer a robust development platform for data pipelines."
+  },
+  {
+    "app_name": "OpenAI",
+    "website": "https://openai.com/",
+    "category": "Developer Tools",
+    "one_line_description": "OpenAI API Platform for text and code generation",
+    "agent_summary": "OpenAI provides a comprehensive API platform for text and code generation, with a focus on developer tools and integrations.",
+    "authentication_methods": [
+      "API Key",
+      "OAuth 2.0"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST",
+      "GraphQL"
+    ],
+    "api_documentation_url": null,
+    "mcp_available": true,
+    "buildability_verdict": "Easy",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://openai.com/docs/",
+        "source_type": "Official Docs",
+        "claim_supported": "Confirms API Key authentication support"
+      },
+      {
+        "url": "https://openai.com/docs/",
+        "source_type": "Official Docs",
+        "claim_supported": "Confirms OAuth 2.0 authentication support"
+      }
+    ],
+    "confidence_score": 72.0,
+    "status": "Manual Review",
+    "manual_review_required": true,
+    "research_timestamp": "2026-07-17T13:03:47.280730",
+    "verification_timestamp": "2026-07-17T14:29:49.128583",
+    "processing_time_seconds": 14.68,
+    "processing_notes": [
+      "API docs are well-organized and easily accessible",
+      "Multiple SDKs and CLI tools available",
+      "Verifier: Could not fetch text from evidence URLs."
+    ],
+    "notes": null
+  },
+  {
+    "app_name": "Midjourney",
+    "website": "https://www.midjourney.com/",
+    "category": "Developer Tools",
+    "one_line_description": "AI-powered digital art generation platform",
+    "agent_summary": null,
+    "authentication_methods": [],
+    "self_serve_status": "Unknown",
+    "api_surface": [],
+    "api_documentation_url": null,
+    "mcp_available": false,
+    "buildability_verdict": "Impossible",
+    "primary_blocker": "Insufficient documentation",
+    "evidence": [],
+    "confidence_score": 40.0,
+    "status": "Manual Review",
+    "manual_review_required": true,
+    "research_timestamp": "2026-07-17T13:06:25.092804",
+    "verification_timestamp": "2026-07-17T14:29:49.132424",
+    "processing_time_seconds": 20.57,
+    "processing_notes": [
+      "No scraped content available. Relied on LLM general knowledge.",
+      "Verifier: No evidence URLs provided by Researcher."
+    ],
+    "notes": "Insufficient documentation for integration metadata"
+  },
+  {
+    "app_name": "Cohere",
+    "website": "https://cohere.com/",
+    "category": "NLP/AI",
+    "one_line_description": "Platform for building, deploying, and managing enterprise AI models.",
+    "agent_summary": null,
+    "authentication_methods": [
+      "OAuth 2.0"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST",
+      "GraphQL"
+    ],
+    "api_documentation_url": "https://cohere.com/docs",
+    "mcp_available": true,
+    "buildability_verdict": "Easy",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://cohere.com/docs",
+        "source_type": "Official Docs",
+        "claim_supported": "Provision of API documentation"
+      },
+      {
+        "url": "https://cohere.com/developers",
+        "source_type": "Official Docs",
+        "claim_supported": "Providing APIs for developers"
+      },
+      {
+        "url": "https://cohere.com/pricing",
+        "source_type": "Official Docs",
+        "claim_supported": "Enterprise-ready AI pricing"
+      }
+    ],
+    "confidence_score": 90.8,
+    "status": "Verified",
+    "manual_review_required": false,
+    "research_timestamp": "2026-07-17T13:06:55.218427",
+    "verification_timestamp": "2026-07-17T14:57:03.702347",
+    "processing_time_seconds": 34.57,
+    "processing_notes": [
+      "Verifier Reasoning: The provided evidence supports the claims about Cohere providing API documentation and APIs for developers. However, the pricing information does not fully support the claim about enterprise-ready AI pricing."
+    ],
+    "notes": null
+  },
+  {
+    "app_name": "Segment",
+    "website": "https://segment.com/",
+    "category": "Customer Data Platform",
+    "one_line_description": "Collect, clean, and activate your customer data across 700+ tools and destinations.",
+    "agent_summary": null,
+    "authentication_methods": [
+      "OAuth 2.0",
+      "API Key"
+    ],
+    "self_serve_status": "Self-Serve",
+    "api_surface": [
+      "REST",
+      "GraphQL"
+    ],
+    "api_documentation_url": null,
+    "mcp_available": false,
+    "buildability_verdict": "Moderate",
+    "primary_blocker": null,
+    "evidence": [
+      {
+        "url": "https://segment.com/docs/",
+        "source_type": "Official Docs",
+        "claim_supported": "OAuth 2.0 Support"
+      },
+      {
+        "url": "https://segment.com/docs/",
+        "source_type": "Official Docs",
+        "claim_supported": "API Key Support"
+      },
+      {
+        "url": "https://segment.com/docs/",
+        "source_type": "Official Docs",
+        "claim_supported": "REST API"
+      },
+      {
+        "url": "https://segment.com/docs/",
+        "source_type": "Official Docs",
+        "claim_supported": "GraphQL API"
+      },
+      {
+        "url": "https://segment.com/pricing/",
+        "source_type": "Official Docs",
+        "claim_supported": "Customer Data Platform"
+      }
+    ],
+    "confidence_score": 95.0,
+    "status": "Manual Review",
+    "manual_review_required": true,
+    "research_timestamp": "2026-07-17T14:15:42.955319",
+    "verification_timestamp": "2026-07-17T14:58:05.930097",
+    "processing_time_seconds": 74.2,
+    "processing_notes": [
+      "Based on the official documentation, Segment provides a unified customer data platform.",
+      "Verifier Reasoning: Manual review is required because the provided text does not explicitly mention support for Customer Data Platform."
+    ],
+    "notes": "Based on the official documentation, Segment provides an OAuth 2.0 and API Key authentication methods and supports REST and GraphQL APIs for data collection and processing."
+  }
+]

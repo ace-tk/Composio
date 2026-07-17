@@ -25,7 +25,7 @@ The project follows a multi-agent, batch-processing architecture:
 2. **Environment Variables:**
    Create a `.env` file and add your API keys:
    ```env
-   OPENAI_API_KEY=your_key_here
+   GROQ_API_KEY=your_key_here
    ```
 
 3. **Execution:**
