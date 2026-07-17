@@ -1107,14 +1107,15 @@
         "claim_supported": "Supports GraphQL API"
       }
     ],
-    "confidence_score": 98.5,
-    "status": "Failed",
-    "manual_review_required": false,
+    "confidence_score": 88.5,
+    "status": "Manual Review",
+    "manual_review_required": true,
     "research_timestamp": "2026-07-17T12:02:58.007622",
-    "verification_timestamp": "2026-07-17T14:50:59.774005",
-    "processing_time_seconds": 28.93,
+    "verification_timestamp": "2026-07-17T17:37:19.187621",
+    "processing_time_seconds": 44.04,
     "processing_notes": [
-      "Verification Failed with exception: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kkx482h7e24rjrzy1mby4r5y` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 5456, Requested 2274. Please try again in 17.3s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+      "[Validation Error] LLM output failed schema validation: Error code: 400 - {'error': {'message': \"Failed to generate JSON. Please adjust your prompt. See 'failed_generation' for",
+      "[LLM Failure] LLM verification exhausted all retries. Flagged for human review."
     ],
     "notes": "Inflected from documentation, pricing page, and general knowledge."
   },
@@ -2002,14 +2003,16 @@
         "claim_supported": "Customer portal"
       }
     ],
-    "confidence_score": 90.0,
-    "status": "Failed",
+    "confidence_score": 94.85,
+    "status": "Verified",
     "manual_review_required": false,
     "research_timestamp": "2026-07-17T12:42:17.899117",
-    "verification_timestamp": "2026-07-17T14:52:35.027253",
-    "processing_time_seconds": 16.35,
+    "verification_timestamp": "2026-07-17T17:37:28.290781",
+    "processing_time_seconds": 25.44,
     "processing_notes": [
-      "Verification Failed with exception: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kkx482h7e24rjrzy1mby4r5y` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 4301, Requested 2926. Please try again in 12.27s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+      "Verifier Reasoning: Verified fields: auth_methods, api_surface, buildability_verdict. Uncertain fields: self_serve_status, mcp_available. No contradicted fields. For a clear verdict on self_serve_status and mcp_available, further evidence is required.",
+      "Verifier Field Breakdown:\n  \u2022 auth_methods: \u2713 SUPPORTED (+7.5) \u2014 Evidence explicitly confirms 'OAuth 2.0' as an auth_method. See https://www.freshworks.com/freshdesk/pricing/.\n  \u2022 api_surface: \u2713 SUPPORTED (+6.0) \u2014 Evidence explicitly confirms 'REST' as an API surface. See https://www.freshworks.com/freshdesk/pricing/.\n  \u2022 self_serve_status: ? AMBIGUOUS (-2.2) \u2014 Evidence does not mention self_serve_status. This is unclear.\n  \u2022 buildability_verdict: \u2713 SUPPORTED (+3.0) \u2014 Evidence explicitly confirms 'Easy' as the buildability_verdict. See https://www.freshworks.com/freshdesk/pricing/.\n  \u2022 mcp_available: ? AMBIGUOUS (-0.2) \u2014 Evidence does not confirm 'mcp_available'. However, 'Multi-Language Support' feature does exist in Freshdesk which supports the 'mcp_available'. Therefore, ambiguous=true and contradicted=false.",
+      "Verified with minor evidence gaps in: ['self_serve_status']. Non-critical ambiguity does not block verification."
     ],
     "notes": null
   },
@@ -2358,15 +2361,16 @@
         "claim_supported": "SOC 2 Type II certified and enterprise-grade security"
       }
     ],
-    "confidence_score": 60.0,
-    "status": "Failed",
+    "confidence_score": 50.0,
+    "status": "Manual Review",
     "manual_review_required": true,
     "research_timestamp": "2026-07-17T12:52:58.131470",
-    "verification_timestamp": "2026-07-17T14:54:29.971248",
-    "processing_time_seconds": 20.71,
+    "verification_timestamp": "2026-07-17T17:37:41.999523",
+    "processing_time_seconds": 34.42,
     "processing_notes": [
       "Insufficient documentation; pricing not explicitly stated as API-based or integration-friendly",
-      "Verification Failed with exception: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kkx482h7e24rjrzy1mby4r5y` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 4458, Requested 2856. Please try again in 13.14s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+      "[Validation Error] LLM output failed schema validation: Error code: 400 - {'error': {'message': \"Failed to generate JSON. Please adjust your prompt. See 'failed_generation' for",
+      "[LLM Failure] LLM verification exhausted all retries. Flagged for human review."
     ],
     "notes": null
   },
@@ -2550,14 +2554,15 @@
         "claim_supported": "Has a self-serve pricing plan for small-scale businesses"
       }
     ],
-    "confidence_score": 98.0,
-    "status": "Failed",
-    "manual_review_required": false,
+    "confidence_score": 88.0,
+    "status": "Manual Review",
+    "manual_review_required": true,
     "research_timestamp": "2026-07-17T12:59:21.816170",
-    "verification_timestamp": "2026-07-17T14:56:12.575930",
-    "processing_time_seconds": 35.92,
+    "verification_timestamp": "2026-07-17T17:38:08.313879",
+    "processing_time_seconds": 62.230000000000004,
     "processing_notes": [
-      "Verification Failed with exception: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kkx482h7e24rjrzy1mby4r5y` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 5403, Requested 3962. Please try again in 33.65s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}"
+      "[Validation Error] LLM output failed schema validation: Error code: 400 - {'error': {'message': \"Failed to generate JSON. Please adjust your prompt. See 'failed_generation' for",
+      "[LLM Failure] LLM verification exhausted all retries. Flagged for human review."
     ],
     "notes": "Mixpanel is ideal for companies seeking insights on user behavior and customer interactions."
   },
