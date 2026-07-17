@@ -92,6 +92,12 @@ Open http://localhost:8000
 
 Pipeline runs also copy JSON artifacts into `templates/data/` automatically.
 
+## Limitations
+
+- Some research-stage extractions may fail due to LLM structured-output validation or external API rate limits.
+- The pipeline intentionally reports these cases as failed instead of generating unreliable metadata.
+- Future improvements include retry mechanisms, alternative LLM providers, and more robust structured-output handling.
+
 ## Future Improvements
 
 - Integrate Composio SDK for native tool execution
