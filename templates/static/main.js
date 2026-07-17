@@ -92,6 +92,9 @@ async function loadData() {
   // Populate Executive Summary
   populateExecutiveSummary(insights);
 
+  // Populate Results at a Glance
+  populateResultsGlance(report);
+
   // Populate Dataset Overview (KPIs)
   populateDatasetKPIs(report, insights);
 
@@ -124,14 +127,14 @@ function populateExecutiveSummary(insights) {
   `;
 }
 
-function populateDatasetKPIs(report, insights) {
-  const container = document.querySelector('#dataset .content-container');
+function populateResultsGlance(report) {
+  const container = document.querySelector('#results-glance .content-container');
   if (!container) return;
 
   container.innerHTML = `
     <div class="kpi-grid">
         <div class="kpi-card">
-            <span class="kpi-label">Total Applications Audited</span>
+            <span class="kpi-label">Applications Researched</span>
             <span class="kpi-value">${report.total_apps || 104}</span>
             <span class="kpi-detail">Complete CSV Target Batch</span>
         </div>
@@ -141,17 +144,52 @@ function populateDatasetKPIs(report, insights) {
             <span class="kpi-detail">Approved by Verifier Agent</span>
         </div>
         <div class="kpi-card">
-            <span class="kpi-label">Manual Review Queue</span>
+            <span class="kpi-label">Human Review Required</span>
             <span class="kpi-value highlight-review">${report.manual_review_required || 33}</span>
             <span class="kpi-detail">Ambiguous Evidence / Flagged</span>
         </div>
         <div class="kpi-card">
-            <span class="kpi-label">Unresolved / Failed</span>
+            <span class="kpi-label">Verification Failed</span>
             <span class="kpi-value highlight-failed">${report.failed || 44}</span>
             <span class="kpi-detail">Failed Scraping or Exceptions</span>
         </div>
         <div class="kpi-card">
-            <span class="kpi-label">Average Confidence Score</span>
+            <span class="kpi-label">Average Verification Confidence</span>
+            <span class="kpi-value">${report.average_confidence ? report.average_confidence + '%' : '47.85%'}</span>
+            <span class="kpi-detail">LLM Self-Assessment Avg</span>
+        </div>
+    </div>
+  `;
+}
+
+function populateDatasetKPIs(report, insights) {
+  const container = document.querySelector('#dataset .content-container');
+  if (!container) return;
+
+  container.innerHTML = `
+    <div class="kpi-grid">
+        <div class="kpi-card">
+            <span class="kpi-label">Applications Researched</span>
+            <span class="kpi-value">${report.total_apps || 104}</span>
+            <span class="kpi-detail">Complete CSV Target Batch</span>
+        </div>
+        <div class="kpi-card">
+            <span class="kpi-label">Automatically Verified</span>
+            <span class="kpi-value highlight-verified">${report.automatically_verified || 27}</span>
+            <span class="kpi-detail">Approved by Verifier Agent</span>
+        </div>
+        <div class="kpi-card">
+            <span class="kpi-label">Human Review Required</span>
+            <span class="kpi-value highlight-review">${report.manual_review_required || 33}</span>
+            <span class="kpi-detail">Ambiguous Evidence / Flagged</span>
+        </div>
+        <div class="kpi-card">
+            <span class="kpi-label">Verification Failed</span>
+            <span class="kpi-value highlight-failed">${report.failed || 44}</span>
+            <span class="kpi-detail">Failed Scraping or Exceptions</span>
+        </div>
+        <div class="kpi-card">
+            <span class="kpi-label">Average Verification Confidence</span>
             <span class="kpi-value">${report.average_confidence ? report.average_confidence + '%' : '47.85%'}</span>
             <span class="kpi-detail">LLM Self-Assessment Avg</span>
         </div>

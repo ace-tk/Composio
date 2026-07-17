@@ -12,6 +12,7 @@
         <nav id="main-navigation">
             <a href="#hero" class="nav-logo">AI SaaS Pipeline</a>
             <ul class="nav-links">
+                <li><a href="#results-glance">Results</a></li>
                 <li><a href="#executive-summary">Summary</a></li>
                 <li><a href="#objective">Objective</a></li>
                 <li><a href="#architecture">Architecture</a></li>
@@ -33,11 +34,48 @@
         <section id="hero">
             <div class="container">
                 <span class="badge">Case Study</span>
-                <h1 class="project-title">Autonomous AI SaaS Integration Pipeline</h1>
-                <p class="one-line-description">An end-to-end multi-agent system designed for automated research, adversarial verification, and strategic pattern analysis of 100+ SaaS applications.</p>
+                <h1 class="project-title">Autonomous SaaS Research & Verification System</h1>
+                <p class="one-line-description">Autonomously researched, verified, and analyzed 104 SaaS applications using a multi-agent AI pipeline.</p>
                 <div class="cta-buttons">
-                    <a href="#executive-summary" class="btn btn-primary">Read Case Study</a>
+                    <a href="#results-glance" class="btn btn-primary">Explore Results</a>
                     <a href="#repository" class="btn btn-secondary">Explore Codebase</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 1.5 Results at a Glance Section -->
+        <section id="results-glance">
+            <div class="container">
+                <h2 class="section-heading">Results at a Glance</h2>
+                <p class="section-subtitle">Key outcomes from the autonomous research and verification pipeline.</p>
+                <div class="content-container">
+                    <div class="kpi-grid">
+                        <div class="kpi-card">
+                            <span class="kpi-label">Applications Researched</span>
+                            <span class="kpi-value">104</span>
+                            <span class="kpi-detail">Complete CSV Target Batch</span>
+                        </div>
+                        <div class="kpi-card">
+                            <span class="kpi-label">Automatically Verified</span>
+                            <span class="kpi-value highlight-verified">27</span>
+                            <span class="kpi-detail">Approved by Verifier Agent</span>
+                        </div>
+                        <div class="kpi-card">
+                            <span class="kpi-label">Human Review Required</span>
+                            <span class="kpi-value highlight-review">33</span>
+                            <span class="kpi-detail">Ambiguous Evidence / Flagged</span>
+                        </div>
+                        <div class="kpi-card">
+                            <span class="kpi-label">Verification Failed</span>
+                            <span class="kpi-value highlight-failed">44</span>
+                            <span class="kpi-detail">Failed Scraping or Exceptions</span>
+                        </div>
+                        <div class="kpi-card">
+                            <span class="kpi-label">Average Verification Confidence</span>
+                            <span class="kpi-value">47.85%</span>
+                            <span class="kpi-detail">LLM Self-Assessment Avg</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -248,7 +286,7 @@
                 <div class="content-container">
                     <div class="kpi-grid">
                         <div class="kpi-card">
-                            <span class="kpi-label">Total Applications</span>
+                            <span class="kpi-label">Applications Researched</span>
                             <span class="kpi-value">104</span>
                             <span class="kpi-detail">Complete CSV Target Batch</span>
                         </div>
@@ -258,17 +296,17 @@
                             <span class="kpi-detail">Approved by Verifier Agent</span>
                         </div>
                         <div class="kpi-card">
-                            <span class="kpi-label">Manual Review Required</span>
+                            <span class="kpi-label">Human Review Required</span>
                             <span class="kpi-value highlight-review">33</span>
                             <span class="kpi-detail">Ambiguous Evidence / Flagged</span>
                         </div>
                         <div class="kpi-card">
-                            <span class="kpi-label">Failed Verification</span>
+                            <span class="kpi-label">Verification Failed</span>
                             <span class="kpi-value highlight-failed">44</span>
                             <span class="kpi-detail">Failed Scraping or Exceptions</span>
                         </div>
                         <div class="kpi-card">
-                            <span class="kpi-label">Average Confidence Score</span>
+                            <span class="kpi-label">Average Verification Confidence</span>
                             <span class="kpi-value">47.85%</span>
                             <span class="kpi-detail">LLM Self-Assessment Avg</span>
                         </div>
@@ -605,19 +643,32 @@
                             </div>
                         </div>
                         <div class="repo-run">
-                            <h4>Quick Start</h4>
-                            <div class="code-block">
-                                <pre><code># 1. Set your Groq API key
-export $(cat .env | xargs)
-
-# 2. Install dependencies
-pip install -r requirements.txt
-
-# 3. Run the full pipeline
-python main.py
-
-# 4. Open the case study
-open templates/index.html</code></pre>
+                            <h4>Generated Project Outputs</h4>
+                            <div class="outputs-list" style="display: flex; flex-direction: column; gap: 15px; margin-top: 15px;">
+                                <div class="output-item" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); padding: 12px 16px; border-radius: 8px;">
+                                    <code style="color: #c084fc; font-family: monospace; font-size: 14px; font-weight: 600;">research.json</code>
+                                    <p style="margin: 4px 0 0 0; font-size: 13px; color: #a1a1aa; line-height: 1.4;">Raw integration claims and source documentation URLs extracted during the first research pass.</p>
+                                </div>
+                                <div class="output-item" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); padding: 12px 16px; border-radius: 8px;">
+                                    <code style="color: #c084fc; font-family: monospace; font-size: 14px; font-weight: 600;">verified.json</code>
+                                    <p style="margin: 4px 0 0 0; font-size: 13px; color: #a1a1aa; line-height: 1.4;">The clean, structured, and verified directory of SaaS applications and their verified auth/API schemas.</p>
+                                </div>
+                                <div class="output-item" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); padding: 12px 16px; border-radius: 8px;">
+                                    <code style="color: #c084fc; font-family: monospace; font-size: 14px; font-weight: 600;">verification_report.json</code>
+                                    <p style="margin: 4px 0 0 0; font-size: 13px; color: #a1a1aa; line-height: 1.4;">Contains verification metrics, confidence scores, and failure summaries.</p>
+                                </div>
+                                <div class="output-item" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); padding: 12px 16px; border-radius: 8px;">
+                                    <code style="color: #c084fc; font-family: monospace; font-size: 14px; font-weight: 600;">insights.json</code>
+                                    <p style="margin: 4px 0 0 0; font-size: 13px; color: #a1a1aa; line-height: 1.4;">Strategic ecosystem patterns, API distributions, and buildability recommendations generated by the Analyst.</p>
+                                </div>
+                                <div class="output-item" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); padding: 12px 16px; border-radius: 8px;">
+                                    <code style="color: #c084fc; font-family: monospace; font-size: 14px; font-weight: 600;">workflow.json</code>
+                                    <p style="margin: 4px 0 0 0; font-size: 13px; color: #a1a1aa; line-height: 1.4;">Execution checkpoints, timing metrics, and status logs tracing the pipeline run.</p>
+                                </div>
+                                <div class="output-item" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); padding: 12px 16px; border-radius: 8px;">
+                                    <code style="color: #c084fc; font-family: monospace; font-size: 14px; font-weight: 600;">case_studies.json</code>
+                                    <p style="margin: 4px 0 0 0; font-size: 13px; color: #a1a1aa; line-height: 1.4;">Adversarial verification examples showing raw/verified discrepancy details and LLM self-assessments.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
