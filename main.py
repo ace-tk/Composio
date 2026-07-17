@@ -68,7 +68,7 @@ async def process_apps():
         # Resume capability
         if app_name in existing_data:
             status = existing_data[app_name].get("status")
-            if status in [ResearchStatus.RESEARCHED.value, ResearchStatus.VERIFIED.value, ResearchStatus.MANUAL_REVIEW.value]:
+            if status in [ResearchStatus.RESEARCHED.value, ResearchStatus.VERIFIED.value, ResearchStatus.MANUAL_REVIEW.value, ResearchStatus.FAILED.value]:
                 logger.info(f"Skipping {app_name}, already researched (Status: {status}).")
                 continue
             
@@ -117,6 +117,9 @@ async def process_apps():
             logger.error(f"Permanently failed to process {app_name}.")
         else:
             logger.info(f"Saved Successfully: {app_name}")
+
+        # Rate-limit guard: Groq free-tier allows ~30 req/min; sleep between apps
+        await asyncio.sleep(15)
             
     logger.info("Research pipeline complete.")
 
