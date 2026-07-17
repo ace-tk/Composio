@@ -123,6 +123,66 @@ async def process_apps():
             
     logger.info("Research pipeline complete.")
 
+def classify_failure(app_data: SaaSApplicationData) -> Optional[str]:
+    """
+    Classifies a failed or manual review application into a standardized failure category
+    by inspecting its processing notes, status, and other fields.
+    """
+    if app_data.status not in [ResearchStatus.MANUAL_REVIEW, ResearchStatus.FAILED]:
+        return None
+
+    # Gather all text describing the failure/review reason
+    text_blocks = []
+    if app_data.processing_notes:
+        text_blocks.extend(app_data.processing_notes)
+    if hasattr(app_data, 'notes') and app_data.notes:
+        text_blocks.append(app_data.notes)
+    if app_data.one_line_description:
+        text_blocks.append(app_data.one_line_description)
+    if app_data.agent_summary:
+        text_blocks.append(app_data.agent_summary)
+
+    combined_text = " ".join(text_blocks).lower()
+
+    # Match patterns to standardized categories in order of specificity
+    # 1. Rate Limit
+    if any(p in combined_text for p in ["429", "rate limit"]):
+        return "Rate Limit"
+
+    # 2. Validation Error
+    if any(p in combined_text for p in ["failed to call a function", "tool call validation failed", "schema validation", "json_validate_failed", "validation error"]):
+        return "Validation Error"
+
+    # 3. Network Error
+    if any(p in combined_text for p in ["timeout", "network error", "connection error"]):
+        return "Network Error"
+
+    # 4. Evidence Fetch Failure
+    if any(p in combined_text for p in ["could not fetch text", "no evidence urls", "fetch failed", "evidence fetch failure", "no scraped content", "content loaded is also empty"]):
+        return "Evidence Fetch Failure"
+
+    # 5. LLM Failure
+    if any(p in combined_text for p in ["exhausted all retries", "llm failure"]):
+        return "LLM Failure"
+
+    # 6. Contradictory Evidence
+    if any(p in combined_text for p in ["contradict", "conflict", "does not match"]):
+        return "Contradictory Evidence"
+
+    # 7. Unsupported Claim
+    if any(p in combined_text for p in ["unsupported", "does not support", "not supported", "unspecified"]):
+        return "Unsupported Claim"
+
+    # 8. Documentation Ambiguity
+    if any(p in combined_text for p in ["insufficient evidence", "silent", "ambiguous", "does not explicitly", "insufficient", "not explicitly", "limited info", "limited", "incomplete"]):
+        return "Documentation Ambiguity"
+
+    # 9. Unexpected Exception
+    if any(p in combined_text for p in ["exception", "crash"]):
+        return "Unexpected Exception"
+
+    return "Other"
+
 async def process_verification():
     logger.info("Starting Verification Pipeline...")
     
@@ -160,9 +220,14 @@ async def process_verification():
         "failure_categories": {
             "Rate Limit": 0,
             "Evidence Fetch Failure": 0,
-            "Documentation Ambiguity": 0,
+            "LLM Failure": 0,
             "Validation Error": 0,
-            "Unexpected Exception": 0
+            "Documentation Ambiguity": 0,
+            "Contradictory Evidence": 0,
+            "Unsupported Claim": 0,
+            "Network Error": 0,
+            "Unexpected Exception": 0,
+            "Other": 0
         }
     }
     
@@ -207,20 +272,27 @@ async def process_verification():
             
         total_confidence += app_data.confidence_score
         
-        if app_data.status != ResearchStatus.VERIFIED and app_data.processing_notes:
-            last_note = app_data.processing_notes[-1]
-            report["common_failure_reasons"].append(f"{app_name}: {last_note[:120]}")
-            # Tally structured failure categories from bracketed prefixes in notes
-            for note in app_data.processing_notes:
-                for category in report["failure_categories"]:
-                    if f"[{category}]" in note:
-                        report["failure_categories"][category] += 1
-                        break
+        if app_data.status != ResearchStatus.VERIFIED:
+            if app_data.processing_notes:
+                last_note = app_data.processing_notes[-1]
+                report["common_failure_reasons"].append(f"{app_name}: {last_note[:120]}")
+            
+            category = classify_failure(app_data)
+            if category and category in report["failure_categories"]:
+                report["failure_categories"][category] += 1
             
     if report["total_apps"] > 0:
         report["average_confidence"] = round(total_confidence / report["total_apps"], 2)
         
     report["verification_time"] = round(time.time() - start_time, 2)
+
+    # Validation check
+    total_failures_and_review = report["failed"] + report["manual_review_required"]
+    sum_categorized = sum(report["failure_categories"].values())
+    if sum_categorized > total_failures_and_review:
+        logger.error(f"Validation failed: sum of categorized failures ({sum_categorized}) > total failed + manual review ({total_failures_and_review})")
+    else:
+        logger.info(f"Validation passed: sum of categorized failures ({sum_categorized}) <= total failed + manual review ({total_failures_and_review})")
     
     with open(REPORT_JSON, "w") as f:
         json.dump(report, f, indent=2)
