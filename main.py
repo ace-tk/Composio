@@ -156,7 +156,14 @@ async def process_verification():
         "failed": 0,
         "average_confidence": 0.0,
         "verification_time": 0.0,
-        "common_failure_reasons": []
+        "common_failure_reasons": [],
+        "failure_categories": {
+            "Rate Limit": 0,
+            "Evidence Fetch Failure": 0,
+            "Documentation Ambiguity": 0,
+            "Validation Error": 0,
+            "Unexpected Exception": 0
+        }
     }
     
     total_confidence = 0.0
@@ -201,7 +208,14 @@ async def process_verification():
         total_confidence += app_data.confidence_score
         
         if app_data.status != ResearchStatus.VERIFIED and app_data.processing_notes:
-            report["common_failure_reasons"].append(f"{app_name}: {app_data.processing_notes[-1][:100]}...")
+            last_note = app_data.processing_notes[-1]
+            report["common_failure_reasons"].append(f"{app_name}: {last_note[:120]}")
+            # Tally structured failure categories from bracketed prefixes in notes
+            for note in app_data.processing_notes:
+                for category in report["failure_categories"]:
+                    if f"[{category}]" in note:
+                        report["failure_categories"][category] += 1
+                        break
             
     if report["total_apps"] > 0:
         report["average_confidence"] = round(total_confidence / report["total_apps"], 2)
