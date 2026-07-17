@@ -1,15 +1,20 @@
 import asyncio
-import csv
 import json
 import logging
-import os
 import time
 from pathlib import Path
+from typing import Optional
 
 from agents.researcher import ResearchAgent
 from agents.verifier import VerifierAgent
 from agents.analyst import AnalystAgent
 from scripts.generate_metadata import generate_workflow_metadata, generate_case_studies
+from utils.dataset_sync import (
+    load_apps_csv,
+    load_records_by_app_name,
+    records_to_ordered_list,
+    sync_json_to_apps_csv,
+)
 from utils.models import SaaSApplicationData, ResearchStatus
 
 # Configure robust logging
@@ -28,6 +33,21 @@ INSIGHTS_JSON = DATA_DIR / "insights.json"
 WORKFLOW_JSON = DATA_DIR / "workflow.json"
 CASE_STUDIES_JSON = DATA_DIR / "case_studies.json"
 
+
+def _save_research_records(records: dict[str, dict], ordered_app_names: list[str]) -> None:
+    """Persist research.json using only apps from the current apps.csv."""
+    ordered_records = records_to_ordered_list(records, ordered_app_names)
+    with open(RESEARCH_JSON, "w") as f:
+        json.dump(ordered_records, f, indent=2)
+
+
+def _save_verified_records(records: dict[str, dict], ordered_app_names: list[str]) -> None:
+    """Persist verified.json using only apps from the current apps.csv."""
+    ordered_records = records_to_ordered_list(records, ordered_app_names)
+    with open(VERIFIED_JSON, "w") as f:
+        json.dump(ordered_records, f, indent=2)
+
+
 async def process_apps():
     """
     Reads apps from CSV and runs the ResearchAgent on each.
@@ -35,52 +55,39 @@ async def process_apps():
     Handles network retries gracefully.
     """
     agent = ResearchAgent()
-    
-    existing_data = {}
-    if RESEARCH_JSON.exists():
-        try:
-            with open(RESEARCH_JSON, "r") as f:
-                data_list = json.load(f)
-                for item in data_list:
-                    existing_data[item["app_name"]] = item
-            logger.info(f"Loaded {len(existing_data)} existing records. Resuming research...")
-        except json.JSONDecodeError:
-            logger.warning("research.json is corrupted or empty. Starting fresh.")
 
-    apps_to_process = []
-    if APPS_CSV.exists():
-        with open(APPS_CSV, "r") as f:
-            reader = csv.DictReader(f)
-            for row in reader:
-                apps_to_process.append(row)
-    else:
-        logger.error(f"Cannot find {APPS_CSV}. Please ensure it exists.")
+    apps_to_process, ordered_app_names = load_apps_csv(APPS_CSV)
+    if not apps_to_process:
+        logger.error(f"Cannot find {APPS_CSV} or it is empty. Please ensure it exists.")
         return
-            
-    # Filter existing_data to keep only current apps in apps.csv, purging stale ones
-    current_app_names = {row["app_name"] for row in apps_to_process}
-    original_count = len(existing_data)
-    existing_data = {app: data for app, data in existing_data.items() if app in current_app_names}
-    if len(existing_data) < original_count:
-        logger.info(f"Purged {original_count - len(existing_data)} stale research records.")
-        with open(RESEARCH_JSON, "w") as f:
-            json.dump(list(existing_data.values()), f, indent=2)
+
+    allowed_app_names = set(ordered_app_names)
+    existing_data, _, _ = sync_json_to_apps_csv(
+        RESEARCH_JSON, allowed_app_names, ordered_app_names
+    )
+    if existing_data:
+        logger.info(f"Loaded {len(existing_data)} existing records. Resuming research...")
 
     total_apps = len(apps_to_process)
-    
+
     for idx, row in enumerate(apps_to_process, 1):
         app_name = row["app_name"]
         website = row["url"]
-        
+
         logger.info(f"Progress: [{idx}/{total_apps}] - Processing {app_name}")
-        
+
         # Resume capability
         if app_name in existing_data:
             status = existing_data[app_name].get("status")
-            if status in [ResearchStatus.RESEARCHED.value, ResearchStatus.VERIFIED.value, ResearchStatus.MANUAL_REVIEW.value, ResearchStatus.FAILED.value]:
+            if status in [
+                ResearchStatus.RESEARCHED.value,
+                ResearchStatus.VERIFIED.value,
+                ResearchStatus.MANUAL_REVIEW.value,
+                ResearchStatus.FAILED.value,
+            ]:
                 logger.info(f"Skipping {app_name}, already researched (Status: {status}).")
                 continue
-            
+
         # Resilient Execution Loop (Max 3 retries for transient errors)
         max_retries = 3
         result = None
@@ -88,11 +95,13 @@ async def process_apps():
             try:
                 result = await agent.run(app_name, website)
                 if result.status == ResearchStatus.FAILED:
-                    logger.warning(f"Agent returned FAILED for {app_name}. Retrying ({attempt+1}/{max_retries})...")
+                    logger.warning(
+                        f"Agent returned FAILED for {app_name}. Retrying ({attempt+1}/{max_retries})..."
+                    )
                     if attempt < max_retries - 1:
                         await asyncio.sleep(2 ** attempt)
                         continue
-                break # Success or max retries reached
+                break  # Success or max retries reached
             except Exception as e:
                 logger.error(f"Unexpected crash while processing {app_name}: {e}")
                 if attempt < max_retries - 1:
@@ -116,12 +125,11 @@ async def process_apps():
                         evidence=[]
                     )
                     break
-        
+
         # Save atomically immediately after every single app
         existing_data[app_name] = result.model_dump(mode='json')
-        with open(RESEARCH_JSON, "w") as f:
-            json.dump(list(existing_data.values()), f, indent=2)
-            
+        _save_research_records(existing_data, ordered_app_names)
+
         if result.status == ResearchStatus.FAILED:
             logger.error(f"Permanently failed to process {app_name}.")
         else:
@@ -129,8 +137,11 @@ async def process_apps():
 
         # Rate-limit guard: Groq free-tier allows ~30 req/min; sleep between apps
         await asyncio.sleep(15)
-            
+
+    # Ensure stale on-disk records are removed even when every app was skipped.
+    _save_research_records(existing_data, ordered_app_names)
     logger.info("Research pipeline complete.")
+
 
 def classify_failure(app_data: SaaSApplicationData) -> Optional[str]:
     """
@@ -192,43 +203,37 @@ def classify_failure(app_data: SaaSApplicationData) -> Optional[str]:
 
     return "Other"
 
+
 async def process_verification():
     logger.info("Starting Verification Pipeline...")
-    
+
+    apps_to_process, ordered_app_names = load_apps_csv(APPS_CSV)
+    if not apps_to_process:
+        logger.error(f"Cannot find {APPS_CSV} or it is empty.")
+        return
+
+    allowed_app_names = set(ordered_app_names)
+
     if not RESEARCH_JSON.exists():
         logger.error("No research.json found. Please run the research pipeline first.")
         return
-        
-    with open(RESEARCH_JSON, "r") as f:
-        try:
-            research_data = json.load(f)
-        except json.JSONDecodeError:
-            logger.error("research.json is corrupted.")
-            return
+
+    research_records, research_data, _ = sync_json_to_apps_csv(
+        RESEARCH_JSON, allowed_app_names, ordered_app_names
+    )
+    if not research_records:
+        logger.error("No research records found for the current apps.csv.")
+        return
 
     verifier = VerifierAgent()
-    verified_data = {}
-    if VERIFIED_JSON.exists():
-        try:
-            with open(VERIFIED_JSON, "r") as f:
-                data_list = json.load(f)
-                for item in data_list:
-                    verified_data[item["app_name"]] = item
-            logger.info(f"Loaded {len(verified_data)} existing verified records.")
-        except json.JSONDecodeError:
-            pass
-
-    # Filter verified_data to keep only current apps in research_data, purging stale ones
-    current_research_names = {item["app_name"] for item in research_data}
-    original_verified_count = len(verified_data)
-    verified_data = {app: data for app, data in verified_data.items() if app in current_research_names}
-    if len(verified_data) < original_verified_count:
-        logger.info(f"Purged {original_verified_count - len(verified_data)} stale verified records.")
-        with open(VERIFIED_JSON, "w") as f:
-            json.dump(list(verified_data.values()), f, indent=2)
+    verified_data, _, _ = sync_json_to_apps_csv(
+        VERIFIED_JSON, allowed_app_names, ordered_app_names
+    )
+    if verified_data:
+        logger.info(f"Loaded {len(verified_data)} existing verified records.")
 
     report = {
-        "total_apps": len(research_data),
+        "total_apps": len(ordered_app_names),
         "automatically_verified": 0,
         "manual_review_required": 0,
         "failed": 0,
@@ -248,37 +253,43 @@ async def process_verification():
             "Other": 0
         }
     }
-    
+
     total_confidence = 0.0
     start_time = time.time()
-    
-    total_apps = len(research_data)
-    for idx, item in enumerate(research_data, 1):
-        app_name = item["app_name"]
+
+    total_apps = len(ordered_app_names)
+    for idx, app_name in enumerate(ordered_app_names, 1):
         logger.info(f"Verification Progress: [{idx}/{total_apps}] - {app_name}")
-        
+
+        item = research_records.get(app_name)
+        if not item:
+            logger.warning(f"No research record for {app_name}; skipping verification.")
+            continue
+
         app_data = SaaSApplicationData.model_validate(item)
-        
-        if app_name in verified_data and verified_data[app_name].get("status") in [ResearchStatus.VERIFIED.value, ResearchStatus.MANUAL_REVIEW.value]:
-             app_data = SaaSApplicationData.model_validate(verified_data[app_name])
+
+        if app_name in verified_data and verified_data[app_name].get("status") in [
+            ResearchStatus.VERIFIED.value,
+            ResearchStatus.MANUAL_REVIEW.value,
+        ]:
+            app_data = SaaSApplicationData.model_validate(verified_data[app_name])
         else:
-             if app_data.status not in [ResearchStatus.FAILED, ResearchStatus.NEW]:
-                 # Resilient verification execution
-                 max_retries = 3
-                 for attempt in range(max_retries):
-                     try:
-                         app_data = await verifier.verify(app_data)
-                         break
-                     except Exception as e:
-                         if attempt < max_retries - 1:
-                             await asyncio.sleep(2 ** attempt)
-                         else:
-                             logger.error(f"Verification crashed for {app_name}: {e}")
-                             app_data.status = ResearchStatus.FAILED
-                 
-                 verified_data[app_name] = app_data.model_dump(mode='json')
-                 with open(VERIFIED_JSON, "w") as f:
-                     json.dump(list(verified_data.values()), f, indent=2)
+            if app_data.status not in [ResearchStatus.FAILED, ResearchStatus.NEW]:
+                # Resilient verification execution
+                max_retries = 3
+                for attempt in range(max_retries):
+                    try:
+                        app_data = await verifier.verify(app_data)
+                        break
+                    except Exception as e:
+                        if attempt < max_retries - 1:
+                            await asyncio.sleep(2 ** attempt)
+                        else:
+                            logger.error(f"Verification crashed for {app_name}: {e}")
+                            app_data.status = ResearchStatus.FAILED
+
+            verified_data[app_name] = app_data.model_dump(mode='json')
+            _save_verified_records(verified_data, ordered_app_names)
 
         # Update Stats
         if app_data.status == ResearchStatus.VERIFIED:
@@ -287,52 +298,72 @@ async def process_verification():
             report["manual_review_required"] += 1
         elif app_data.status == ResearchStatus.FAILED:
             report["failed"] += 1
-            
+
         total_confidence += app_data.confidence_score
-        
+
         if app_data.status != ResearchStatus.VERIFIED:
             if app_data.processing_notes:
                 last_note = app_data.processing_notes[-1]
                 report["common_failure_reasons"].append(f"{app_name}: {last_note[:120]}")
-            
+
             category = classify_failure(app_data)
             if category and category in report["failure_categories"]:
                 report["failure_categories"][category] += 1
-            
+
     if report["total_apps"] > 0:
         report["average_confidence"] = round(total_confidence / report["total_apps"], 2)
-        
+
     report["verification_time"] = round(time.time() - start_time, 2)
 
     # Validation check
     total_failures_and_review = report["failed"] + report["manual_review_required"]
     sum_categorized = sum(report["failure_categories"].values())
     if sum_categorized > total_failures_and_review:
-        logger.error(f"Validation failed: sum of categorized failures ({sum_categorized}) > total failed + manual review ({total_failures_and_review})")
+        logger.error(
+            f"Validation failed: sum of categorized failures ({sum_categorized}) > "
+            f"total failed + manual review ({total_failures_and_review})"
+        )
     else:
-        logger.info(f"Validation passed: sum of categorized failures ({sum_categorized}) <= total failed + manual review ({total_failures_and_review})")
-    
+        logger.info(
+            f"Validation passed: sum of categorized failures ({sum_categorized}) <= "
+            f"total failed + manual review ({total_failures_and_review})"
+        )
+
+    _save_verified_records(verified_data, ordered_app_names)
+
     with open(REPORT_JSON, "w") as f:
         json.dump(report, f, indent=2)
-        
+
     logger.info("Verification pipeline complete.")
+
 
 async def process_analysis():
     logger.info("Starting Pattern Analysis Engine...")
-    
+
+    _, ordered_app_names = load_apps_csv(APPS_CSV)
+    allowed_app_names = set(ordered_app_names)
+
     if not VERIFIED_JSON.exists():
         logger.error("No verified.json found.")
         return
-        
-    with open(VERIFIED_JSON, "r") as f:
-         verified_data = json.load(f)
-            
-    apps_to_analyze = [SaaSApplicationData.model_validate(item) for item in verified_data if item.get("status") == ResearchStatus.VERIFIED.value]
-            
+
+    verified_records, verified_data, _ = sync_json_to_apps_csv(
+        VERIFIED_JSON, allowed_app_names, ordered_app_names
+    )
+    if not verified_data:
+        logger.warning("No verified records available for analysis.")
+        return
+
+    apps_to_analyze = [
+        SaaSApplicationData.model_validate(item)
+        for item in verified_data
+        if item.get("status") == ResearchStatus.VERIFIED.value
+    ]
+
     if not apps_to_analyze:
         logger.warning("No fully VERIFIED apps available for analysis.")
         return
-        
+
     analyst = AnalystAgent()
     try:
         report = await analyst.analyze(apps_to_analyze)
@@ -342,11 +373,15 @@ async def process_analysis():
     except Exception as e:
         logger.error(f"Failed to generate analysis: {e}")
 
+
 def validate_outputs():
     """Verifies all expected JSON files were created and are valid."""
     logger.info("Validating output artifacts...")
     required_files = [RESEARCH_JSON, VERIFIED_JSON, REPORT_JSON, INSIGHTS_JSON, WORKFLOW_JSON, CASE_STUDIES_JSON]
-    
+
+    _, ordered_app_names = load_apps_csv(APPS_CSV)
+    expected_app_count = len(ordered_app_names)
+
     all_valid = True
     for fpath in required_files:
         if not fpath.exists():
@@ -355,35 +390,64 @@ def validate_outputs():
             continue
         try:
             with open(fpath, "r") as f:
-                json.load(f)
+                data = json.load(f)
         except json.JSONDecodeError:
             logger.error(f"CRITICAL ERROR: File is corrupted or invalid JSON: {fpath}")
             all_valid = False
-            
+            continue
+
+        if fpath in {RESEARCH_JSON, VERIFIED_JSON} and isinstance(data, list):
+            synced_records = load_records_by_app_name(fpath)
+            allowed_app_names = set(ordered_app_names)
+            stale_count = len(synced_records) - len(
+                {name for name in synced_records if name in allowed_app_names}
+            )
+            if stale_count:
+                logger.error(
+                    f"CRITICAL ERROR: {fpath.name} contains {stale_count} stale app(s) "
+                    "not present in apps.csv."
+                )
+                all_valid = False
+            if len(data) != expected_app_count:
+                logger.error(
+                    f"CRITICAL ERROR: {fpath.name} has {len(data)} records; "
+                    f"expected {expected_app_count} from apps.csv."
+                )
+                all_valid = False
+
+        if fpath == REPORT_JSON and isinstance(data, dict):
+            if data.get("total_apps") != expected_app_count:
+                logger.error(
+                    f"CRITICAL ERROR: verification_report.json total_apps="
+                    f"{data.get('total_apps')}; expected {expected_app_count}."
+                )
+                all_valid = False
+
     if all_valid:
         logger.info("All output artifacts successfully validated.")
     else:
         logger.error("Pipeline failed output validation.")
+
 
 def print_execution_summary(start_time):
     """Prints a clear terminal summary of the entire run."""
     print("\n" + "="*50)
     print("COMPOSIO AI PIPELINE EXECUTION SUMMARY")
     print("="*50)
-    
+
     try:
         with open(REPORT_JSON, "r") as f:
             report = json.load(f)
-            
+
         print(f"Total Apps Processed:     {report.get('total_apps', 0)}")
         print(f"Automatically Verified:   {report.get('automatically_verified', 0)}")
         print(f"Manual Review Required:   {report.get('manual_review_required', 0)}")
         print(f"Failed Extractions:       {report.get('failed', 0)}")
         print(f"Average AI Confidence:    {report.get('average_confidence', 0)}%")
-        
+
     except Exception:
         print("Error reading verification report.")
-        
+
     elapsed = round(time.time() - start_time, 2)
     print(f"Total Execution Time:     {elapsed} seconds")
     print("\nGenerated Output Files:")
@@ -395,25 +459,26 @@ def print_execution_summary(start_time):
     print("  ✓ data/case_studies.json")
     print("="*50 + "\n")
 
+
 def main():
     start_time = time.time()
-    
+
     async def run_all():
         await process_apps()
         await process_verification()
         await process_analysis()
-        
+
     # Execute the asynchronous pipeline
     asyncio.run(run_all())
-    
+
     # Generate static metadata
     logger.info("Generating workflow metadata and case studies...")
     generate_workflow_metadata()
     generate_case_studies()
-    
+
     # Validate final outputs
     validate_outputs()
-    
+
     # Print summary
     print_execution_summary(start_time)
 

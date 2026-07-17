@@ -1,66 +1,18 @@
 // Client-side script to load and present real case study data from generated outputs.
 
-// Fallback data in case dynamic fetching is blocked (e.g., via file:// protocol CORS)
+function displayCount(value) {
+  return value ?? '—';
+}
+
+function displayPercent(value) {
+  return value != null ? `${value}%` : '—';
+}
+
+// Minimal fallback when dynamic fetching is blocked (e.g., via file:// protocol CORS)
 const fallbackData = {
-  verificationReport: {
-    "total_apps": 104,
-    "automatically_verified": 27,
-    "manual_review_required": 33,
-    "failed": 44,
-    "average_confidence": 47.85,
-    "verification_time": 454.37
-  },
+  verificationReport: {},
   insights: {
-    "summary": "Composio can drive growth by optimizing its core engine for REST + OAuth 2.0, developing a self-serve onboarding process, and establishing business development partnerships with companies in high gated_access categories.",
-    "key_metrics": {
-      "total_verified_apps": 27,
-      "auth_distribution": {
-        "OAuth 2.0": 25,
-        "API Key": 10,
-        "Basic Auth": 5,
-        "JWT": 4,
-        "Unknown": 3,
-        "Other": 3
-      },
-      "api_surface_distribution": {
-        "REST": 26,
-        "GraphQL": 12,
-        "SOAP": 3,
-        "Webhooks": 3,
-        "gRPC": 3,
-        "Unknown": 3,
-        "Other": 3
-      },
-      "access_model_distribution": {
-        "Self-Serve": 21,
-        "Gated": 5,
-        "Unknown": 1
-      },
-      "buildability_distribution": {
-        "Easy": 18,
-        "Moderate": 8,
-        "Unknown": 1
-      },
-      "mcp_adoption_count": 15
-    },
-    "patterns": [
-      "REST + OAuth 2.0 dominates the API tech trends",
-      "Self-serve access model is prevalent"
-    ],
-    "recommendations": [
-      {
-        "finding": "REST + OAuth 2.0 dominates the API tech trends",
-        "recommendation": "Optimize Composio's core engine to support REST + OAuth 2.0, as this will enable seamless integration with the majority of verified SaaS applications."
-      },
-      {
-        "finding": "Self-serve access model is prevalent",
-        "recommendation": "Develop a self-serve onboarding process for Composio to reduce friction and increase adoption rates."
-      },
-      {
-        "finding": "High gated_access in certain categories",
-        "recommendation": "Establish business development partnerships with companies in categories with high gated_access, such as Finance and Customer Service, to facilitate integration and growth."
-      }
-    ]
+    summary: "Load the dashboard via a local HTTP server to fetch live pipeline data."
   }
 };
 
@@ -135,27 +87,27 @@ function populateResultsGlance(report) {
     <div class="kpi-grid">
         <div class="kpi-card">
             <span class="kpi-label">Applications Researched</span>
-            <span class="kpi-value">${report.total_apps || 104}</span>
+            <span class="kpi-value">${displayCount(report.total_apps)}</span>
             <span class="kpi-detail">Complete CSV Target Batch</span>
         </div>
         <div class="kpi-card">
             <span class="kpi-label">Automatically Verified</span>
-            <span class="kpi-value highlight-verified">${report.automatically_verified || 27}</span>
+            <span class="kpi-value highlight-verified">${displayCount(report.automatically_verified)}</span>
             <span class="kpi-detail">Approved by Verifier Agent</span>
         </div>
         <div class="kpi-card">
             <span class="kpi-label">Human Review Required</span>
-            <span class="kpi-value highlight-review">${report.manual_review_required || 33}</span>
+            <span class="kpi-value highlight-review">${displayCount(report.manual_review_required)}</span>
             <span class="kpi-detail">Ambiguous Evidence / Flagged</span>
         </div>
         <div class="kpi-card">
             <span class="kpi-label">Verification Failed</span>
-            <span class="kpi-value highlight-failed">${report.failed || 44}</span>
+            <span class="kpi-value highlight-failed">${displayCount(report.failed)}</span>
             <span class="kpi-detail">Failed Scraping or Exceptions</span>
         </div>
         <div class="kpi-card">
             <span class="kpi-label">Average Verification Confidence</span>
-            <span class="kpi-value">${report.average_confidence ? report.average_confidence + '%' : '47.85%'}</span>
+            <span class="kpi-value">${displayPercent(report.average_confidence)}</span>
             <span class="kpi-detail">LLM Self-Assessment Avg</span>
         </div>
     </div>
@@ -170,27 +122,27 @@ function populateDatasetKPIs(report, insights) {
     <div class="kpi-grid">
         <div class="kpi-card">
             <span class="kpi-label">Applications Researched</span>
-            <span class="kpi-value">${report.total_apps || 104}</span>
+            <span class="kpi-value">${displayCount(report.total_apps)}</span>
             <span class="kpi-detail">Complete CSV Target Batch</span>
         </div>
         <div class="kpi-card">
             <span class="kpi-label">Automatically Verified</span>
-            <span class="kpi-value highlight-verified">${report.automatically_verified || 27}</span>
+            <span class="kpi-value highlight-verified">${displayCount(report.automatically_verified)}</span>
             <span class="kpi-detail">Approved by Verifier Agent</span>
         </div>
         <div class="kpi-card">
             <span class="kpi-label">Human Review Required</span>
-            <span class="kpi-value highlight-review">${report.manual_review_required || 33}</span>
+            <span class="kpi-value highlight-review">${displayCount(report.manual_review_required)}</span>
             <span class="kpi-detail">Ambiguous Evidence / Flagged</span>
         </div>
         <div class="kpi-card">
             <span class="kpi-label">Verification Failed</span>
-            <span class="kpi-value highlight-failed">${report.failed || 44}</span>
+            <span class="kpi-value highlight-failed">${displayCount(report.failed)}</span>
             <span class="kpi-detail">Failed Scraping or Exceptions</span>
         </div>
         <div class="kpi-card">
             <span class="kpi-label">Average Verification Confidence</span>
-            <span class="kpi-value">${report.average_confidence ? report.average_confidence + '%' : '47.85%'}</span>
+            <span class="kpi-value">${displayPercent(report.average_confidence)}</span>
             <span class="kpi-detail">LLM Self-Assessment Avg</span>
         </div>
     </div>
@@ -230,7 +182,7 @@ function populateKeyInsights(insights) {
   container.innerHTML = `
     <div class="insights-layout">
         <div class="insights-top">
-            <p>Analysis of the ${insights.key_metrics ? insights.key_metrics.total_verified_apps : 27} fully verified applications revealed clear technical pathways for core integration optimizations.</p>
+            <p>Analysis of the ${displayCount(insights.key_metrics?.total_verified_apps)} fully verified applications revealed clear technical pathways for core integration optimizations.</p>
         </div>
         <div class="insights-grid">
             ${patternsHTML}

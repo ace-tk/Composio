@@ -13,10 +13,10 @@
       "ai_reasoning_and_decisions": "Verifier Reasoning: Pipedrive API documentation confirms REST API availability, and developers share positive experiences with the API and documentation."
     },
     {
-      "app_name": "Zendesk Sell",
+      "app_name": "Podio",
       "status": "Verified",
-      "confidence_score": 90.9,
-      "ai_reasoning_and_decisions": "Verifier Reasoning: The Zendesk Sell API supports OAuth 2.0 authentication, and the API purpose includes core, search, and filter capabilities through REST API."
+      "confidence_score": 98.59,
+      "ai_reasoning_and_decisions": "Verifier Field Breakdown:\n  \u2022 auth_methods: \u2713 SUPPORTED (+7.5) \u2014 The evidence from the Podio documentation confirms the availability of OAuth 2.0 and API Key as authentication methods.\n  \u2022 api_surface: \u2713 SUPPORTED (+6.0) \u2014 The evidence from the Podio documentation mentions the REST API, indicating support for it.\n  \u2022 self_serve_status: \u2713 SUPPORTED (+4.5) \u2014 According to the Podio pricing page, Podio offers a self-serve API, supporting the claim.\n  \u2022 buildability_verdict: ? AMBIGUOUS (-0.5) \u2014 There is no mention of buildability verdict in the provided evidence, leaving it uncertain.\n  \u2022 mcp_available: \u2713 SUPPORTED (+1.5) \u2014 Based on the evidence, it appears that MCP is available in Podio."
     },
     {
       "app_name": "Zoho CRM",
@@ -25,10 +25,10 @@
       "ai_reasoning_and_decisions": "Verifier Reasoning: The Zoho CRM documentation explicitly mentions the support for REST API at https://www.zoho.com/crm/docs, but does not mention GraphQL API. However, it does contain an Integration section which is a strong indication of API support. We could not find any clear information supporting the claim for team users."
     },
     {
-      "app_name": "Notion",
+      "app_name": "Close",
       "status": "Verified",
-      "confidence_score": 94.5,
-      "ai_reasoning_and_decisions": "Verifier Reasoning: Notion provides a REST API interface for building integrations, as stated in the docs. However, the evidence contradicts the claim that Auth Methods is Basic, as the pricing page mentions OAuth 2.0 as an authentication method. Therefore, manual review is required."
+      "confidence_score": 98.59,
+      "ai_reasoning_and_decisions": "Verifier Field Breakdown:\n  \u2022 auth_methods: \u2713 SUPPORTED (+7.5) \u2014 Evidence explicitly confirms the claim: multiple pricing plans 'Try for free' includes 500 AI credits per user/month, 1,000 AI credits per user/month, 1,500 AI credits per user/month, etc.\n  \u2022 api_surface: \u2713 SUPPORTED (+6.0) \u2014 Evidence explicitly confirms the claim: 'Integrate all of Close's functionality into your existing toolset through our powerful API'.\n  \u2022 self_serve_status: \u2713 SUPPORTED (+4.5) \u2014 Evidence explicitly confirms the claim: 'Self-Serve', a button on pricing page leads to a 30-day money-back guarantee.\n  \u2022 buildability_verdict: ? AMBIGUOUS (-0.5) \u2014 Evidence is silent on this claim, as it only mentions features without mentioning its buildability status.\n  \u2022 mcp_available: \u2713 SUPPORTED (+1.5) \u2014 Evidence explicitly confirms the claim: '500 credits/month', '1,000 credits/month', etc. is mentioned, with an option to refresh the monthly credits."
     }
   ],
   "manual_review_examples": [
@@ -39,48 +39,36 @@
       "ai_reasoning_and_decisions": "Verifier Reasoning: The evidence obtained from the provided URL does not explicitly support or contradict the claim that Salesforce offers a REST API. However, upon further evaluation, it appears that the evidence obtained is incomplete and does not allow for a definitive conclusion. The content loaded is also empty, suggesting that the link might be broken."
     },
     {
-      "app_name": "Freshsales",
+      "app_name": "DealCloud",
       "status": "Manual Review",
-      "confidence_score": 89.5,
-      "ai_reasoning_and_decisions": "Verifier Reasoning: The provided pricing information does not match the claim that API Surface is empty, as it mentions multiple pricing plans and features. Similarly, the Auth Methods are left unspecified."
+      "confidence_score": 68.0,
+      "ai_reasoning_and_decisions": "[Evidence Fetch Failure] No evidence URLs provided by the Researcher."
     },
     {
-      "app_name": "Evernote",
+      "app_name": "Zendesk",
       "status": "Manual Review",
-      "confidence_score": 40.0,
-      "ai_reasoning_and_decisions": "Verifier Reasoning: Text does not explicitly mention OAuth 2.0 support."
+      "confidence_score": 75.0,
+      "ai_reasoning_and_decisions": "Verifier: Could not fetch text from evidence URLs."
     },
     {
-      "app_name": "Asana",
+      "app_name": "Pylon",
       "status": "Manual Review",
-      "confidence_score": 98.0,
-      "ai_reasoning_and_decisions": "Verifier Reasoning: Evidence text directly confirms the existence of a REST API, supporting API key authentication."
+      "confidence_score": 30.0,
+      "ai_reasoning_and_decisions": "[LLM Failure] LLM verification exhausted all retries. Flagged for human review."
     },
     {
-      "app_name": "Trello",
+      "app_name": "Discord",
       "status": "Manual Review",
-      "confidence_score": 70.0,
-      "ai_reasoning_and_decisions": "Verifier Reasoning: Evidence does not explicitly mention OAuth 2.0"
+      "confidence_score": 86.0,
+      "ai_reasoning_and_decisions": "Verifier Reasoning: Multiple authentication methods are listed, but not all claims are explicitly supported by evidence. Authentication method listing is incomplete."
     }
   ],
   "confidence_drop_examples": [
     {
-      "app_name": "Zoom",
+      "app_name": "Gorgias",
       "status": "Verified",
-      "confidence_score": 85.0,
-      "ai_reasoning_and_decisions": "Verifier Reasoning: Both URLs explicitly state support for REST API, which aligns with the original claim of REST API support."
-    },
-    {
-      "app_name": "RingCentral",
-      "status": "Verified",
-      "confidence_score": 85.0,
-      "ai_reasoning_and_decisions": "Verifier Reasoning: Claims were fully supported by evidence."
-    },
-    {
-      "app_name": "Ramp",
-      "status": "Verified",
-      "confidence_score": 80.5,
-      "ai_reasoning_and_decisions": "Verifier Reasoning: Source: https://ramp.com/pricing, Ramp Pricing and Plans start for free. This supports the claim. However, details in the text may require further review."
+      "confidence_score": 89.5,
+      "ai_reasoning_and_decisions": "Verifier Reasoning: The text does not mention any authentication methods other than API Key, but does not explicitly confirm that API Key is the only method."
     },
     {
       "app_name": "Mailchimp",
@@ -89,10 +77,16 @@
       "ai_reasoning_and_decisions": "Verifier Reasoning: The provided evidence supports the claims made by the researcher. Mailchimp's official API documentation lists various integration methods, including OAuth 2.0, which matches the researcher's claim. The documentation also highlights the capabilities of the API, including sending automated emails, which aligns with the researcher's mention of API Surface being REST and GraphQL."
     },
     {
-      "app_name": "Gorgias",
+      "app_name": "Ramp",
       "status": "Verified",
-      "confidence_score": 89.5,
-      "ai_reasoning_and_decisions": "Verifier Reasoning: The text does not mention any authentication methods other than API Key, but does not explicitly confirm that API Key is the only method."
+      "confidence_score": 80.5,
+      "ai_reasoning_and_decisions": "Verifier Reasoning: Source: https://ramp.com/pricing, Ramp Pricing and Plans start for free. This supports the claim. However, details in the text may require further review."
+    },
+    {
+      "app_name": "NotebookLM",
+      "status": "Verified",
+      "confidence_score": 73.64,
+      "ai_reasoning_and_decisions": "Verified with minor evidence gaps in: ['self_serve_status']. Non-critical ambiguity does not block verification."
     }
   ]
 }

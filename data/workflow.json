@@ -9,10 +9,10 @@
     "6. Case Study Rendering"
   ],
   "execution_order": "Batch processing -> Verification -> Insights Generation -> Report Rendering",
-  "research_count": 64,
-  "verification_count": 28,
-  "manual_review_count": 36,
-  "failed_count": 0,
+  "research_count": 100,
+  "verification_count": 30,
+  "manual_review_count": 39,
+  "failed_count": 31,
   "generated_artifacts": [
     "data/research.json",
     "data/verified.json",
@@ -22,7 +22,7 @@
     "data/case_studies.json"
   ],
   "timing_information": {
-    "report_generated_at": "2026-07-17T17:50:24.961979",
-    "total_agent_processing_seconds": 2015.66
+    "report_generated_at": "2026-07-17T19:41:06.891120",
+    "total_agent_processing_seconds": 3012.43
   }
 }

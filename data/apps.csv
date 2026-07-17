@@ -1,103 +1,101 @@
 app_name,url
-Salesforce,https://www.salesforce.com
-HubSpot,https://www.hubspot.com
-Pipedrive,https://www.pipedrive.com
-Zendesk Sell,https://www.zendesk.com/sell
+Salesforce,https://salesforce.com
+HubSpot,https://hubspot.com
+Pipedrive,https://pipedrive.com
+Attio,https://attio.com
+Twenty,https://twenty.com
+Podio,https://podio.com
 Zoho CRM,https://www.zoho.com/crm
-Freshsales,https://www.freshworks.com/crm
-Notion,https://www.notion.so
-Evernote,https://evernote.com
-Asana,https://asana.com
-Trello,https://trello.com
-Monday.com,https://monday.com
-ClickUp,https://clickup.com
-Airtable,https://airtable.com
-Smartsheet,https://www.smartsheet.com
-Wrike,https://www.wrike.com
-Slack,https://slack.com
-Microsoft Teams,https://www.microsoft.com/en-us/microsoft-teams
-Zoom,https://zoom.us
-Discord,https://discord.com
-Google Workspace,https://workspace.google.com
-Webex,https://www.webex.com
-RingCentral,https://www.ringcentral.com
-Twilio,https://www.twilio.com
-SendGrid,https://sendgrid.com
-GitHub,https://github.com
-GitLab,https://about.gitlab.com
-Bitbucket,https://bitbucket.org
-Datadog,https://www.datadoghq.com
-New Relic,https://newrelic.com
-Sentry,https://sentry.io
-PagerDuty,https://www.pagerduty.com
-Auth0,https://auth0.com
-Okta,https://www.okta.com
-Vercel,https://vercel.com
-Netlify,https://www.netlify.com
-Stripe,https://stripe.com
-PayPal,https://www.paypal.com
-Square,https://squareup.com
-Adyen,https://www.adyen.com
-Plaid,https://plaid.com
-Brex,https://www.brex.com
-Ramp,https://ramp.com
-Expensify,https://www.expensify.com
-QuickBooks,https://quickbooks.intuit.com
-Xero,https://www.xero.com
-Mailchimp,https://mailchimp.com
-ActiveCampaign,https://www.activecampaign.com
-Klaviyo,https://www.klaviyo.com
-Marketo,https://www.marketo.com
-Braze,https://www.braze.com
-Hootsuite,https://www.hootsuite.com
-Buffer,https://buffer.com
-Sprout Social,https://sproutsocial.com
-Shopify,https://www.shopify.com
-BigCommerce,https://www.bigcommerce.com
-WooCommerce,https://woocommerce.com
-Magento,https://business.adobe.com/products/magento/magento-commerce.html
-Stripe Billing,https://stripe.com/billing
-Chargebee,https://www.chargebee.com
-Recurly,https://recurly.com
-Zendesk,https://www.zendesk.com
-Intercom,https://www.intercom.com
-Freshdesk,https://www.freshworks.com/freshdesk
-Help Scout,https://www.helpscout.com
-Gorgias,https://www.gorgias.com
-Kustomer,https://www.kustomer.com
+Close,https://close.com
+Copper,https://copper.com
+DealCloud,https://api.docs.dealcloud.com
+Zendesk,https://zendesk.com
+Intercom,https://intercom.com
+Freshdesk,https://freshdesk.com
 Front,https://front.com
-Workday,https://www.workday.com
-BambooHR,https://www.bamboohr.com
-Gusto,https://gusto.com
-Rippling,https://www.rippling.com
-Deel,https://www.deel.com
-Lattice,https://lattice.com
-Greenhouse,https://www.greenhouse.io
-Lever,https://www.lever.co
-Snowflake,https://www.snowflake.com
-Databricks,https://databricks.com
-Tableau,https://www.tableau.com
-Looker,https://looker.com
-Mixpanel,https://mixpanel.com
-Amplitude,https://amplitude.com
-Segment,https://segment.com
-Fivetran,https://fivetran.com
-dbt Labs,https://www.getdbt.com
-OpenAI,https://openai.com
-Anthropic,https://www.anthropic.com
-Midjourney,https://www.midjourney.com
-Cohere,https://cohere.com
-Hugging Face,https://huggingface.co
-Pinecone,https://www.pinecone.io
-Weaviate,https://weaviate.io
-LangChain,https://www.langchain.com
-Typeform,https://www.typeform.com
-SurveyMonkey,https://www.surveymonkey.com
-Qualtrics,https://www.qualtrics.com
-Calendly,https://calendly.com
-DocuSign,https://www.docusign.com
-Box,https://www.box.com
-Dropbox,https://www.dropbox.com
-Figma,https://www.figma.com
-Miro,https://miro.com
-Canva,https://www.canva.com
+Pylon,https://usepylon.com
+LiveAgent,https://liveagent.com
+Plain,https://plain.com
+Help Scout,https://helpscout.com
+Gorgias,https://gorgias.com
+Gladly,https://gladly.com
+Slack,https://slack.com
+Twilio,https://twilio.com
+Zoho Cliq,https://www.zoho.com/cliq
+Lark,https://open.larksuite.com
+Pumble,https://pumble.com
+Discord,https://discord.com
+Telegram,https://core.telegram.org
+WhatsApp Business,https://developers.facebook.com/docs/whatsapp
+Aircall,https://aircall.io
+Vonage,https://developer.vonage.com
+Google Ads,https://developers.google.com/google-ads
+Meta Ads,https://developers.facebook.com/docs/marketing-apis
+LinkedIn Ads,https://learn.microsoft.com/linkedin/marketing
+GoHighLevel,https://highlevel.stoplight.io
+Mailchimp,https://mailchimp.com/developer
+Klaviyo,https://developers.klaviyo.com
+systeme.io,https://systeme.io
+Pinterest,https://developers.pinterest.com
+Threads,https://developers.facebook.com/docs/threads
+SendGrid,https://sendgrid.com
+Shopify,https://shopify.dev
+WooCommerce,https://woocommerce.com/document/woocommerce-rest-api
+BigCommerce,https://developer.bigcommerce.com
+Salesforce Commerce Cloud,https://developer.salesforce.com/docs/commerce
+Magento,https://developer.adobe.com/commerce
+Squarespace,https://developers.squarespace.com
+Ecwid,https://api-docs.ecwid.com
+Gumroad,https://gumroad.com/api
+Amazon Selling Partner,https://developer-docs.amazon.com/sp-api
+fanbasis,https://fanbasis.com
+DataForSEO,https://docs.dataforseo.com
+SE Ranking,https://seranking.com/api
+Ahrefs,https://ahrefs.com/api
+MrScraper,https://docs.mrscraper.com
+Apify,https://docs.apify.com
+Firecrawl,https://firecrawl.dev
+Bright Data,https://brightdata.com
+Sherlock,https://github.com/sherlock-project/sherlock
+Waterfall.io,https://waterfall.io
+Clay,https://clay.com
+GitHub,https://docs.github.com/rest
+Vercel,https://vercel.com/docs/rest-api
+Netlify,https://docs.netlify.com/api
+Cloudflare,https://developers.cloudflare.com/api
+Supabase,https://supabase.com/docs
+Neo4j,https://neo4j.com/docs/api
+Snowflake,https://docs.snowflake.com
+MongoDB Atlas,https://mongodb.com/docs/atlas/api
+Datadog,https://docs.datadoghq.com/api
+Sentry,https://docs.sentry.io/api
+Notion,https://developers.notion.com
+Airtable,https://airtable.com/developers
+Linear,https://developers.linear.app
+Jira,https://developer.atlassian.com
+Asana,https://developers.asana.com
+Monday.com,https://developer.monday.com
+ClickUp,https://clickup.com/api
+Coda,https://coda.io/developers
+Smartsheet,https://smartsheet.com/developers
+Harvest,https://help.getharvest.com/api-v2
+Stripe,https://stripe.com/docs/api
+Plaid,https://plaid.com/docs
+Binance,https://binance-docs.github.io
+Paygent Connect,https://paygent.co.jp
+iPayX,https://ipayx.ai/docs
+QuickBooks,https://developer.intuit.com
+Xero,https://developer.xero.com
+Brex,https://developer.brex.com
+Ramp,https://docs.ramp.com
+PitchBook,https://pitchbook.com
+NotebookLM,https://cloud.google.com/gemini
+Otter AI,https://help.otter.ai
+Fathom,https://fathom.video
+Consensus,https://consensus.app
+Reducto,https://reducto.ai
+Devin,https://docs.devin.ai
+Higgsfield,https://higgsfield.ai/cli
+Mermaid CLI,https://github.com/mermaid-js/mermaid-cli
+YouTube Transcript,https://transcriptapi.com
+Grain,https://grain.com
