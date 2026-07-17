@@ -1,7 +1,7 @@
 from datetime import datetime
 from enum import Enum
-from typing import List, Optional
-from pydantic import BaseModel, Field, HttpUrl
+from typing import List, Optional, Union
+from pydantic import BaseModel, Field, HttpUrl, field_validator
 
 class SelfServeStatus(str, Enum):
     SELF_SERVE = "Self-Serve"
@@ -55,6 +55,14 @@ class Evidence(BaseModel):
     source_type: SourceType = Field(..., description="The type of source material.")
     claim_supported: str = Field(..., description="A short description of the specific claim this evidence supports (e.g., 'Confirms OAuth 2.0 support').")
 
+    @field_validator("source_type", mode="before")
+    @classmethod
+    def validate_source_type(cls, v):
+        for enum_item in SourceType:
+            if str(v).lower() in enum_item.value.lower() or enum_item.value.lower() in str(v).lower():
+                return enum_item
+        return SourceType.OTHER
+
 class SaaSApplicationData(BaseModel):
     """
     The core data contract representing a single researched SaaS application.
@@ -76,12 +84,12 @@ class SaaSApplicationData(BaseModel):
         ..., 
         description="The primary industry category (e.g., CRM, Developer Tools, Marketing)."
     )
-    one_line_description: str = Field(
-        ..., 
+    one_line_description: Optional[str] = Field(
+        None,
         description="A concise, one-sentence description of what the product does."
     )
-    agent_summary: str = Field(
-        ...,
+    agent_summary: Optional[str] = Field(
+        None,
         description="A short AI-generated summary of the application's overall integration ecosystem."
     )
 
@@ -146,11 +154,11 @@ class SaaSApplicationData(BaseModel):
     # ---------------------------------------------------------
     # Processing Metadata
     # ---------------------------------------------------------
-    research_timestamp: Optional[datetime] = Field(
+    research_timestamp: Optional[str] = Field(
         None,
         description="When the initial research was completed."
     )
-    verification_timestamp: Optional[datetime] = Field(
+    verification_timestamp: Optional[str] = Field(
         None,
         description="When the verification process was completed."
     )
@@ -166,3 +174,60 @@ class SaaSApplicationData(BaseModel):
         None, 
         description="Any additional context, edge cases, or reasoning provided by the AI agents or human reviewers."
     )
+
+    @field_validator("authentication_methods", mode="before")
+    @classmethod
+    def validate_auth_methods(cls, v):
+        if not isinstance(v, list):
+            return v
+        valid_methods = []
+        for item in v:
+            matched = False
+            for enum_item in AuthMethod:
+                if str(item).lower() in enum_item.value.lower() or enum_item.value.lower() in str(item).lower():
+                    valid_methods.append(enum_item)
+                    matched = True
+                    break
+            if not matched:
+                valid_methods.append(AuthMethod.OTHER)
+        return valid_methods
+
+    @field_validator("api_surface", mode="before")
+    @classmethod
+    def validate_api_surface(cls, v):
+        if not isinstance(v, list):
+            return v
+        valid_surfaces = []
+        for item in v:
+            matched = False
+            for enum_item in APISurface:
+                if str(item).lower() in enum_item.value.lower() or enum_item.value.lower() in str(item).lower():
+                    valid_surfaces.append(enum_item)
+                    matched = True
+                    break
+            if not matched:
+                valid_surfaces.append(APISurface.OTHER)
+        return valid_surfaces
+
+    @field_validator("self_serve_status", mode="before")
+    @classmethod
+    def validate_self_serve(cls, v):
+        for enum_item in SelfServeStatus:
+            if str(v).lower() in enum_item.value.lower() or enum_item.value.lower() in str(v).lower():
+                return enum_item
+        return SelfServeStatus.UNKNOWN
+
+    @field_validator("buildability_verdict", mode="before")
+    @classmethod
+    def validate_buildability(cls, v):
+        for enum_item in BuildabilityVerdict:
+            if str(v).lower() in enum_item.value.lower() or enum_item.value.lower() in str(v).lower():
+                return enum_item
+        return BuildabilityVerdict.UNKNOWN
+
+    @field_validator("research_timestamp", "verification_timestamp", mode="before")
+    @classmethod
+    def serialize_datetime(cls, v):
+        if isinstance(v, datetime):
+            return v.isoformat()
+        return v

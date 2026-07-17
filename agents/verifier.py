@@ -13,10 +13,10 @@ logger = logging.getLogger(__name__)
 
 class VerificationResult(BaseModel):
     """Internal model for the LLM output during verification."""
-    is_valid: bool = Field(..., description="True if the original claims are fully supported by evidence.")
+    is_valid: bool = Field(..., description="true if the original claims are fully supported by evidence.")
     confidence_adjustment: float = Field(..., description="Amount to add/subtract from the original confidence score. Negative for penalties.")
     reasoning: str = Field(..., description="Detailed explanation of why claims are valid or invalid.")
-    manual_review_needed: bool = Field(..., description="True if evidence is insufficient, contradictory, missing, or required fields are absent.")
+    manual_review_needed: bool = Field(..., description="true if evidence is insufficient, contradictory, missing, or required fields are absent.")
 
 class VerifierAgent:
     """
@@ -25,8 +25,14 @@ class VerifierAgent:
     """
     
     def __init__(self):
-        api_key = os.getenv("OPENAI_API_KEY", "")
-        self.client = instructor.from_openai(AsyncOpenAI(api_key=api_key))
+        api_key = os.getenv("GROQ_API_KEY", "")
+        self.client = instructor.from_openai(
+            AsyncOpenAI(
+                api_key=api_key,
+                base_url="https://api.groq.com/openai/v1"
+            ),
+            mode=instructor.Mode.JSON
+        )
 
     async def verify(self, app_data: SaaSApplicationData) -> SaaSApplicationData:
         """
@@ -44,7 +50,7 @@ class VerifierAgent:
                 app_data.manual_review_required = True
                 app_data.status = ResearchStatus.MANUAL_REVIEW
                 app_data.processing_notes.append("Verifier: No evidence URLs provided by Researcher.")
-                app_data.verification_timestamp = datetime.now()
+                app_data.verification_timestamp = datetime.now().isoformat()
                 app_data.processing_time_seconds = (app_data.processing_time_seconds or 0) + round(time.time() - start_time, 2)
                 return app_data
 
@@ -64,7 +70,7 @@ class VerifierAgent:
                 app_data.manual_review_required = True
                 app_data.status = ResearchStatus.MANUAL_REVIEW
                 app_data.processing_notes.append("Verifier: Could not fetch text from evidence URLs.")
-                app_data.verification_timestamp = datetime.now()
+                app_data.verification_timestamp = datetime.now().isoformat()
                 app_data.processing_time_seconds = (app_data.processing_time_seconds or 0) + round(time.time() - start_time, 2)
                 return app_data
                 
@@ -85,14 +91,14 @@ class VerifierAgent:
             
             Rules:
             1. DO NOT invent new information. You are an auditor, not a researcher.
-            2. If the text does not explicitly support the claims, mark is_valid=False and manual_review_needed=True.
+            2. If the text does not explicitly support the claims, mark is_valid=false and manual_review_needed=true.
             3. If the evidence is contradictory (e.g. text says OAuth 2.0 but claim says Basic), require manual review.
             4. If required fields appear "Unknown", require manual review.
             5. Be harsh. We prioritize accuracy over automation.
             """
             
             result: VerificationResult = await self.client.chat.completions.create(
-                model="gpt-4o-mini",
+                model="llama-3.1-8b-instant",  # Groq model: matches researcher for consistency
                 response_model=VerificationResult,
                 messages=[
                     {"role": "system", "content": "You are a highly skeptical auditor."},
@@ -115,7 +121,7 @@ class VerifierAgent:
                 app_data.status = ResearchStatus.VERIFIED
                 logger.info(f"Evidence Found ✓ Confidence {app_data.confidence_score}% Verified")
 
-            app_data.verification_timestamp = datetime.now()
+            app_data.verification_timestamp = datetime.now().isoformat()
             app_data.processing_time_seconds = (app_data.processing_time_seconds or 0) + round(time.time() - start_time, 2)
             
             return app_data
@@ -124,5 +130,5 @@ class VerifierAgent:
             logger.error(f"Error verifying {app_data.app_name}: {e}")
             app_data.status = ResearchStatus.FAILED
             app_data.processing_notes.append(f"Verification Failed with exception: {e}")
-            app_data.verification_timestamp = datetime.now()
+            app_data.verification_timestamp = datetime.now().isoformat()
             return app_data

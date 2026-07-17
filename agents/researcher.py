@@ -170,9 +170,15 @@ class ResearchAgent:
     """
     
     def __init__(self):
-        # We rely on OPENAI_API_KEY being present in the environment
-        api_key = os.getenv("OPENAI_API_KEY", "")
-        self.client = instructor.from_openai(AsyncOpenAI(api_key=api_key))
+        # Uses Groq's OpenAI-compatible endpoint. Reads key from GROQ_API_KEY.
+        api_key = os.getenv("GROQ_API_KEY", "")
+        self.client = instructor.from_openai(
+            AsyncOpenAI(
+                api_key=api_key,
+                base_url="https://api.groq.com/openai/v1"
+            ),
+            mode=instructor.Mode.JSON
+        )
 
     async def search_docs_url(self, app_name: str, website: str) -> List[str]:
         """
@@ -226,7 +232,7 @@ class ResearchAgent:
             
             # instructor wrapper guarantees the output matches SaaSApplicationData
             response: SaaSApplicationData = await self.client.chat.completions.create(
-                model="gpt-4o-mini", # Using a faster/cheaper model for the bulk run, upgrade to gpt-4o if needed
+                model="llama-3.1-8b-instant",  # Groq model: fast and free-tier friendly
                 response_model=SaaSApplicationData,
                 messages=[
                     {"role": "system", "content": "You are a strict data extraction assistant."},
@@ -236,7 +242,7 @@ class ResearchAgent:
             )
             
             # Populate processing metadata
-            response.research_timestamp = datetime.now()
+            response.research_timestamp = datetime.now().isoformat()
             response.processing_time_seconds = round(time.time() - start_time, 2)
             response.status = ResearchStatus.RESEARCHED
             
