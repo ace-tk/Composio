@@ -29,8 +29,13 @@ class AnalystAgent:
     """
     
     def __init__(self):
-        api_key = os.getenv("OPENAI_API_KEY", "")
-        self.client = instructor.from_openai(AsyncOpenAI(api_key=api_key))
+        api_key = os.getenv("GROQ_API_KEY", "")
+        self.client = instructor.from_openai(
+            AsyncOpenAI(
+                api_key=api_key,
+                base_url="https://api.groq.com/openai/v1"
+            )
+        )
 
     async def analyze(self, verified_apps: List[SaaSApplicationData]) -> AnalysisReport:
         """
@@ -100,9 +105,9 @@ class AnalystAgent:
         Every recommendation MUST explain WHY the finding matters. 
         """
         
-        # We use a smarter/larger model here since this runs only once at the very end
+        # We use a larger Groq model here since this runs only once at the very end
         report: AnalysisReport = await self.client.chat.completions.create(
-            model="gpt-4o",
+            model="llama-3.3-70b-versatile",  # Groq's best reasoning model for strategic analysis
             response_model=AnalysisReport,
             messages=[
                 {"role": "system", "content": "You are a visionary Product Operations executive."},
