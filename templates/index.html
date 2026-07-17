@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Autonomous AI SaaS Integration Pipeline: Case Study</title>
+    <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
     <!-- Sticky Navigation -->
@@ -68,8 +69,69 @@
             <div class="container">
                 <h2 class="section-heading">Multi-Agent Architecture</h2>
                 <p class="section-subtitle">Understanding the roles and relationships of our autonomous agents.</p>
-                <div class="content-container">
-                    <p class="placeholder-text">This section will outline the design of the multi-agent system, explaining the distinct roles of the Researcher, Verifier, and Analyst agents and how they communicate.</p>
+                
+                <div class="agent-flow-container">
+                    <!-- Agent Card 1 -->
+                    <div class="agent-card">
+                        <div class="agent-card-header">
+                            <span class="agent-icon">🔍</span>
+                            <h3>Research Agent</h3>
+                        </div>
+                        <ul class="agent-features">
+                            <li>Reads SaaS application list</li>
+                            <li>Collects documentation</li>
+                            <li>Extracts authentication methods</li>
+                            <li>Detects API capabilities</li>
+                        </ul>
+                    </div>
+
+                    <!-- Flow Arrow 1 -->
+                    <div class="agent-arrow">
+                        <svg class="arrow-horizontal" viewBox="0 0 24 24" width="24" height="24">
+                            <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        </svg>
+                        <svg class="arrow-vertical" viewBox="0 0 24 24" width="24" height="24">
+                            <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        </svg>
+                    </div>
+
+                    <!-- Agent Card 2 -->
+                    <div class="agent-card">
+                        <div class="agent-card-header">
+                            <span class="agent-icon">🛡️</span>
+                            <h3>Verifier Agent</h3>
+                        </div>
+                        <ul class="agent-features">
+                            <li>Validates research findings</li>
+                            <li>Confirms evidence from documentation</li>
+                            <li>Flags uncertain cases</li>
+                            <li>Produces confidence scores</li>
+                        </ul>
+                    </div>
+
+                    <!-- Flow Arrow 2 -->
+                    <div class="agent-arrow">
+                        <svg class="arrow-horizontal" viewBox="0 0 24 24" width="24" height="24">
+                            <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        </svg>
+                        <svg class="arrow-vertical" viewBox="0 0 24 24" width="24" height="24">
+                            <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        </svg>
+                    </div>
+
+                    <!-- Agent Card 3 -->
+                    <div class="agent-card">
+                        <div class="agent-card-header">
+                            <span class="agent-icon">📊</span>
+                            <h3>Analyst Agent</h3>
+                        </div>
+                        <ul class="agent-features">
+                            <li>Aggregates verified data</li>
+                            <li>Detects ecosystem patterns</li>
+                            <li>Generates insights</li>
+                            <li>Produces final case study</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
@@ -79,8 +141,72 @@
             <div class="container">
                 <h2 class="section-heading">Pipeline Workflow</h2>
                 <p class="section-subtitle">The sequential execution stages from raw data to verified insights.</p>
-                <div class="content-container">
-                    <p class="placeholder-text">This section will detail the step-by-step lifecycle of the pipeline, tracking an application through discovery, scraping, verification, human-in-the-loop fallback, and analysis.</p>
+                
+                <div class="timeline-container">
+                    <div class="timeline-line"></div>
+                    
+                    <!-- Step 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-icon">📁</div>
+                        <div class="timeline-content">
+                            <h3>CSV Dataset</h3>
+                            <p>Source list containing raw SaaS applications and target domains for processing.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="timeline-item">
+                        <div class="timeline-icon">🔍</div>
+                        <div class="timeline-content">
+                            <h3>Research</h3>
+                            <p>Web scraping, text extraction, and Pydantic-based documentation auditing.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="timeline-item">
+                        <div class="timeline-icon">🛡️</div>
+                        <div class="timeline-content">
+                            <h3>Verification</h3>
+                            <p>Cross-examining extracted metadata using independent source validation and confidence scoring.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="timeline-item">
+                        <div class="timeline-icon">👥</div>
+                        <div class="timeline-content">
+                            <h3>Human Review</h3>
+                            <p>Adversarial auditing fallback queue for records falling below confidence thresholds.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 5 -->
+                    <div class="timeline-item">
+                        <div class="timeline-icon">⚙️</div>
+                        <div class="timeline-content">
+                            <h3>Pattern Analysis</h3>
+                            <p>Ecosystem profiling, API surface detection, and authentication design clustering.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 6 -->
+                    <div class="timeline-item">
+                        <div class="timeline-icon">💡</div>
+                        <div class="timeline-content">
+                            <h3>Insights Generation</h3>
+                            <p>Synthesizing critical takeaways, developer experience trends, and API buildability recommendations.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 7 -->
+                    <div class="timeline-item">
+                        <div class="timeline-icon">📄</div>
+                        <div class="timeline-content">
+                            <h3>HTML Report</h3>
+                            <p>Compiling findings and case studies into a premium, interactive single-page report.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
