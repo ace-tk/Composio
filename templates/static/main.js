@@ -22,7 +22,7 @@ async function loadData() {
 
   // Try to load actual JSON files dynamically
   try {
-    const reportRes = await fetch('../data/verification_report.json');
+    const reportRes = await fetch('/data/verification_report.json');
     if (reportRes.ok) {
       report = await reportRes.json();
       console.log('Successfully fetched verification report dynamically.');
@@ -32,7 +32,7 @@ async function loadData() {
   }
 
   try {
-    const insightsRes = await fetch('../data/insights.json');
+    const insightsRes = await fetch('/data/insights.json');
     if (insightsRes.ok) {
       insights = await insightsRes.json();
       console.log('Successfully fetched insights dynamically.');

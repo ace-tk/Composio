@@ -8,7 +8,11 @@ from typing import Optional
 from agents.researcher import ResearchAgent
 from agents.verifier import VerifierAgent
 from agents.analyst import AnalystAgent
-from scripts.generate_metadata import generate_workflow_metadata, generate_case_studies
+from scripts.generate_metadata import (
+    generate_workflow_metadata,
+    generate_case_studies,
+    publish_static_dashboard_data,
+)
 from utils.dataset_sync import (
     load_apps_csv,
     load_records_by_app_name,
@@ -475,6 +479,7 @@ def main():
     logger.info("Generating workflow metadata and case studies...")
     generate_workflow_metadata()
     generate_case_studies()
+    publish_static_dashboard_data()
 
     # Validate final outputs
     validate_outputs()

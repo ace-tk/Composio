@@ -19,6 +19,11 @@ from utils.dataset_sync import (
     load_apps_csv,
     sync_all_artifacts,
 )
+from utils.publish_dashboard import publish_dashboard_data
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+DATA_DIR = PROJECT_ROOT / "data"
+TEMPLATES_DATA_DIR = PROJECT_ROOT / "templates" / "data"
 
 
 def main() -> int:
@@ -51,6 +56,10 @@ def main() -> int:
             with open(REPORT_JSON, "w") as f:
                 json.dump(report, f, indent=2)
             print(f"verification_report.json: updated total_apps -> {summary['csv_app_count']}")
+
+    copied = publish_dashboard_data(DATA_DIR, TEMPLATES_DATA_DIR)
+    if copied:
+        print(f"templates/data:  published {len(copied)} file(s) for the dashboard")
 
     print()
     return 0

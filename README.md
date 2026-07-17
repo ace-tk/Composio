@@ -79,6 +79,25 @@ Running the pipeline generates:
 
 The final HTML report is generated from these outputs.
 
+## Dashboard (local)
+
+Serve the static site from `templates/` so `/data/*.json` resolves correctly:
+
+```bash
+cd templates
+python3 -m http.server 8000
+```
+
+Open http://localhost:8000
+
+Pipeline runs also copy JSON artifacts into `templates/data/` automatically.
+
+## Deploy (Vercel)
+
+1. Set **Root Directory** to `templates` (keep this setting).
+2. Deploy — `templates/data/*.json` is included in the static site.
+3. After re-running the pipeline, commit the updated `templates/data/` files and redeploy.
+
 ## Repository
 
 This project was built as part of the **Composio AI Product Ops Intern** take-home assignment.

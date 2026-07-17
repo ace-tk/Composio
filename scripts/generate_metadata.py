@@ -8,12 +8,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(BASE_DIR))
 
 from utils.dataset_sync import load_apps_csv, sync_json_to_apps_csv
+from utils.publish_dashboard import publish_dashboard_data
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
 # Base paths
 DATA_DIR = BASE_DIR / "data"
+TEMPLATES_DATA_DIR = BASE_DIR / "templates" / "data"
 
 APPS_CSV = DATA_DIR / "apps.csv"
 VERIFIED_JSON = DATA_DIR / "verified.json"
@@ -124,8 +126,15 @@ def generate_case_studies():
         json.dump(case_studies, f, indent=2)
     logger.info("Generated case_studies.json")
 
+
+def publish_static_dashboard_data():
+    """Copy pipeline JSON into templates/data/ for Vercel / local static serving."""
+    publish_dashboard_data(DATA_DIR, TEMPLATES_DATA_DIR)
+
+
 if __name__ == "__main__":
     logger.info("Generating final workflow metadata and case studies...")
     generate_workflow_metadata()
     generate_case_studies()
+    publish_static_dashboard_data()
     logger.info("Done.")
