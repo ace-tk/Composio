@@ -11,12 +11,13 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 def check_api_key():
-    key = os.getenv("OPENAI_API_KEY", "")
-    if not key or key == "your_openai_api_key_here":
-        print("❌  OPENAI_API_KEY is not set.")
-        print("    Fix: export OPENAI_API_KEY=sk-...")
+    key = os.getenv("GROQ_API_KEY", "")
+    if not key or key == "your_groq_api_key_here":
+        print("❌  GROQ_API_KEY is not set.")
+        print("    Fix: export GROQ_API_KEY=gsk_...")
         return False
-    print(f"✅  OPENAI_API_KEY present (length: {len(key)})")
+    print(f"✅  GROQ_API_KEY present (length: {len(key)})")
+    return True
     return True
 
 def check_apps_csv():

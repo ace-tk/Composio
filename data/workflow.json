@@ -1,0 +1,28 @@
+{
+  "version": "1.0.0",
+  "pipeline_stages": [
+    "1. Discovery & Scraping (Research Agent)",
+    "2. Data Extraction & Strict Formatting (Research Agent)",
+    "3. Evidence Validation & Auditing (Verifier Agent)",
+    "4. Human-in-the-Loop Fallback (Manual Review Queue)",
+    "5. Strategic Pattern Analysis (Analyst Agent)",
+    "6. Case Study Rendering"
+  ],
+  "execution_order": "Batch processing -> Verification -> Insights Generation -> Report Rendering",
+  "research_count": 64,
+  "verification_count": 27,
+  "manual_review_count": 33,
+  "failed_count": 4,
+  "generated_artifacts": [
+    "data/research.json",
+    "data/verified.json",
+    "data/verification_report.json",
+    "data/insights.json",
+    "data/workflow.json",
+    "data/case_studies.json"
+  ],
+  "timing_information": {
+    "report_generated_at": "2026-07-17T14:58:08.555959",
+    "total_agent_processing_seconds": 1951.44
+  }
+}
