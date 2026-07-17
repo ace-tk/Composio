@@ -92,11 +92,19 @@ Open http://localhost:8000
 
 Pipeline runs also copy JSON artifacts into `templates/data/` automatically.
 
+## Future Improvements
+
+- Integrate Composio SDK for native tool execution
+- Add incremental update support
+- Schedule automatic pipeline runs
+- Add confidence scoring using LLM evaluation
+
 ## Deploy (Vercel)
 
 1. Set **Root Directory** to `templates` (keep this setting).
 2. Deploy — `templates/data/*.json` is included in the static site.
 3. After re-running the pipeline, commit the updated `templates/data/` files and redeploy.
+
 
 ## Repository
 
